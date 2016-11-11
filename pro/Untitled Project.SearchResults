@@ -1,18 +1,18 @@
----- UART_IRQHandler Matches (13 in 5 files) ----
-Lpc_project.htm: <LI><a href="#[14]">UART_IRQHandler</a> from main.o(.text) referenced from startup_lpc11xx.o(RESET)
-Lpc_project.htm:<P><STRONG><a name="[14]"></a>UART_IRQHandler</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, main.o(.text))
-Lpc_project.map:    startup_lpc11xx.o(RESET) refers to main.o(.text) for UART_IRQHandler
-Lpc_project.map:    UART_IRQHandler                          0x00000611   Thumb Code    32  main.o(.text)
-Main.c (user):void UART_IRQHandler(void)
-startup_LPC11xx.lst:   98 00000094 00000000        DCD              UART_IRQHandler ; 16+21: UART
-startup_LPC11xx.lst:  168 00000012                 EXPORT           UART_IRQHandler           [WEAK
-startup_LPC11xx.lst:  189 00000012         UART_IRQHandler
-startup_LPC11xx.lst:UART_IRQHandler 00000012
-startup_LPC11xx.lst:Symbol: UART_IRQHandler
-startup_LPC11xx.s:                DCD     UART_IRQHandler           ; 16+21: UART
-startup_LPC11xx.s:                EXPORT  UART_IRQHandler           [WEAK]
-startup_LPC11xx.s:UART_IRQHandler
----- UART_IRQHandler Search Errors Encountered (2) ----
-The following 2 files could not be processed:
+---- uart_irq_disable Matches (12 in 6 files) ----
+Com.c (drive):			uart_irq_disable();
+Com.c (drive):			uart_irq_disable();
+Com.c (drive):			uart_irq_disable();
+Lpc_project.htm:<P><STRONG><a name="[54]"></a>uart_irq_disable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text))
+Lpc_project.htm:<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_disable
+Lpc_project.map:    com.o(.text) refers to uart.o(.text) for uart_irq_disable
+Lpc_project.map:    uart_irq_disable                         0x0000080b   Thumb Code    14  uart.o(.text)
+Main.c (user):					uart_irq_disable();
+Main.c (user):					uart_irq_disable();
+Main.c (user):					uart_irq_disable();
+Uart.c (drive):void uart_irq_disable()
+Uart.h (drive):extern void uart_irq_disable();
+---- uart_irq_disable Search Errors Encountered (3) ----
+The following 3 files could not be processed:
+E:\ip话机项目\myproject\lpc_gpio_uart\lpc_project.plg : File could not be opened.
 E:\ip话机项目\myproject\lpc_gpio_uart\pro\Untitled Project.IAB : File could not be opened.
 E:\ip话机项目\myproject\lpc_gpio_uart\pro\Untitled Project.IMB : File could not be opened.

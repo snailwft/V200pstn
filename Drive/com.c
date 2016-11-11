@@ -1,15 +1,15 @@
 #include "com.h"
-
+#include "config.h"
 /*
  *RING:1/0:CID:0704121313016054035:HOOK:1/0*
  1:表示振铃或摘机
  0:表示不振铃或挂机
 */
 
-int deal_message(uchar *databuf, uchar datalength)
+int deal_message(uint8 *databuf, uint8 datalength)
 {
-	uchar *ptr = NULL;
-	uchar *ch = NULL;
+	uint8 *ptr = NULL;
+	uint8 *ch = NULL;
 	//获取HOOK,返回值
 	if (datalength == 0)
 		return -1;
@@ -25,13 +25,69 @@ int deal_message(uchar *databuf, uchar datalength)
 	return -1;
 }
 
-int message_integrity(uchar *databuf)
+int message_integrity(uint8 *databuf)
 {
-	uchar *ptr = NULL;
+	uint8 *ptr = NULL;
 	ptr = strstr(databuf, "*");
 	if (ptr == NULL)
 	{
 		return 0;
 	}
 	return 1;
+}
+
+int message_parese_process(uint8 *buf)
+{
+	int hook_status;
+	int fsk_status;
+	uint8 data_buf[100] = {0};
+	
+	if (buf[0] == '*') //主控发送 
+	{					
+		if (message_integrity(&buf[1])) //检测消息的完整性
+		{
+			hook_status = deal_message(buf, strlen(buf));
+			if (hook_status == 1)
+			{
+				CLR_BIT(LPC_GPIO0,DATA,9); //摘机
+				time16b1_disable();
+				fsk_ucgetflag = 0; //我方摘机清零
+				CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 拉低PDWN进入休眠模式
+			}
+			else if (hook_status == 0)
+			{
+				SET_BIT(LPC_GPIO0,DATA,9); //挂机
+			}
+			uart_irq_disable();
+			memset(buf, 0, sizeof(buf));
+			recv_num = 0;	
+			uart_irq_enable();
+		}
+	}
+	else  //  fsk来显
+	{				
+		if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
+		{
+			uart_send(buf, strlen(buf)); //发送给主控
+			memset(data_buf, 0x0, sizeof(data_buf));
+			sprintf(data_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
+			uart_send(data_buf, strlen(data_buf)); //发送给主控
+			uart_irq_disable();
+			memset(buf, 0, sizeof(buf));
+			recv_num = 0;	
+			uart_irq_enable();
+		}
+		else if (fsk_status == -1) // fsk 消息错误
+		{
+			uart_irq_disable();
+			memset(buf, 0, sizeof(buf));
+			recv_num = 0;
+			uart_irq_enable();
+		}
+	}			
+	{ // dtmf 来显
+
+	}
+
+	return 0;
 }

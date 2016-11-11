@@ -7,61 +7,6 @@ E:\ip话机项目\myproject\lpc_gpio_uart\lpc_project.uvproj
 Project File Date:  11/02/2016
 
 <h2>Output:</h2>
-Build target 'Target 1'
-assembling startup_LPC11xx.s...
-compiling system_LPC11xx.c...
-compiling main.c...
-.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
-.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
-.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
-.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
-.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
-.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-.\Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-User\main.c(54): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(78): warning:  #1293-D: assignment in condition
-User\main.c(80): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(82): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(83): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(155): warning:  #177-D: variable "redata" was declared but never referenced
-User\main.c(156): warning:  #177-D: variable "fsk_status" was declared but never referenced
-User\main.c(180): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(180): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(180): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(181): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(186): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(186): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(186): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(187): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-compiling ct.c...
-Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
-Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
-Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
-compiling gpio.c...
-compiling uart.c...
-Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
-Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
-Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
-compiling fsk.c...
-Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
-Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
-Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-compiling com.c...
-Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-Drive\com.c(16): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uchar *"
-Drive\com.c(20): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(22): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(31): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uchar *"
-Drive\com.c(37): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=4704 RO-data=496 RW-data=12 ZI-data=956  
-FromELF: creating hex file...
-"lpc_project.axf" - 0 Error(s), 42 Warning(s).
 Load "E:\\ip话机项目\\myproject\\lpc_gpio_uart\\lpc_project.AXF" 
 Set JLink Project File to "E:\ip话机项目\myproject\lpc_gpio_uart\JLinkSettings.ini"
  
@@ -84,13 +29,13 @@ ROMTableAddr = 0xE00FF003
 Target info:
 ------------
 Device: LPC1114/302
-VTarget = 3.325V
+VTarget = 2.814V
 State of Pins: 
 TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
 Hardware-Breakpoints: 4
 Software-Breakpoints: 2048
 Watchpoints:          2
-JTAG speed: 2000 kHz
+JTAG speed: 500 kHz
  
 Erase Done.
 Programming Done.
@@ -109,23 +54,18 @@ compiling main.c...
 .\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
 .\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
 .\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-.\Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-User\main.c(52): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(76): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(76): warning:  #1293-D: assignment in condition
-User\main.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(80): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(81): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(153): warning:  #177-D: variable "redata" was declared but never referenced
-User\main.c(154): warning:  #177-D: variable "fsk_status" was declared but never referenced
-User\main.c(178): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(178): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(178): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(179): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(184): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(184): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(184): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(185): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+User\main.c(33): warning:  #177-D: variable "fsk_status" was declared but never referenced
+User\main.c(34): warning:  #177-D: variable "hook_status" was declared but never referenced
+User\main.c(118): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(142): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(142): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(142): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(143): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(148): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(148): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(148): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(149): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
 compiling ct.c...
 Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
 Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
@@ -137,23 +77,37 @@ Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - gi
 Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
 Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
 compiling fsk.c...
-Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
 Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
 Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
 Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
 compiling com.c...
-Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-Drive\com.c(16): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uchar *"
-Drive\com.c(20): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(22): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(31): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uchar *"
-Drive\com.c(37): warning:  #1-D: last line of file ends without a newline
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(61): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(64): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(71): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(71): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(75): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(78): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(82): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(85): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(93): warning:  #1-D: last line of file ends without a newline
 linking...
-Program Size: Code=4760 RO-data=496 RW-data=12 ZI-data=956  
+Program Size: Code=4868 RO-data=496 RW-data=8 ZI-data=856  
 FromELF: creating hex file...
-"lpc_project.axf" - 0 Error(s), 42 Warning(s).
+"lpc_project.axf" - 0 Error(s), 51 Warning(s).
 Load "E:\\ip话机项目\\myproject\\lpc_gpio_uart\\lpc_project.AXF" 
 Set JLink Project File to "E:\ip话机项目\myproject\lpc_gpio_uart\JLinkSettings.ini"
  
@@ -176,13 +130,13 @@ ROMTableAddr = 0xE00FF003
 Target info:
 ------------
 Device: LPC1114/302
-VTarget = 3.325V
+VTarget = 2.801V
 State of Pins: 
 TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
 Hardware-Breakpoints: 4
 Software-Breakpoints: 2048
 Watchpoints:          2
-JTAG speed: 2000 kHz
+JTAG speed: 500 kHz
  
 Erase Done.
 Programming Done.
@@ -201,23 +155,18 @@ compiling main.c...
 .\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
 .\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
 .\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-.\Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-User\main.c(52): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(76): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(76): warning:  #1293-D: assignment in condition
-User\main.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(80): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(81): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(140): warning:  #177-D: variable "redata" was declared but never referenced
-User\main.c(141): warning:  #177-D: variable "fsk_status" was declared but never referenced
-User\main.c(165): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(165): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(165): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(166): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-User\main.c(171): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-User\main.c(171): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(171): warning:  #181-D: argument is incompatible with corresponding format string conversion
-User\main.c(172): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+User\main.c(33): warning:  #177-D: variable "fsk_status" was declared but never referenced
+User\main.c(34): warning:  #177-D: variable "hook_status" was declared but never referenced
+User\main.c(119): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(143): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(143): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(143): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(144): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(149): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(150): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
 compiling ct.c...
 Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
 Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
@@ -229,20 +178,491 @@ Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - gi
 Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
 Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
 compiling fsk.c...
-Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
 Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
 Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
 Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
 compiling com.c...
-Drive\fsk.h(33): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-Drive\com.c(16): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uchar *"
-Drive\com.c(20): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(22): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(31): warning:  #167-D: argument of type "uchar *" is incompatible with parameter of type "const char *"
-Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uchar *"
-Drive\com.c(37): warning:  #1-D: last line of file ends without a newline
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(61): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(64): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(71): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(71): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(75): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(78): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(82): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(85): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(93): warning:  #1-D: last line of file ends without a newline
 linking...
-Program Size: Code=4768 RO-data=496 RW-data=12 ZI-data=956  
+Program Size: Code=4884 RO-data=496 RW-data=8 ZI-data=856  
 FromELF: creating hex file...
-"lpc_project.axf" - 0 Error(s), 42 Warning(s).
+"lpc_project.axf" - 0 Error(s), 51 Warning(s).
+Load "E:\\ip话机项目\\myproject\\lpc_gpio_uart\\lpc_project.AXF" 
+Set JLink Project File to "E:\ip话机项目\myproject\lpc_gpio_uart\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.24b, compiled Feb 22 2011 20:47:17
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ 
+Target info:
+------------
+Device: LPC1114/302
+VTarget = 2.788V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 2048
+Watchpoints:          2
+JTAG speed: 500 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+Application running ...
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+User\main.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(73): warning:  #1293-D: assignment in condition
+User\main.c(75): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(77): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(120): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(144): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(144): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(144): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(145): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(150): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(150): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(150): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(61): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(64): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(71): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(71): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(75): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(78): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(82): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(85): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(93): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5084 RO-data=496 RW-data=8 ZI-data=856  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 55 Warning(s).
+Load "E:\\ip话机项目\\myproject\\lpc_gpio_uart\\lpc_project.AXF" 
+Set JLink Project File to "E:\ip话机项目\myproject\lpc_gpio_uart\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.24b, compiled Feb 22 2011 20:47:17
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ 
+Target info:
+------------
+Device: LPC1114/302
+VTarget = 2.814V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 2048
+Watchpoints:          2
+JTAG speed: 500 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+Application running ...
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+User\main.c(50): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(74): warning:  #1293-D: assignment in condition
+User\main.c(76): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(79): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(121): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(145): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(145): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(145): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(146): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(61): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(64): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(71): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(71): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(75): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(78): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(82): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(85): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(93): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5072 RO-data=496 RW-data=8 ZI-data=952  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 55 Warning(s).
+Load "E:\\ip话机项目\\myproject\\lpc_gpio_uart\\lpc_project.AXF" 
+Set JLink Project File to "E:\ip话机项目\myproject\lpc_gpio_uart\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.24b, compiled Feb 22 2011 20:47:17
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ 
+Target info:
+------------
+Device: LPC1114/302
+VTarget = 2.808V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 2048
+Watchpoints:          2
+JTAG speed: 500 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+Application running ...
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+User\main.c(50): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(74): warning:  #1293-D: assignment in condition
+User\main.c(76): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(79): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(121): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(145): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(145): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(145): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(146): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(61): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(64): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(71): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(71): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(75): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(78): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(82): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(85): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(93): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5048 RO-data=496 RW-data=8 ZI-data=952  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 55 Warning(s).
+Load "E:\\ip话机项目\\myproject\\lpc_gpio_uart\\lpc_project.AXF" 
+Set JLink Project File to "E:\ip话机项目\myproject\lpc_gpio_uart\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.24b, compiled Feb 22 2011 20:47:17
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ 
+Target info:
+------------
+Device: LPC1114/302
+VTarget = 2.795V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 2048
+Watchpoints:          2
+JTAG speed: 500 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+Application running ...
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+User\main.c(50): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(74): warning:  #1293-D: assignment in condition
+User\main.c(76): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(79): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(121): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(145): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(145): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(145): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(146): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+User\main.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(61): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(64): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(71): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(71): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(75): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(78): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(82): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(85): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(93): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5024 RO-data=496 RW-data=8 ZI-data=952  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 55 Warning(s).
+Load "E:\\ip话机项目\\myproject\\lpc_gpio_uart\\lpc_project.AXF" 
+Set JLink Project File to "E:\ip话机项目\myproject\lpc_gpio_uart\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.24b, compiled Feb 22 2011 20:47:17
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+ 
+Target info:
+------------
+Device: LPC1114/302
+VTarget = 2.801V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 2048
+Watchpoints:          2
+JTAG speed: 500 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info:   FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+Application running ...

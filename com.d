@@ -4,3 +4,10 @@ com.o: Drive\fsk.h
 com.o: d:\Keil\ARM\RV31\INC\stdio.h
 com.o: d:\Keil\ARM\RV31\INC\string.h
 com.o: d:\Keil\ARM\RV31\INC\stdlib.h
+com.o: .\User\config.h
+com.o: .\User\../system/LPC11xx.h
+com.o: d:\Keil\ARM\CMSIS\Include\core_cm0.h
+com.o: d:\Keil\ARM\RV31\INC\stdint.h
+com.o: d:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+com.o: d:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+com.o: .\User\../system/system_LPC11xx.h

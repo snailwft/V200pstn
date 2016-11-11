@@ -134,7 +134,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>JL2CM3</Key>
-          <Name>-U99999994 -O4303 -S0 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(0BB11477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD10000000 -FC800 -FN1 -FF0LPC1xxx_32 -FS00 -FL08000</Name>
+          <Name>-U99999994 -O4303 -S2 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD10000000 -FC800 -FN1 -FF0LPC1xxx_32 -FS00 -FL08000</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -320,8 +320,8 @@
       <Focus>0</Focus>
       <ColumnNumber>52</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>149</TopLine>
-      <CurrentLine>149</CurrentLine>
+      <TopLine>55</TopLine>
+      <CurrentLine>68</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -353,10 +353,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>42</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>36</TopLine>
-      <CurrentLine>50</CurrentLine>
+      <TopLine>39</TopLine>
+      <CurrentLine>52</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Drive\gpio.c</PathWithFileName>
       <FilenameWithoutPath>gpio.c</FilenameWithoutPath>
@@ -381,10 +381,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>5</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>4</TopLine>
+      <CurrentLine>6</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Drive\fsk.c</PathWithFileName>
       <FilenameWithoutPath>fsk.c</FilenameWithoutPath>
@@ -395,7 +395,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>36</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>12</TopLine>
       <CurrentLine>20</CurrentLine>
@@ -406,9 +406,35 @@
   </Group>
 
   <AlienFiles>
+    <PathWithFilename>E:\ip话机项目\myproject\lpc_gpio_uart\Drive\com.h</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>8</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
     <PathWithFilename>E:\ip话机项目\myproject\lpc_gpio_uart\Drive\fsk.h</PathWithFilename>
-    <TopLine>2</TopLine>
-    <CurrentLine>26</CurrentLine>
+    <TopLine>13</TopLine>
+    <CurrentLine>35</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -492,7 +518,7 @@
       <Documents>
         <Doc>
           <Name>.\Drive\com.c</Name>
-          <ColumnNumber>36</ColumnNumber>
+          <ColumnNumber>0</ColumnNumber>
           <TopLine>12</TopLine>
           <CurrentLine>20</CurrentLine>
         </Doc>
@@ -505,14 +531,14 @@
         <Doc>
           <Name>.\User\main.c</Name>
           <ColumnNumber>52</ColumnNumber>
-          <TopLine>149</TopLine>
-          <CurrentLine>149</CurrentLine>
+          <TopLine>55</TopLine>
+          <CurrentLine>68</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\Drive\gpio.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>36</TopLine>
-          <CurrentLine>50</CurrentLine>
+          <ColumnNumber>42</ColumnNumber>
+          <TopLine>39</TopLine>
+          <CurrentLine>52</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\System\system_LPC11xx.c</Name>
@@ -540,9 +566,9 @@
         </Doc>
         <Doc>
           <Name>.\Drive\fsk.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
+          <ColumnNumber>5</ColumnNumber>
+          <TopLine>4</TopLine>
+          <CurrentLine>6</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\Drive\uart.h</Name>
@@ -552,9 +578,15 @@
         </Doc>
         <Doc>
           <Name>.\Drive\fsk.h</Name>
-          <ColumnNumber>22</ColumnNumber>
-          <TopLine>2</TopLine>
-          <CurrentLine>26</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>13</TopLine>
+          <CurrentLine>35</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\Drive\com.h</Name>
+          <ColumnNumber>61</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>8</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

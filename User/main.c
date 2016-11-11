@@ -14,13 +14,11 @@
 */
 
 uint8 tmpbuf[100] = {0};  				//用来作为模拟串口接收数据的缓存   
-uint8 data_buf[100] = {0};
 uint8 buf[5] = {0};;
 uint8 tmp = 0;
 uint8 recv_num = 0;
-uint8 recv_over = 0;
-uint8 hook_status = 0;
 uint8 ring_times = 0, ring_num = 0;
+uint8 data_buf[100] = {0};
 
 void init(void)
 {
@@ -31,17 +29,19 @@ void init(void)
 	uart_init(1200); 								// 串口，并设置波特率	
 }
 
-
-
 int main(void)
 {
+	
 	int fsk_status = 0;
+	uint8 hook_status = 0;
 	init();
-	while(1)
+	while (1)
 	{		
 		tim16b0_delay_ms(100);
-		if(recv_num > 0)
+		if (recv_num > 0)
 		{		
+			//message_parese_process(tmpbuf);
+#if 1
 			//判断是来显还是主控发送
 			if (tmpbuf[0] == '*') //主控发送 
 			{					
@@ -98,8 +98,8 @@ int main(void)
 			{ // dtmf 来显
 			
 			}
-		}
-		
+#endif
+		}		
 	}
 }
 
@@ -109,6 +109,7 @@ void PIOINT0_IRQHandler(void)
 	{
 		ring_num++;
 		time16b1_enable();
+		uart_send("hello",5); 	//发送给主控
 		ring_times = 0;
 	}
 	LPC_GPIO0->IC = 0xFFF;  						 	// 清除GPIO0上的中断
@@ -118,15 +119,14 @@ void UART_IRQHandler(void)
 {
 	uint32 IRQ_ID;		  				// 定义读取中断ID号变量
 	uint8 redata;    						// 定义接收数据变量数组
-	uint8 fsk_status;
-
+	
 	IRQ_ID = LPC_UART->IIR;   	// 读中断ID号
 	IRQ_ID =((IRQ_ID>>1)&0x7);	// 检测bit4:bit1	
 	if(IRQ_ID == 0x02 )		  			// 检测是不是接收数据引起的中断
 	{
 		while (LPC_UART->LSR & 0x1)
 		{
-			tmpbuf[recv_num++] = LPC_UART->RBR;	  // 从RXFIFO中读取接收到的数据
+			//tmpbuf[recv_num++] = LPC_UART->RBR;	  // 从RXFIFO中读取接收到的数据
 		}
 	}
 	return;
@@ -134,15 +134,15 @@ void UART_IRQHandler(void)
 
 void TIMER16_1_IRQHandler(void)
 {
+	//uint8 data_buf[100] = {0};
 	if((LPC_TMR16B1->IR & 0x1)==1) 						// 检测是不是MR0引起的中断
 	{	
 		ring_times++;
 		if (ring_num > 15)
 		{
-			SET_BIT(LPC_GPIO1,DATA,9);  	 				// 拉低 ht9032 PDWN进入工作模式
-			//来电振铃通知主控振铃
+			SET_BIT(LPC_GPIO1,DATA,9);  	 				// 拉低 ht9032 PDWN进入工作模式		
 			memset(data_buf, 0x0, sizeof(data_buf));
-			sprintf(data_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0);
+			sprintf(data_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
 			uart_send(data_buf, strlen(data_buf)); 	//发送给主控
 		}
 		if (ring_times > 5)
@@ -154,8 +154,8 @@ void TIMER16_1_IRQHandler(void)
 			CLR_BIT(LPC_GPIO1,DATA,9);  	 				//ht9032 拉低PDWN进入休眠模式
 			time16b1_disable();
 		}
-		CPL_BIT(LPC_GPIO0,DATA,7);  	 	
-		CPL_BIT(LPC_GPIO2,DATA,0);  	 	
+		//CPL_BIT(LPC_GPIO0,DATA,7);  	 	
+		//CPL_BIT(LPC_GPIO2,DATA,0);  	 	
 		ring_num = 0;
 	}
 	LPC_TMR16B1->IR = 0x1F; 									// 清所有定时器/计数器中断标志	

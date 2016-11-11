@@ -3,19 +3,19 @@
 #include "uart.h"
 
 ST_FSK_MEG_STATE stFskMeg;
-uchar fsk_ucgetflag = 0;
+uint8 fsk_ucgetflag = 0;
 
 void fsk_init()
 {
 	memset(&stFskMeg, 0x0, sizeof(stFskMeg));
 }
 
-int CheckFSKMessage(uchar * DataBuf, uchar DataLength)
+int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 {
-	uchar ucTemp;
-	uchar ucTemp1;
-	uchar ucStartPoint;
-	uchar ucGetFskStep;
+	uint8 ucTemp;
+	uint8 ucTemp1;
+	uint8 ucStartPoint;
+	uint8 ucGetFskStep;
 	uint  uiCheckSum;
 
 	ucStartPoint = 0;
