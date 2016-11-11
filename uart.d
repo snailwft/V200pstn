@@ -1,0 +1,10 @@
+uart.o: Drive\uart.c
+uart.o: .\User\config.h
+uart.o: d:\Keil\ARM\RV31\INC\string.h
+uart.o: .\User\../system/LPC11xx.h
+uart.o: d:\Keil\ARM\CMSIS\Include\core_cm0.h
+uart.o: d:\Keil\ARM\RV31\INC\stdint.h
+uart.o: d:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+uart.o: d:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+uart.o: .\User\../system/system_LPC11xx.h
+uart.o: Drive\uart.h

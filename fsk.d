@@ -1,0 +1,13 @@
+fsk.o: Drive\fsk.c
+fsk.o: .\User\config.h
+fsk.o: d:\Keil\ARM\RV31\INC\string.h
+fsk.o: .\User\../system/LPC11xx.h
+fsk.o: d:\Keil\ARM\CMSIS\Include\core_cm0.h
+fsk.o: d:\Keil\ARM\RV31\INC\stdint.h
+fsk.o: d:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+fsk.o: d:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+fsk.o: .\User\../system/system_LPC11xx.h
+fsk.o: Drive\fsk.h
+fsk.o: d:\Keil\ARM\RV31\INC\stdio.h
+fsk.o: d:\Keil\ARM\RV31\INC\stdlib.h
+fsk.o: Drive\uart.h
