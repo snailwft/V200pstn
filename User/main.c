@@ -106,7 +106,7 @@ int main(void)
 		
 	}
 }
-
+// hhhhhhhh
 void PIOINT1_IRQHandler(void)				    //中断函数名不能自己命名
 {	
 	if(GET_BIT(LPC_GPIO1,MIS,2)!=0)    // 检测P1.2引脚产生的中断 RDET 振铃合格 下降沿触发中断
