@@ -22,10 +22,6 @@ uint8 recv_over = 0;
 uint8 hook_status = 0;
 uint8 ring_times = 0, ring_num = 0;
 
-#ifndef V_101
-#define V_101
-#endif
-
 void init(void)
 {
 	system_init();							    	// 系统初始化
@@ -106,26 +102,8 @@ int main(void)
 		
 	}
 }
-// hhhhhhhh
-void PIOINT1_IRQHandler(void)				    //中断函数名不能自己命名
-{	
-	if(GET_BIT(LPC_GPIO1,MIS,2)!=0)    // 检测P1.2引脚产生的中断 RDET 振铃合格 下降沿触发中断
-	{
-		//uart_send("hello", 5);
-		// 拉低PDWN
-		//CLR_BIT(LPC_GPIO1,DATA,9);  	 	// 拉低PDWN进入工作模式
-	}
-	if (GET_BIT(LPC_GPIO1,MIS,1)!=0)    // 检测P1.1引脚产生的中断 fsk传输完成 CDET 上升沿触发中断
-	{
-		// 拉高PDWN
-		//SET_BIT(LPC_GPIO1,DATA,9);  	 	// 拉高PDWN进入休眠模式
-		//CLR_BIT(LPC_GPIO1,DATA,9);  	 	// 拉低PDWN进入工作模式
-		//recv_over = 1;
-	}
-	LPC_GPIO1->IC = 0xFFF;  					// 清除GPIO1上的中断
-}
 
-void PIOINT0_IRQHandler(void)  		// 来电显示数据接收中断处理
+void PIOINT0_IRQHandler(void)  	  
 {
 	if (GET_BIT(LPC_GPIO0, MIS, 8)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
 	{
@@ -161,7 +139,7 @@ void TIMER16_1_IRQHandler(void)
 		ring_times++;
 		if (ring_num > 15)
 		{
-			SET_BIT(LPC_GPIO1,DATA,9);  	 				// 拉低PDWN进入工作模式
+			SET_BIT(LPC_GPIO1,DATA,9);  	 				// 拉低 ht9032 PDWN进入工作模式
 			//来电振铃通知主控振铃
 			memset(data_buf, 0x0, sizeof(data_buf));
 			sprintf(data_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0);

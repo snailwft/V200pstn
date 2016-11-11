@@ -16,7 +16,7 @@ void gpio_init(void)
 	LPC_IOCON->JTAG_nTRST_PIO1_2 = 0XD1; // 设置为gpio脚								PSTN_RDET_MCU
 	LPC_IOCON->JTAG_TDI_PIO0_11 = 0XD1;	 // 												PSTN_DOUTC_MCU
 	LPC_IOCON->PIO1_8 = 0XD0;						//													DTMF_Q1_MCU
-	//LPC_IOCON->PIO1_9 = 0XD0;						//													DTMF_Q2_MCU  重合了
+	//LPC_IOCON->PIO1_9 = 0XD0;						//													DTMF_Q2_MCU   与ht9032 down脚  重合了
 	LPC_IOCON->PIO1_10 = 0XD0; 					//把P1.10设置为数字IO脚（字节操作）DTMF_Q3_MCU			PSTN_9032_OE
 	LPC_IOCON->PIO1_11 = 0XD0; 					//把P1.11设置为数字IO脚（字节操作）DTMF_Q4_MCU			ACOK_MCU
 	LPC_IOCON->PIO0_8 = 0xD0;						//把p0.8设置为数字IO脚					PSTN_RING_MCU
