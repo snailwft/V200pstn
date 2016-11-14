@@ -110,7 +110,7 @@ void time16b1_int_init(uint32 ms)
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<8);    //打开CT16B1定时器时钟
     LPC_TMR16B1->TCR = 0x02;        					//复位定时器
     LPC_TMR16B1->PR  = 1000;        					//配置预分频器，使得1us TC+1
-    LPC_TMR16B1->MR0 = 48*ms;						//在48Mhz下工作的比较值，其它请修改
+    LPC_TMR16B1->MR0 = 48 * ms;						//在48Mhz下工作的比较值，其它请修改
     LPC_TMR16B1->IR  = 0x01;        						//中断复位
     LPC_TMR16B1->MCR = 0x03;							//MR0与TC值匹配时产生中断，MR0与TC值匹配时使TC复位
     LPC_TMR16B1->TCR = 0x00; 							// 关闭定时器

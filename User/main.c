@@ -13,34 +13,31 @@
  0:表示不振铃或挂机
 */
 
-uint8 tmpbuf[100] = {0};  				//用来作为模拟串口接收数据的缓存   
-uint8 buf[5] = {0};;
-uint8 tmp = 0;
-uint8 recv_num = 0;
-uint8 ring_times = 0, ring_num = 0;
-uint8 data_buf[100] = {0};
+#define BUF_MAX_SIZE				100
+
+uint8 uartrecv_buf[BUF_MAX_SIZE] = {0};  					//用来作为模拟串口接收数据的缓存    
+uint8 ring_times = 0, ring_num = 0, recv_num = 0;
+uint8 uartsend_buf[BUF_MAX_SIZE] = {0};
 
 void init(void)
 {
-	system_init();							    	// 系统初始化
-	gpio_init();								    	// GPIO初始化
-	fsk_init();										// fsk缓冲区初始化
+	system_init();							// 系统初始化
+	gpio_init();							// GPIO初始化
+	fsk_init();								// fsk缓冲区初始化
 	time16b1_int_init(1000);				// 16位定时器1 1秒定时并产生中断
-	uart_init(1200); 								// 串口，并设置波特率	
+	uart_init(9600); 						// 串口，并设置波特率	
 }
 
 int main(void)
-{
-	
-	int fsk_status = 0;
-	uint8 hook_status = 0;
+{	
 	init();
 	while (1)
 	{		
-		tim16b0_delay_ms(100);
+		tim16b0_delay_ms(1000);
+		//uart_send("hello", 5);
 		if (recv_num > 0)
 		{		
-			message_parese_process(tmpbuf);
+			message_parese_process(uartrecv_buf);
 		}		
 	}
 }
@@ -67,30 +64,32 @@ void UART_IRQHandler(void)
 	{
 		while (LPC_UART->LSR & 0x1)
 		{
-			tmpbuf[recv_num++] = LPC_UART->RBR;	  // 从RXFIFO中读取接收到的数据
+			if (recv_num >= BUF_MAX_SIZE)
+			{
+				recv_num = 0;
+			}
+			uartrecv_buf[recv_num++] = LPC_UART->RBR;	  // 从RXFIFO中读取接收到的数据
 		}
 	}
-	return;
 }
 
 void TIMER16_1_IRQHandler(void)
 {
-	//uint8 data_buf[100] = {0};
 	if((LPC_TMR16B1->IR & 0x1)==1) 						// 检测是不是MR0引起的中断
 	{	
 		ring_times++;
 		if (ring_num > 15)
 		{
 			SET_BIT(LPC_GPIO1,DATA,9);  	 				// 拉低 ht9032 PDWN进入工作模式		
-			memset(data_buf, 0x0, sizeof(data_buf));
-			sprintf(data_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
-			uart_send(data_buf, strlen(data_buf)); 	//发送给主控
+			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
+			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 		}
 		if (ring_times > 6)
 		{
-			memset(data_buf, 0x0, sizeof(data_buf));
-			sprintf(data_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 0, NULL, NULL, 0);
-			uart_send(data_buf, strlen(data_buf)); 	//发送给主控
+			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 0, NULL, NULL, 0);
+			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 			fsk_ucgetflag = 0;										//对方挂机清零
 			CLR_BIT(LPC_GPIO1,DATA,9);  	 				//ht9032 拉低PDWN进入休眠模式
 			time16b1_disable();

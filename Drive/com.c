@@ -40,7 +40,7 @@ int message_parese_process(uint8 *buf)
 {
 	int hook_status;
 	int fsk_status;
-	uint8 data_buf[100] = {0};
+	uint8 uartsend_buf[100] = {0};
 	
 	if (buf[0] == '*') //主控发送 
 	{					
@@ -69,9 +69,9 @@ int message_parese_process(uint8 *buf)
 		if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
 		{
 			uart_send(buf, strlen(buf)); //发送给主控
-			memset(data_buf, 0x0, sizeof(data_buf));
-			sprintf(data_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
-			uart_send(data_buf, strlen(data_buf)); //发送给主控
+			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
+			uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
 			uart_irq_disable();
 			memset(buf, 0, sizeof(buf));
 			recv_num = 0;	
