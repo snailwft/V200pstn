@@ -43,9 +43,9 @@ void gpio_init(void)
 	SET_BIT(LPC_GPIO2, DIR, 0);//把p2.0设置为输出
 
 	//第三步，设置中断
-	CLR_BIT(LPC_GPIO0,IS,11); //选择P0.11为边沿触发   PSTN_DOUTC_MCU
-	CLR_BIT(LPC_GPIO0,IEV,11);//选择P0.11为下降沿触发 
-	SET_BIT(LPC_GPIO0,IE,11); //设置P0.11中断不被屏蔽
+	//CLR_BIT(LPC_GPIO0,IS,11); //选择P0.11为边沿触发   PSTN_DOUTC_MCU
+	//CLR_BIT(LPC_GPIO0,IEV,11);//选择P0.11为下降沿触发 
+	//SET_BIT(LPC_GPIO0,IE,11); //设置P0.11中断不被屏蔽
 	CLR_BIT(LPC_GPIO0,IS,8); //选择P0.8为边沿触发   PSTN_RING_MCU
 	CLR_BIT(LPC_GPIO0,IEV,8);//选择P0.8为下降沿触发 
 	SET_BIT(LPC_GPIO0,IE,8); //设置P0.8中断不被屏蔽
@@ -58,7 +58,7 @@ void gpio_init(void)
 	//SET_BIT(LPC_GPIO1,IE,1); //设置P1.1中断不被屏蔽
 	
 	//第四步，开GPIO1中断
-	NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
+	//NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
 	NVIC_EnableIRQ(EINT0_IRQn);	// 使能GPIO0中断
 }
 
