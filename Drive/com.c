@@ -58,10 +58,7 @@ int message_parese_process(uint8 *buf)
 			{
 				SET_BIT(LPC_GPIO0,DATA,9); //挂机
 			}
-			uart_irq_disable();
-			memset(buf, 0, sizeof(buf));
-			recv_num = 0;	
-			uart_irq_enable();
+			return 1;
 		}
 	}
 	else  //  fsk来显
@@ -72,17 +69,11 @@ int message_parese_process(uint8 *buf)
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-			uart_irq_disable();
-			memset(buf, 0, sizeof(buf));
-			recv_num = 0;	
-			uart_irq_enable();
+			return 1;
 		}
 		else if (fsk_status == -1) // fsk 消息错误
 		{
-			uart_irq_disable();
-			memset(buf, 0, sizeof(buf));
-			recv_num = 0;
-			uart_irq_enable();
+			return 1;
 		}
 	}			
 	{ // dtmf 来显

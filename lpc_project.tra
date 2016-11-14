@@ -17,7 +17,7 @@
 ### ADS-LD Output File: 'lpc_project.axf'
 ### ADS-LD Command File: 'lpc_project.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'lpc_project.lnp', Handle=0x000004D4
+### Creating CmdFile 'lpc_project.lnp', Handle=0x000001CC
 ### Writing '.lnp' file
 ### ADS-LD Command file 'lpc_project.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

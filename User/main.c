@@ -30,6 +30,7 @@ void init(void)
 
 int main(void)
 {	
+	int stat = 0;
 	init();
 	while (1)
 	{		
@@ -37,7 +38,14 @@ int main(void)
 		//uart_send("hello", 5);
 		if (recv_num > 0)
 		{		
-			message_parese_process(uartrecv_buf);
+			stat = message_parese_process(uartrecv_buf);
+			if (stat == 1)
+			{
+				uart_irq_disable();
+				memset(uartrecv_buf, 0, sizeof(uartrecv_buf));
+				recv_num = 0;	
+				uart_irq_enable();
+			}
 		}		
 	}
 }
@@ -94,8 +102,6 @@ void TIMER16_1_IRQHandler(void)
 			CLR_BIT(LPC_GPIO1,DATA,9);  	 				//ht9032 拉低PDWN进入休眠模式
 			time16b1_disable();
 		}
-		CPL_BIT(LPC_GPIO0,DATA,7);  	 	
-		CPL_BIT(LPC_GPIO2,DATA,0);  	 	
 		ring_num = 0;
 	}
 	LPC_TMR16B1->IR = 0x1F; 									// 清所有定时器/计数器中断标志	
