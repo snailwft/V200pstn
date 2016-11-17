@@ -65,7 +65,6 @@ int message_parese_process(uint8 *buf)
 	{				
 		if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
 		{
-			uart_send(buf, strlen(buf)); //发送给主控
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控

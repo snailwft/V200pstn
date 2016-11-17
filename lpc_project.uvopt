@@ -318,10 +318,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>11</ColumnNumber>
+      <ColumnNumber>72</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>16</CurrentLine>
+      <TopLine>17</TopLine>
+      <CurrentLine>17</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -530,9 +530,9 @@
         </Doc>
         <Doc>
           <Name>.\User\main.c</Name>
-          <ColumnNumber>11</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>16</CurrentLine>
+          <ColumnNumber>72</ColumnNumber>
+          <TopLine>17</TopLine>
+          <CurrentLine>17</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\Drive\gpio.c</Name>

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [E:\ip话机项目\myproject\lpc_gpio_uart\lpc_project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image E:\ip话机项目\myproject\lpc_gpio_uart\lpc_project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 644]: Last Updated: Mon Nov 14 19:06:20 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 644]: Last Updated: Thu Nov 17 09:54:24 2016
 <BR><P>
 <H3>Maximum Stack Usage =        248 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -347,12 +347,12 @@ Global Symbols
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 </UL>
 
-<P><STRONG><a name="[4b]"></a>time16b1_enable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ct.o(.text))
+<P><STRONG><a name="[4a]"></a>time16b1_enable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ct.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT0_IRQHandler
 </UL>
 
 <P><STRONG><a name="[4d]"></a>time16b1_disable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ct.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
 </UL>
 
@@ -363,7 +363,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
 </UL>
 
@@ -393,18 +393,17 @@ Global Symbols
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_init
 </UL>
 
-<P><STRONG><a name="[36]"></a>main</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[36]"></a>main</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248 + Unknown Stack Size
 <LI>Call Chain = main &rArr; message_parese_process &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_enable
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_disable
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_enable
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_disable
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_int_init
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tim16b0_delay_ms
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_init
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_init
@@ -415,7 +414,7 @@ Global Symbols
 <P><STRONG><a name="[1e]"></a>PIOINT0_IRQHandler</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PIOINT0_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_enable
+<BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_enable
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
 </UL>
@@ -424,14 +423,14 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
 </UL>
-<P><STRONG><a name="[10]"></a>TIMER16_1_IRQHandler</STRONG> (Thumb, 148 bytes, Stack size 32 bytes, main.o(.text))
+<P><STRONG><a name="[10]"></a>TIMER16_1_IRQHandler</STRONG> (Thumb, 108 bytes, Stack size 32 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = TIMER16_1_IRQHandler &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_disable
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
@@ -456,11 +455,11 @@ Global Symbols
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 </UL>
 
-<P><STRONG><a name="[48]"></a>uart_irq_disable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text))
+<P><STRONG><a name="[47]"></a>uart_irq_disable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4a]"></a>uart_irq_enable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text))
+<P><STRONG><a name="[49]"></a>uart_irq_enable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -468,17 +467,16 @@ Global Symbols
 
 <P><STRONG><a name="[94]"></a>uart_send_byte</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[46]"></a>uart_send</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, uart.o(.text))
+<P><STRONG><a name="[4c]"></a>uart_send</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CheckFSKMessage
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
-<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[42]"></a>fsk_init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, fsk.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = fsk_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
@@ -487,10 +485,10 @@ Global Symbols
 <P><STRONG><a name="[50]"></a>CheckFSKMessage</STRONG> (Thumb, 474 bytes, Stack size 32 bytes, fsk.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = CheckFSKMessage
 </UL>
-<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 </UL>
 
 <P><STRONG><a name="[51]"></a>deal_message</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, com.o(.text), UNUSED)
@@ -502,17 +500,17 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
 
-<P><STRONG><a name="[47]"></a>message_parese_process</STRONG> (Thumb, 238 bytes, Stack size 128 bytes, com.o(.text))
+<P><STRONG><a name="[46]"></a>message_parese_process</STRONG> (Thumb, 224 bytes, Stack size 128 bytes, com.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248 + Unknown Stack Size
 <LI>Call Chain = message_parese_process &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
 <LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CheckFSKMessage
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_disable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -554,7 +552,7 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deal_message
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 </UL>
 
 <P><STRONG><a name="[52]"></a>strstr</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, strstr.o(.text))
@@ -562,13 +560,13 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_integrity
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deal_message
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 </UL>
 
-<P><STRONG><a name="[4c]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 12 bytes, strlen.o(.text))
+<P><STRONG><a name="[4b]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 12 bytes, strlen.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
 </UL>
 
@@ -580,10 +578,10 @@ Global Symbols
 <P><STRONG><a name="[61]"></a>_memset</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, rt_memclr.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset_w
 </UL>
-<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[49]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, rt_memclr.o(.text))
+<P><STRONG><a name="[48]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, rt_memclr.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CheckFSKMessage
@@ -595,7 +593,7 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>__rt_memclr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
 
 <P><STRONG><a name="[55]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese_process
 </UL>
 
 <P><STRONG><a name="[96]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
