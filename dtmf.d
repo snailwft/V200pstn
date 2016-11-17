@@ -1,0 +1,11 @@
+dtmf.o: Drive\dtmf.c
+dtmf.o: Drive\dtmf.h
+dtmf.o: .\User\config.h
+dtmf.o: d:\Keil\ARM\RV31\INC\string.h
+dtmf.o: .\User\../system/LPC11xx.h
+dtmf.o: d:\Keil\ARM\CMSIS\Include\core_cm0.h
+dtmf.o: d:\Keil\ARM\RV31\INC\stdint.h
+dtmf.o: d:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+dtmf.o: d:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+dtmf.o: .\User\../system/system_LPC11xx.h
+dtmf.o: d:\Keil\ARM\RV31\INC\stdio.h

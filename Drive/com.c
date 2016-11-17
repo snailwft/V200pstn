@@ -75,9 +75,5 @@ int message_parese_process(uint8 *buf)
 			return 1;
 		}
 	}			
-	{ // dtmf À´ÏÔ
-
-	}
-
 	return 0;
 }

@@ -8,10 +8,11 @@
 
 typedef struct
 {
-	uchar  rx_addr;                        //接收指针地址
+	char  rx_addr;                        //接收指针地址
 	char   dtmf_buff[MAX_DTMF_BUFF];       //接收缓冲
 }ST_DTMF_RXBUFF;
 
 extern ST_DTMF_RXBUFF dtmf_rx_buf;
-
+extern void dtmf_rx_buf_init();
+extern void recv_dtmf();
 #endif

@@ -10,15 +10,16 @@
 ### List of Objects: adding '"fsk.o"'
 ### List of Objects: adding '"com.o"'
 ### List of Objects: adding '"wdt.o"'
+### List of Objects: adding '"dtmf.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M0 "startup_lpc11xx.o" "system_lpc11xx.o" "main.o" "ct.o" "gpio.o" "uart.o" "fsk.o" "com.o" "wdt.o" --strict --scatter "lpc_project.sct" 
+--cpu Cortex-M0 "startup_lpc11xx.o" "system_lpc11xx.o" "main.o" "ct.o" "gpio.o" "uart.o" "fsk.o" "com.o" "wdt.o" "dtmf.o" --strict --scatter "lpc_project.sct" 
 --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\lpc_project.map" -o "lpc_project.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'lpc_project.axf'
 ### ADS-LD Command File: 'lpc_project.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'lpc_project.lnp', Handle=0x00000328
+### Creating CmdFile 'lpc_project.lnp', Handle=0x000009F8
 ### Writing '.lnp' file
 ### ADS-LD Command file 'lpc_project.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

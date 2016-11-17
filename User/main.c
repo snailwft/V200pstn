@@ -5,6 +5,7 @@
 #include "fsk.h"
 #include "com.h"
 #include "wdt.h"
+#include "dtmf.h"
 #include <stdio.h>
 
 /*
@@ -24,6 +25,7 @@ void init(void)
 	system_init();							// 系统初始化
 	gpio_init();								// GPIO初始化
 	fsk_init();								// fsk缓冲区初始化
+	dtmf_rx_buf_init();
 	time16b1_int_init(1000);		// 16位定时器1 1秒定时并产生中断
 	uart_init(9600); 						// 串口，并设置波特率	
 	WDT_Enable();
@@ -50,6 +52,11 @@ int main(void)
 				uart_irq_enable();
 			}
 		}		
+		recv_dtmf();  //怎么检测dtmf来显的完整性
+		if (dtmf_rx_buf.rx_addr > 0)
+		{
+			
+		}
 	}
 }
 
