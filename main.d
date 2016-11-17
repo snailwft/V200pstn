@@ -14,3 +14,4 @@ main.o: .\Drive\fsk.h
 main.o: d:\Keil\ARM\RV31\INC\stdio.h
 main.o: d:\Keil\ARM\RV31\INC\stdlib.h
 main.o: .\Drive\com.h
+main.o: .\Drive\wdt.h

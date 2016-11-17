@@ -1,0 +1,10 @@
+wdt.o: Drive\wdt.c
+wdt.o: Drive\wdt.h
+wdt.o: .\User\config.h
+wdt.o: d:\Keil\ARM\RV31\INC\string.h
+wdt.o: .\User\../system/LPC11xx.h
+wdt.o: d:\Keil\ARM\CMSIS\Include\core_cm0.h
+wdt.o: d:\Keil\ARM\RV31\INC\stdint.h
+wdt.o: d:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+wdt.o: d:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+wdt.o: .\User\../system/system_LPC11xx.h

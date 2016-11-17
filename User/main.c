@@ -4,6 +4,7 @@
 #include "uart.h"
 #include "fsk.h"
 #include "com.h"
+#include "wdt.h"
 #include <stdio.h>
 
 /*
@@ -25,16 +26,19 @@ void init(void)
 	fsk_init();								// fsk缓冲区初始化
 	time16b1_int_init(1000);		// 16位定时器1 1秒定时并产生中断
 	uart_init(9600); 						// 串口，并设置波特率	
+	WDT_Enable();
 }
 
 int main(void)
 {	
 	int stat = 0;
 	init();
+	uart_send("system reset", strlen("system reset"));
 	while (1)
 	{		
+		WDTFeed();     // 喂狗
 		tim16b0_delay_ms(1000);
-		//uart_send("hello", 5);
+		uart_send("hello", 5);
 		if (recv_num > 0)
 		{		
 			stat = message_parese_process(uartrecv_buf);

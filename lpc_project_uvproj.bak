@@ -436,6 +436,11 @@
               <FileType>1</FileType>
               <FilePath>.\Drive\fsk.c</FilePath>
             </File>
+            <File>
+              <FileName>com.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drive\com.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
