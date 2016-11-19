@@ -6,6 +6,7 @@
 #include "com.h"
 #include "wdt.h"
 #include "dtmf.h"
+#include "main.h"
 #include <stdio.h>
 
 /*
@@ -15,7 +16,6 @@
  0:表示不振铃或挂机
 */
 
-#define BUF_MAX_SIZE				100
 
 uint8 uartrecv_buf[BUF_MAX_SIZE] = {0}, uartsend_buf[BUF_MAX_SIZE] = {0};					//用来作为模拟串口接收数据的缓存    
 uint8 ring_times = 0, ring_num = 0, recv_num = 0;
@@ -33,86 +33,15 @@ void init(void)
 
 int main(void)
 {	
-	int stat = 0;
 	init();
-	uart_send("system reset", strlen("system reset"));
 	while (1)
 	{		
 		WDTFeed();     // 喂狗
+		check_pstn_hook();
 		tim16b0_delay_ms(1000);
-		uart_send("hello", 5);
-		if (recv_num > 0)
-		{		
-			stat = message_parese_process(uartrecv_buf);
-			if (stat == 1)
-			{
-				uart_irq_disable();
-				memset(uartrecv_buf, 0, sizeof(uartrecv_buf));
-				recv_num = 0;	
-				uart_irq_enable();
-			}
-		}		
-		recv_dtmf();  //怎么检测dtmf来显的完整性
-		if (dtmf_rx_buf.rx_addr > 0)
-		{
-			
-		}
+		message_handler();
+		dtmf_data_handler();
 	}
+	return 0;
 }
 
-void PIOINT0_IRQHandler(void)  	  
-{
-	if (GET_BIT(LPC_GPIO0, MIS, 8)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
-	{
-		ring_num++;
-		time16b1_enable();
-		ring_times = 0;
-	}
-	LPC_GPIO0->IC = 0xFFF;  						 	// 清除GPIO0上的中断
-}
-
-void UART_IRQHandler(void)
-{
-	uint32 IRQ_ID;		  				// 定义读取中断ID号变量
-	uint8 redata;    						// 定义接收数据变量数组
-	
-	IRQ_ID = LPC_UART->IIR;   	// 读中断ID号
-	IRQ_ID =((IRQ_ID>>1)&0x7);	// 检测bit4:bit1	
-	if(IRQ_ID == 0x02 )		  			// 检测是不是接收数据引起的中断
-	{
-		while (LPC_UART->LSR & 0x1)
-		{
-			if (recv_num >= BUF_MAX_SIZE)
-			{
-				recv_num = 0;
-			}
-			uartrecv_buf[recv_num++] = LPC_UART->RBR;	  // 从RXFIFO中读取接收到的数据
-		}
-	}
-}
-
-void TIMER16_1_IRQHandler(void)
-{
-	if((LPC_TMR16B1->IR & 0x1)==1) 						// 检测是不是MR0引起的中断
-	{	
-		ring_times++;
-		if (ring_num > 15)
-		{
-			SET_BIT(LPC_GPIO1,DATA,9);  	 				// 拉低 ht9032 PDWN进入工作模式		
-			//memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-			//sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
-			//uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
-		}
-		if (ring_times > 6)
-		{
-			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 0, NULL, NULL, 0);
-			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
-			fsk_ucgetflag = 0;										//对方挂机清零
-			CLR_BIT(LPC_GPIO1,DATA,9);  	 				//ht9032 拉低PDWN进入休眠模式
-			time16b1_disable();
-		}
-		ring_num = 0;
-	}
-	LPC_TMR16B1->IR = 0x1F; 									// 清所有定时器/计数器中断标志	
-}

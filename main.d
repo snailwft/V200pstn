@@ -16,3 +16,4 @@ main.o: d:\Keil\ARM\RV31\INC\stdlib.h
 main.o: .\Drive\com.h
 main.o: .\Drive\wdt.h
 main.o: .\Drive\dtmf.h
+main.o: .\Drive\main.h

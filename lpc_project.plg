@@ -1446,3 +1446,1083 @@ linking...
 Program Size: Code=5188 RO-data=496 RW-data=8 ZI-data=1056  
 FromELF: creating hex file...
 "lpc_project.axf" - 0 Error(s), 51 Warning(s).
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(63): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(96): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(96): error:  #20: identifier "ring_num" is undefined
+Drive\gpio.c(97): warning:  #223-D: function "time16b1_enable" declared implicitly
+Drive\gpio.c(98): error:  #20: identifier "ring_times" is undefined
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(66): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(66): warning:  #1293-D: assignment in condition
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(70): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(86): error:  #20: identifier "uartrecv_buf" is undefined
+Drive\com.c(89): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(92): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(95): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(63): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(96): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\com.c(16): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(16): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(31): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(49): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(53): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(66): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(66): warning:  #1293-D: assignment in condition
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(70): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(86): error:  #20: identifier "uartrecv_buf" is undefined
+Drive\com.c(89): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(92): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(95): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(63): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(96): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\com.c(19): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(19): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(23): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(25): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(34): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(34): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(52): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(56): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(72): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(73): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(89): error:  #167: argument of type "uint8" is incompatible with parameter of type "uint8 *"
+Drive\com.c(92): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(93): error:  #167: argument of type "uint8" is incompatible with parameter of type "void *"
+Drive\com.c(95): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(98): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(63): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(96): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(96): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(97): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\com.c(19): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(19): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(23): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(25): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(34): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(34): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(52): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(56): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(72): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(73): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(92): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(95): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(98): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+linking...
+lpc_project.axf: Error: L6200E: Symbol PIOINT0_IRQHandler multiply defined (by gpio.o and main.o).
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(53): warning:  #177-D: variable "redata" was declared but never referenced
+User\main.c(86): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(86): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(86): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(87): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\uart.c(17): warning:  #223-D: function "wait" declared implicitly
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\com.c(19): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(19): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(23): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(25): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(34): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(34): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(52): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(56): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(69): warning:  #1293-D: assignment in condition
+Drive\com.c(72): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(73): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(92): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(95): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(98): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5240 RO-data=496 RW-data=8 ZI-data=1056  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 59 Warning(s).
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(65): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(65): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(65): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(66): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(131): error:  #20: identifier "recv_num" is undefined
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(65): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(65): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(65): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(66): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(131): error:  #20: identifier "recv_num" is undefined
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+User\main.c(65): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+User\main.c(65): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(65): warning:  #181-D: argument is incompatible with corresponding format string conversion
+User\main.c(66): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5244 RO-data=496 RW-data=8 ZI-data=1056  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 62 Warning(s).
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\ct.c(139): error:  #20: identifier "ring_num" is undefined
+Drive\ct.c(150): warning:  #223-D: function "sprintf" declared implicitly
+Drive\ct.c(151): warning:  #223-D: function "uart_send" declared implicitly
+Drive\ct.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\ct.c(152): error:  #20: identifier "fsk_ucgetflag" is undefined
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\ct.c(140): error:  #20: identifier "ring_num" is undefined
+Drive\ct.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(152): warning:  #223-D: function "uart_send" declared implicitly
+Drive\ct.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(46): warning:  #111-D: statement is unreachable
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\ct.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(152): warning:  #223-D: function "uart_send" declared implicitly
+Drive\ct.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5240 RO-data=496 RW-data=8 ZI-data=1056  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 65 Warning(s).
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(44): warning:  #111-D: statement is unreachable
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\ct.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(152): warning:  #223-D: function "uart_send" declared implicitly
+Drive\ct.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5220 RO-data=496 RW-data=8 ZI-data=1056  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 65 Warning(s).
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(44): warning:  #111-D: statement is unreachable
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\ct.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(152): warning:  #223-D: function "uart_send" declared implicitly
+Drive\ct.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+compiling pstn.c...
+Drive\pstn.h(32): warning:  #1295-D: Deprecated declaration clear_pstn_event - give arg types
+Drive\pstn.h(33): warning:  #1295-D: Deprecated declaration pstn_init - give arg types
+Drive\pstn.h(35): warning:  #1295-D: Deprecated declaration get_pstn_state - give arg types
+Drive\pstn.h(36): warning:  #1295-D: Deprecated declaration check_pstn_hook - give arg types
+Drive\pstn.h(37): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5220 RO-data=496 RW-data=8 ZI-data=1056  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 70 Warning(s).
+Build target 'Target 1'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+.\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+.\Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+.\Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+.\Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+.\Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+.\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+.\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+.\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+.\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+.\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+.\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+.\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+.\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+User\main.c(40): warning:  #223-D: function "check_pstn_hook" declared implicitly
+User\main.c(45): warning:  #111-D: statement is unreachable
+compiling ct.c...
+Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
+Drive\ct.h(10): warning:  #1295-D: Deprecated declaration time16b1_enable - give arg types
+Drive\ct.h(11): warning:  #1295-D: Deprecated declaration time16b1_disable - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\ct.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(151): warning:  #181-D: argument is incompatible with corresponding format string conversion
+Drive\ct.c(152): warning:  #223-D: function "uart_send" declared implicitly
+Drive\ct.c(152): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+compiling gpio.c...
+Drive\gpio.c(100): warning:  #223-D: function "time16b1_enable" declared implicitly
+compiling uart.c...
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+Drive\uart.c(123): warning:  #177-D: variable "redata" was declared but never referenced
+compiling fsk.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\uart.h(10): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
+Drive\uart.h(11): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
+Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
+compiling com.c...
+Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
+Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
+Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
+Drive\com.c(20): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(20): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(24): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(35): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
+Drive\com.c(53): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(57): warning:  #223-D: function "time16b1_disable" declared implicitly
+Drive\com.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(70): warning:  #1293-D: assignment in condition
+Drive\com.c(73): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+Drive\com.c(74): warning:  #223-D: function "uart_send" declared implicitly
+Drive\com.c(74): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+Drive\com.c(93): warning:  #223-D: function "uart_irq_disable" declared implicitly
+Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
+Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
+compiling wdt.c...
+Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
+Drive\wdt.c(54): warning:  #223-D: function "uart_send" declared implicitly
+Drive\wdt.c(72): warning:  #1-D: last line of file ends without a newline
+compiling dtmf.c...
+Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+Drive\dtmf.c(18): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(24): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+Drive\dtmf.c(44): warning:  #1-D: last line of file ends without a newline
+compiling pstn.c...
+Drive\pstn.h(32): warning:  #1295-D: Deprecated declaration clear_pstn_event - give arg types
+Drive\pstn.h(33): warning:  #1295-D: Deprecated declaration pstn_init - give arg types
+Drive\pstn.h(35): warning:  #1295-D: Deprecated declaration get_pstn_state - give arg types
+Drive\pstn.h(36): warning:  #1295-D: Deprecated declaration check_pstn_hook - give arg types
+Drive\pstn.h(37): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=5400 RO-data=496 RW-data=8 ZI-data=1072  
+FromELF: creating hex file...
+"lpc_project.axf" - 0 Error(s), 71 Warning(s).

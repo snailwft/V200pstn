@@ -1,5 +1,9 @@
 #include "com.h"
 #include "config.h"
+#include "main.h"
+
+extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
+
 /*
  *RING:1/0:CID:0704121313016054035:HOOK:1/0*
  1:表示振铃或摘机
@@ -36,7 +40,7 @@ int message_integrity(uint8 *databuf)
 	return 1;
 }
 
-int message_parese_process(uint8 *buf)
+int message_parese(uint8 *buf)
 {
 	int hook_status;
 	int fsk_status;
@@ -76,4 +80,20 @@ int message_parese_process(uint8 *buf)
 		}
 	}			
 	return 0;
+}
+
+void message_handler()
+{
+	int stat = 0;
+	if (recv_num > 0)
+	{		
+		stat = message_parese(uartrecv_buf);
+		if (stat == 1)
+		{
+			uart_irq_disable();
+			memset(uartrecv_buf, 0, sizeof(uartrecv_buf));
+			recv_num = 0;	
+			uart_irq_enable();
+		}
+	}		
 }

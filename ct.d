@@ -8,3 +8,7 @@ ct.o: d:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 ct.o: d:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 ct.o: .\User\../system/system_LPC11xx.h
 ct.o: Drive\ct.h
+ct.o: Drive\main.h
+ct.o: Drive\fsk.h
+ct.o: d:\Keil\ARM\RV31\INC\stdio.h
+ct.o: d:\Keil\ARM\RV31\INC\stdlib.h

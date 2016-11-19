@@ -11,3 +11,4 @@ com.o: d:\Keil\ARM\RV31\INC\stdint.h
 com.o: d:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 com.o: d:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 com.o: .\User\../system/system_LPC11xx.h
+com.o: Drive\main.h

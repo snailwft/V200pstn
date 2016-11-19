@@ -1,6 +1,9 @@
 #include "config.h"
 #include "uart.h"
+#include "main.h"
 
+extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
+extern uint8 recv_num;
 /*
  *RING:1/0:CID:0704121313016054035:HOOK:1/0*
  1:表示振铃或摘机
@@ -114,4 +117,23 @@ void uart_send(uint8 *Buffer, uint32 Length)
 	}
 }
 
+void UART_IRQHandler(void)
+{
+	uint32 IRQ_ID;		  				// 定义读取中断ID号变量
+	uint8 redata;    						// 定义接收数据变量数组
+	
+	IRQ_ID = LPC_UART->IIR;   	// 读中断ID号
+	IRQ_ID =((IRQ_ID>>1)&0x7);	// 检测bit4:bit1	
+	if(IRQ_ID == 0x02 )		  			// 检测是不是接收数据引起的中断
+	{
+		while (LPC_UART->LSR & 0x1)
+		{
+			if (recv_num >= BUF_MAX_SIZE)
+			{
+				recv_num = 0;
+			}
+			uartrecv_buf[recv_num++] = LPC_UART->RBR;	  // 从RXFIFO中读取接收到的数据
+		}
+	}
+}
 

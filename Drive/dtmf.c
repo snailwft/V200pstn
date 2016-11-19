@@ -33,3 +33,12 @@ void recv_dtmf()
 		}
 	}		
 }
+
+void dtmf_data_handler()
+{
+	recv_dtmf();  								//怎么检测dtmf来显的完整性
+	if (dtmf_rx_buf.rx_addr > 0)
+	{
+		
+	}
+}

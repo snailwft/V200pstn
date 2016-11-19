@@ -15,4 +15,5 @@ typedef struct
 extern ST_DTMF_RXBUFF dtmf_rx_buf;
 extern void dtmf_rx_buf_init();
 extern void recv_dtmf();
+extern void dtmf_data_handler();
 #endif

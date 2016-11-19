@@ -1,4 +1,4 @@
---cpu Cortex-M0 "startup_lpc11xx.o" "system_lpc11xx.o" "main.o" "ct.o" "gpio.o" "uart.o" "fsk.o" "com.o" "wdt.o" "dtmf.o" --strict --scatter "lpc_project.sct" 
+--cpu Cortex-M0 "startup_lpc11xx.o" "system_lpc11xx.o" "main.o" "ct.o" "gpio.o" "uart.o" "fsk.o" "com.o" "wdt.o" "dtmf.o" "pstn.o" --strict --scatter "lpc_project.sct" 
 --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\lpc_project.map" -o "lpc_project.axf"
