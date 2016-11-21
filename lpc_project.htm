@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\lpc_project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\lpc_project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Mon Nov 21 09:42:14 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Mon Nov 21 16:16:02 2016
 <BR><P>
 <H3>Maximum Stack Usage =        256 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -436,8 +436,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;message_parese
 </UL>
 
-<P><STRONG><a name="[10]"></a>TIMER16_1_IRQHandler</STRONG> (Thumb, 124 bytes, Stack size 32 bytes, ct.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<P><STRONG><a name="[10]"></a>TIMER16_1_IRQHandler</STRONG> (Thumb, 114 bytes, Stack size 24 bytes, ct.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = TIMER16_1_IRQHandler &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
@@ -516,7 +516,7 @@ Global Symbols
 <LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 </UL>
 
-<P><STRONG><a name="[52]"></a>CheckFSKMessage</STRONG> (Thumb, 498 bytes, Stack size 32 bytes, fsk.o(.text))
+<P><STRONG><a name="[52]"></a>CheckFSKMessage</STRONG> (Thumb, 474 bytes, Stack size 32 bytes, fsk.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = CheckFSKMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr

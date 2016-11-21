@@ -135,13 +135,16 @@ void time16b1_disable()
 
 void TIMER16_1_IRQHandler(void)
 {
-	if((LPC_TMR16B1->IR & 0x1)==1) 						// 检测是不是MR0引起的中断
+	//uint8 uartsend_buf[BUF_MAX_SIZE];
+	if((LPC_TMR16B1->IR & 0x1) == 1) 						// 检测是不是MR0引起的中断
 	{	
 		ring_times++;
 		if (ring_num > 15)
 		{
+			uart_send("RING", 4);
 			SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关
-			SET_BIT(LPC_GPIO0, DATA, 11);				//拉高接通ht9032串口
+			//CLR_BIT(LPC_GPIO1, DATA,9);  	
+			//SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口
 			set_pstn_event(PSTN_EVENT_RING);
 			//memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			//sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
@@ -150,7 +153,7 @@ void TIMER16_1_IRQHandler(void)
 		if (ring_times > 6)
 		{
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 0, NULL, NULL, 0);
+			sprintf(uartsend_buf, "*RING:%d:CID::HOOK:%d*", 0, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 			fsk_ucgetflag = 0;										//对方挂机清零
 			CLR_BIT(LPC_GPIO1,DATA,9);  	 				//ht9032 拉低PDWN进入休眠模式

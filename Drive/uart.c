@@ -65,7 +65,7 @@ void uart_irq_disable()
 	uint32 Clear=Clear; 
 	LPC_UART->FCR = 0x03;    //允许FIFO，清空RxFIFO 
 	Clear = LPC_UART->LSR;   //读UART状态寄存器将清空残留状态
-	LPC_UART->IER = 0x00;	//只允许接收中断，关闭其他中断
+	LPC_UART->IER = 0x00;	//关闭中断
 }
 
 void uart_irq_enable()

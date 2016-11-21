@@ -109,7 +109,7 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 
 			//HT9032_PD_SET;
 			CLR_BIT(LPC_GPIO1, DATA, 9);  	 	// 拉低PDWN进入休眠模式
-			CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
+			//CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
 			stFskMeg.ucGetFlag = 1;				//置收到号码标志
 			fsk_ucgetflag = 1;
 			stFskMeg.ucRecCnt = 0;
@@ -134,7 +134,7 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 				}
 				stFskMeg.ucNumLength = stFskMeg.ucFSK_Buf[ucTemp + 1];
 				CLR_BIT(LPC_GPIO1,DATA,9); // 拉低PDWN进入休眠模式
-				CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
+				//CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
 				stFskMeg.ucRecCnt = 0;
 				stFskMeg.ucGetFlag = 1;			//置收到号码标志
 				fsk_ucgetflag = 1;

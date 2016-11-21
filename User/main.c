@@ -37,6 +37,8 @@ int main(void)
 	{		
 		WDTFeed();     					// Î¹¹·
 		check_pstn_hook();
+		//uart_send("hello", 5);
+		//uart_send("&RING:0:CID: :HOOK:0*", strlen("&RING:0:CID: :HOOK:0*"));
 		tim16b0_delay_ms(100);
 		message_handler();
 		dtmf_data_handler();
