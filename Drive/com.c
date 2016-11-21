@@ -1,6 +1,7 @@
 #include "com.h"
 #include "config.h"
 #include "main.h"
+#include "pstn.h"
 
 extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
 
@@ -54,6 +55,10 @@ int message_parese(uint8 *buf)
 			if (hook_status == 1)
 			{
 				CLR_BIT(LPC_GPIO0,DATA,9); //摘机
+				//清除pstn event
+				clear_pstn_event();
+				//设置pstn状态:摘机
+				set_pstn_state(PSTN_OFFHOOK);
 				time16b1_disable();
 				fsk_ucgetflag = 0; //我方摘机清零
 				CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 拉低PDWN进入休眠模式
@@ -61,6 +66,10 @@ int message_parese(uint8 *buf)
 			else if (hook_status == 0)
 			{
 				SET_BIT(LPC_GPIO0,DATA,9); //挂机
+				//清除pstn event
+				clear_pstn_event();
+				//设置pstn状态:挂机
+				set_pstn_state(PSTN_ONHOOK);
 			}
 			return 1;
 		}

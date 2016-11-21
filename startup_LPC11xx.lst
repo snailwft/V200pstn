@@ -359,9 +359,10 @@ ARM Macro Assembler    Page 6
               00000000 
               00000200 
               00000000 
-Command Line: --debug --xref --cpu=Cortex-M0 --apcs=interwork --depend=startup_
-LPC11xx.d -ostartup_LPC11xx.o -Id:\Keil\ARM\CMSIS\Include -Id:\Keil\ARM\INC\NXP
-\LPC11xx --list=startup_LPC11xx.lst startup_LPC11xx.s
+Command Line: --debug --xref --cpu=Cortex-M0 --apcs=interwork --depend=.\startu
+p_lpc11xx.d -o.\startup_lpc11xx.o -Ie:\Keil_v5\ARM\RV31\INC -Ie:\Keil_v5\ARM\PA
+CK\ARM\CMSIS\4.1.0\CMSIS\Include -Ie:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\D
+evice\Include\LPC11xx --list=.\startup_lpc11xx.lst startup_LPC11xx.s
 
 
 
@@ -837,4 +838,4 @@ Symbol: system_init
       At line 126 in file startup_LPC11xx.s
 Comment: system_init used once
 3 symbols
-374 symbols in table
+381 symbols in table

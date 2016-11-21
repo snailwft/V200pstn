@@ -1,6 +1,8 @@
 #include "pstn.h"
 #include "config.h"
 
+ST_PSTN   st_pstn;
+
 void clear_pstn_event()
 {
 	st_pstn.event = PSTN_EVENT_INIT;
@@ -22,6 +24,16 @@ void set_pstn_state(PSTN_MAIN_STATE  state)
 PSTN_MAIN_STATE get_pstn_state()
 {
 	return st_pstn.state;
+}
+
+PSTN_SUB_EVENT  get_pstn_event()
+{
+	return st_pstn.event;
+}
+
+void set_pstn_event(PSTN_SUB_EVENT event)
+{
+	st_pstn.event = event;
 }
 
 void check_pstn_hook()
@@ -52,7 +64,7 @@ void check_pstn_hook()
 				{
 					st_pstn.last_pola = temp;
 					st_pstn.polacount = 0;
-					st_pstn.event = PSTN_EVENT_POLA; // 表示有dtmf来显
+					st_pstn.event = PSTN_EVENT_POLA; // 表示有dtmf来显,接着就会有振铃
 				}
 			}
 			else 

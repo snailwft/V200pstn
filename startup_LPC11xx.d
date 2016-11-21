@@ -1,1 +1,1 @@
-startup_LPC11xx.o: startup_LPC11xx.s
+.\startup_lpc11xx.o: startup_LPC11xx.s

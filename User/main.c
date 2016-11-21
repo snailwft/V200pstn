@@ -16,7 +16,6 @@
  0:表示不振铃或挂机
 */
 
-
 uint8 uartrecv_buf[BUF_MAX_SIZE] = {0}, uartsend_buf[BUF_MAX_SIZE] = {0};					//用来作为模拟串口接收数据的缓存    
 uint8 ring_times = 0, ring_num = 0, recv_num = 0;
 
@@ -36,9 +35,9 @@ int main(void)
 	init();
 	while (1)
 	{		
-		WDTFeed();     // 喂狗
+		WDTFeed();     					// 喂狗
 		check_pstn_hook();
-		tim16b0_delay_ms(1000);
+		tim16b0_delay_ms(100);
 		message_handler();
 		dtmf_data_handler();
 	}

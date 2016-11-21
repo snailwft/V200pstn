@@ -27,7 +27,7 @@ typedef struct
 	int              pstn_checktime;//ºÏ≤‚Õ‚œﬂ—” ±
 }ST_PSTN;
 
-ST_PSTN   st_pstn;
+extern ST_PSTN   st_pstn;
 
 extern void clear_pstn_event();
 extern void pstn_init();
