@@ -1,6 +1,9 @@
 #include "config.h"
 #include "uart.h"
+#include "main.h"
 
+extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
+extern uint8 recv_num, fsk_flag;
 /*
  *RING:1/0:CID:0704121313016054035:HOOK:1/0*
  1:表示振铃或摘机
@@ -62,7 +65,7 @@ void uart_irq_disable()
 	uint32 Clear=Clear; 
 	LPC_UART->FCR = 0x03;    //允许FIFO，清空RxFIFO 
 	Clear = LPC_UART->LSR;   //读UART状态寄存器将清空残留状态
-	LPC_UART->IER = 0x00;	//只允许接收中断，关闭其他中断
+	LPC_UART->IER = 0x00;	//关闭中断
 }
 
 void uart_irq_enable()
@@ -114,4 +117,28 @@ void uart_send(uint8 *Buffer, uint32 Length)
 	}
 }
 
+void UART_IRQHandler(void)
+{
+	uint32 IRQ_ID;		  				// 定义读取中断ID号变量
+	uint8 redata;    						// 定义接收数据变量数组
+	
+	IRQ_ID = LPC_UART->IIR;   	// 读中断ID号
+	IRQ_ID =((IRQ_ID>>1)&0x7);	// 检测bit4:bit1	
+	if(IRQ_ID == 0x02 )		  			// 检测是不是接收数据引起的中断
+	{
+		while (LPC_UART->LSR & 0x1)
+		{
+			redata = LPC_UART->RBR;
+			//uart_send(&redata, 1);
+			if (redata == 0x55) 			//来显数据头
+			{
+				fsk_flag = 1;
+			}
+			if (recv_num < BUF_MAX_SIZE && fsk_flag == 1) //存在风险，万一recv_num没有清0
+			{
+				uartrecv_buf[recv_num++] = redata;	  // 从RXFIFO中读取接收到的数据 ，控制数据量
+			}
+		}
+	}
+}
 

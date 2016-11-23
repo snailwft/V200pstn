@@ -12,16 +12,14 @@
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>LPC1114FBD48/302</Device>
-          <Vendor>NXP</Vendor>
-          <PackID>Keil.LPC1100_DFP.1.4.0</PackID>
-          <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IROM(0x00000000,0x8000) IRAM(0x10000000,0x2000) CPUTYPE("Cortex-M0") CLOCK(50000000) ELITTLE</Cpu>
+          <Device>LPC1114/302</Device>
+          <Vendor>NXP (founded by Philips)</Vendor>
+          <Cpu>IRAM(0x10000000-0x10001FFF) IROM(0-0x7FFF) CLOCK(12000000) CPUTYPE("Cortex-M0")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
-          <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD10000000 -FCFE0 -FN1 -FF0LPC1xxx_32 -FS00 -FL08000 -FP0($$Device:LPC1114FBD48/302$Flash\LPC1xxx_32.FLM))</FlashDriverDll>
-          <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:LPC1114FBD48/302$Device\Include\LPC11xx\LPC11xx.h</RegisterFile>
+          <StartupFile>"STARTUP\NXP\LPC11xx\startup_LPC11xx.s" ("NXP LPC11xx Startup Code")</StartupFile>
+          <FlashDriverDll>UL2CM3(-O4303 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC1xxx_32 -FS00 -FL08000)</FlashDriverDll>
+          <DeviceId>5376</DeviceId>
+          <RegisterFile>LPC11xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -31,14 +29,14 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:LPC1114FBD48/302$SVD\LPC111x.svd</SFDFile>
+          <SFDFile></SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
           <LibPath></LibPath>
-          <RegisterFilePath></RegisterFilePath>
-          <DBRegisterFilePath></DBRegisterFilePath>
+          <RegisterFilePath>NXP\LPC11xx\</RegisterFilePath>
+          <DBRegisterFilePath>NXP\LPC11xx\</DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -172,7 +170,7 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4099</DriverSelection>
+            <DriverSelection>4098</DriverSelection>
           </Flash1>
           <bUseTDR>0</bUseTDR>
           <Flash2>Segger\JL2CM3.dll</Flash2>

@@ -7,6 +7,9 @@
 ".\uart.o"
 ".\fsk.o"
 ".\com.o"
+".\pstn.o"
+".\wdt.o"
+".\dtmf.o"
 --strict --scatter ".\lpc_project.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
