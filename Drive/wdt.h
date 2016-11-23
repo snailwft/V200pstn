@@ -3,8 +3,8 @@
 
 #include "config.h"
 
-extern void WDT_Enable(void);
-extern void WDTFeed(void);
+extern void wdt_enable(void);
+extern void wdt_feed(void);
 extern void WDT_IRQHandler(void);
 
 

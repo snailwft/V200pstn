@@ -3,7 +3,7 @@
 #include "main.h"
 
 extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
-extern uint8 recv_num, fsk_flag;
+extern uint8 recv_num, fsk_flag, fsk_clear;
 /*
  *RING:1/0:CID:0704121313016054035:HOOK:1/0*
  1:表示振铃或摘机
@@ -133,10 +133,14 @@ void UART_IRQHandler(void)
 			if (redata == 0x55) 			//来显数据头
 			{
 				fsk_flag = 1;
+				if (recv_num > 30) // 0x55最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
+				{
+					recv_num = 0;
+				}
 			}
-			if (recv_num < BUF_MAX_SIZE && fsk_flag == 1) //存在风险，万一recv_num没有清0
+			if (recv_num < BUF_MAX_SIZE && fsk_flag == 1) 	//存在风险，万一recv_num没有清0
 			{
-				uartrecv_buf[recv_num++] = redata;	  // 从RXFIFO中读取接收到的数据 ，控制数据量
+				uartrecv_buf[recv_num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
 			}
 		}
 	}

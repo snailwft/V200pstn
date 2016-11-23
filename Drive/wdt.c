@@ -21,17 +21,17 @@ void WDT_CLK_Setup(void)
 }
 
 /******************************************
-* FunctionName   : WDT_Enable()
+* FunctionName   : wdt_enable()
 * Description    : 使能看门狗  
 * EntryParameter : None
 * ReturnValue    : None
 *******************************************/
-void WDT_Enable(void)
+void wdt_enable(void)
 {
   	
 	WDT_CLK_Setup();
 	SET_BIT(LPC_SYSCON,SYSAHBCLKCTRL,15);// 允许WDT时钟，这个时钟是配置寄存器用的
-  	LPC_WDT->TC = 80000;		// 给看门狗定时器赋值，定时时间大约1秒(这是在wdt_clk=250KHz时)8000*4*1/f
+  	LPC_WDT->TC = 80000;								 // 给看门狗定时器赋值，定时时间大约1秒(这是在wdt_clk=250KHz时)8000*4*1/f
   	LPC_WDT->MOD |= 0x03;		// 写值0x03：不喂狗产生复位     写值0x01：不喂狗发生中断
  	LPC_WDT->FEED = 0xAA;		// 喂看门狗，开启
   	LPC_WDT->FEED = 0x55;    
@@ -59,12 +59,12 @@ void WDT_IRQHandler(void)
 }
 
 /******************************************
-* FunctionName   : WDTFeed()
+* FunctionName   : wdt_feed()
 * Description    : 看门狗喂狗   
 * EntryParameter : None
 * ReturnValue    : None
 *******************************************/
-void WDTFeed(void)
+void wdt_feed(void)
 {
   	LPC_WDT->FEED = 0xAA;		// 喂狗
   	LPC_WDT->FEED = 0x55;

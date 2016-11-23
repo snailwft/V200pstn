@@ -1,123 +1,0 @@
-Dependencies for Project 'lpc_project', Target 'Target 1': (DO NOT MODIFY !)
-F (.\startup_LPC11xx.s)(0x57FDF584)(--cpu Cortex-M0 -g --apcs=interwork -I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx--list .\startup_lpc11xx.lst --xref -o .\startup_lpc11xx.o --depend .\startup_lpc11xx.d)
-F (.\System\system_LPC11xx.c)(0x58169ED6)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\system_lpc11xx.o --omf_browse .\system_lpc11xx.crf --depend .\system_lpc11xx.d)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (System\LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (System\system_LPC11xx.h)(0x57FDF46B)
-F (.\User\main.c)(0x58350242)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (User\../system/system_LPC11xx.h)(0x57FDF46B)
-I (.\Drive\gpio.h)(0x57FDF3CC)
-I (.\Drive\ct.h)(0x581AF452)
-I (.\Drive\uart.h)(0x581C0273)
-I (.\Drive\fsk.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (e:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-I (.\Drive\com.h)(0x5834EE15)
-I (.\Drive\wdt.h)(0x5834EE15)
-I (.\Drive\dtmf.h)(0x5834EE15)
-I (.\Drive\main.h)(0x5834F34A)
-F (.\Drive\ct.c)(0x58350570)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\ct.o --omf_browse .\ct.crf --depend .\ct.d)
-I (.\User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-I (Drive\ct.h)(0x581AF452)
-I (Drive\main.h)(0x5834F34A)
-I (Drive\fsk.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (e:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-I (Drive\pstn.h)(0x5834EE15)
-F (.\Drive\gpio.c)(0x5834FD3A)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\gpio.o --omf_browse .\gpio.crf --depend .\gpio.d)
-I (.\User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-I (Drive\gpio.h)(0x57FDF3CC)
-F (.\Drive\uart.c)(0x583505D1)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
-I (.\User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-I (Drive\uart.h)(0x581C0273)
-I (Drive\main.h)(0x5834F34A)
-F (.\Drive\fsk.c)(0x5834F1E2)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\fsk.o --omf_browse .\fsk.crf --depend .\fsk.d)
-I (.\User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-I (Drive\fsk.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (e:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-I (Drive\uart.h)(0x581C0273)
-F (.\Drive\com.c)(0x5834FC45)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\com.o --omf_browse .\com.crf --depend .\com.d)
-I (Drive\com.h)(0x5834EE15)
-I (Drive\fsk.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (e:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
-I (.\User\config.h)(0x5834EE15)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-I (Drive\main.h)(0x5834F34A)
-I (Drive\pstn.h)(0x5834EE15)
-F (.\Drive\pstn.c)(0x5834EE15)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\pstn.o --omf_browse .\pstn.crf --depend .\pstn.d)
-I (Drive\pstn.h)(0x5834EE15)
-I (.\User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-F (.\Drive\wdt.c)(0x5834EE15)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\wdt.o --omf_browse .\wdt.crf --depend .\wdt.d)
-I (Drive\wdt.h)(0x5834EE15)
-I (.\User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-F (.\Drive\dtmf.c)(0x5835010C)(-c --cpu Cortex-M0 -g -O2 -Otime --apcs=interwork -I.\User -I.\Drive -I.\System-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\dtmf.o --omf_browse .\dtmf.crf --depend .\dtmf.d)
-I (Drive\dtmf.h)(0x5834EE15)
-I (.\User\config.h)(0x5834EE15)
-I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
-I (.\User\../system/LPC11xx.h)(0x4BB19F94)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h)(0x53688AAC)
-I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
-I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
-I (.\User\../system/system_LPC11xx.h)(0x57FDF46B)
-I (e:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)

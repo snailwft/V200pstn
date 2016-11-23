@@ -17,7 +17,7 @@
 */
 
 uint8 uartrecv_buf[BUF_MAX_SIZE] = {0}, uartsend_buf[BUF_MAX_SIZE] = {0};					//用来作为模拟串口接收数据的缓存    
-uint8 ring_times = 0, ring_num = 0, recv_num = 0, fsk_flag = 0;
+uint8 ring_times = 0, ring_num = 0, recv_num = 0, fsk_flag = 0, fsk_clear = 0;
 
 void init(void)
 {
@@ -27,7 +27,7 @@ void init(void)
 	dtmf_rx_buf_init();
 	time16b1_int_init(1000);		// 16位定时器1 1秒定时并产生中断
 	uart_init(1200); 						// 串口，并设置波特率	
-	WDT_Enable();
+	wdt_enable();
 }
 
 int main(void)
@@ -35,7 +35,7 @@ int main(void)
 	init();
 	while (1)
 	{		
-		WDTFeed();     					// 喂狗
+		wdt_feed();     					// 喂狗
 		check_pstn_hook();
 		tim16b0_delay_ms(100);
 		message_handler();
