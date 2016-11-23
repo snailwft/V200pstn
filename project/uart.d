@@ -1,0 +1,11 @@
+.\uart.o: ..\Drive\uart.c
+.\uart.o: ..\User\config.h
+.\uart.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+.\uart.o: ..\User\../system/LPC11xx.h
+.\uart.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h
+.\uart.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\uart.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h
+.\uart.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h
+.\uart.o: ..\User\../system/system_LPC11xx.h
+.\uart.o: ..\Drive\uart.h
+.\uart.o: ..\Drive\main.h

@@ -1,0 +1,13 @@
+.\fsk.o: ..\Drive\fsk.c
+.\fsk.o: ..\User\config.h
+.\fsk.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+.\fsk.o: ..\User\../system/LPC11xx.h
+.\fsk.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h
+.\fsk.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\fsk.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h
+.\fsk.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h
+.\fsk.o: ..\User\../system/system_LPC11xx.h
+.\fsk.o: ..\Drive\fsk.h
+.\fsk.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+.\fsk.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+.\fsk.o: ..\Drive\uart.h

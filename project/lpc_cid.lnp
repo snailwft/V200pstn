@@ -1,0 +1,16 @@
+--cpu Cortex-M0
+".\startup_lpc11xx.o"
+".\system_lpc11xx.o"
+".\com.o"
+".\ct.o"
+".\dtmf.o"
+".\fsk.o"
+".\gpio.o"
+".\pstn.o"
+".\uart.o"
+".\wdt.o"
+".\main.o"
+--strict --scatter ".\lpc_cid.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\lpc_cid.map" -o .\lpc_cid.axf
