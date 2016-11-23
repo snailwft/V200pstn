@@ -52,7 +52,7 @@ typedef double           fp64;                 // double precision floating poin
 #define SET_BIT(x,y,z) (x->y|=(1<<z))
 #define CLR_BIT(x,y,z) (x->y&=~(1<<z))
 #define GET_BIT(x,y,z) (x->y&(1<<z))
-#define GET_BITS(x,y) (x->y&0x7)   			//接收来电显示数据
+#define GET_BITS(x,y) (x->y&0xf00)
 
 /**************************************************************************************
 *                             SystemHeaderFiles                    

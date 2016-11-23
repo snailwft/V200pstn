@@ -106,13 +106,13 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments> </SimDllArguments>
-          <SimDlgDll>DARMCM1.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pCM0</SimDlgDllArguments>
+          <SimDllArguments></SimDllArguments>
+          <SimDlgDll>DARMP1.DLL</SimDlgDll>
+          <SimDlgDllArguments>-pLPC1114</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments> </TargetDllArguments>
-          <TargetDlgDll>TARMCM1.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-pCM0</TargetDlgDllArguments>
+          <TargetDllArguments></TargetDllArguments>
+          <TargetDlgDll>TARMP1.DLL</TargetDlgDll>
+          <TargetDlgDllArguments>-pLPC1114</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -463,21 +463,6 @@
               <FileName>com.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Drive\com.c</FilePath>
-            </File>
-            <File>
-              <FileName>wdt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Drive\wdt.c</FilePath>
-            </File>
-            <File>
-              <FileName>dtmf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Drive\dtmf.c</FilePath>
-            </File>
-            <File>
-              <FileName>pstn.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Drive\pstn.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -3,19 +3,19 @@
 #include "uart.h"
 
 ST_FSK_MEG_STATE stFskMeg;
-uint8 fsk_ucgetflag = 0;
+uchar fsk_ucgetflag = 0;
 
 void fsk_init()
 {
 	memset(&stFskMeg, 0x0, sizeof(stFskMeg));
 }
 
-int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
+int CheckFSKMessage(uchar * DataBuf, uchar DataLength)
 {
-	uint8 ucTemp;
-	uint8 ucTemp1;
-	uint8 ucStartPoint;
-	uint8 ucGetFskStep;
+	uchar ucTemp;
+	uchar ucTemp1;
+	uchar ucStartPoint;
+	uchar ucGetFskStep;
 	uint  uiCheckSum;
 
 	ucStartPoint = 0;
@@ -52,11 +52,12 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 				ucStartPoint = ucTemp;							//FSK数据是单数据格式
 				ucGetFskStep = 3;
 			}
+
 			else if(stFskMeg.ucFSK_Buf[ucTemp] == FSK_HEAD_ID)
 			{
 				continue;
 			}
-#if 1
+#if 0
 			else
 			{
 				uart_send("message isn't fsk", strlen("message isn't fsk"));
@@ -108,8 +109,7 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 			stFskMeg.ucNumLength = stFskMeg.ucFSK_Buf[ucStartPoint + 1] - 8;
 
 			//HT9032_PD_SET;
-			CLR_BIT(LPC_GPIO1, DATA, 9);  	 	// 拉低PDWN进入休眠模式
-			//CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
+			CLR_BIT(LPC_GPIO1,DATA,9);  	 	// 拉低PDWN进入休眠模式
 			stFskMeg.ucGetFlag = 1;				//置收到号码标志
 			fsk_ucgetflag = 1;
 			stFskMeg.ucRecCnt = 0;
@@ -134,7 +134,6 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 				}
 				stFskMeg.ucNumLength = stFskMeg.ucFSK_Buf[ucTemp + 1];
 				CLR_BIT(LPC_GPIO1,DATA,9); // 拉低PDWN进入休眠模式
-				//CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
 				stFskMeg.ucRecCnt = 0;
 				stFskMeg.ucGetFlag = 1;			//置收到号码标志
 				fsk_ucgetflag = 1;

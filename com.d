@@ -4,12 +4,3 @@
 .\com.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 .\com.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
 .\com.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
-.\com.o: .\User\config.h
-.\com.o: .\User\../system/LPC11xx.h
-.\com.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0.h
-.\com.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
-.\com.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h
-.\com.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h
-.\com.o: .\User\../system/system_LPC11xx.h
-.\com.o: Drive\main.h
-.\com.o: Drive\pstn.h

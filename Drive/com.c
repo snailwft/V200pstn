@@ -1,9 +1,4 @@
 #include "com.h"
-#include "config.h"
-#include "main.h"
-#include "pstn.h"
-
-extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//ÓÃÀ´×÷ÎªÄ£Äâ´®¿Ú½ÓÊÕÊý¾ÝµÄ»º´æ  
 
 /*
  *RING:1/0:CID:0704121313016054035:HOOK:1/0*
@@ -11,10 +6,10 @@ extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//ÓÃÀ´×
  0:±íÊ¾²»ÕñÁå»ò¹Ò»ú
 */
 
-int deal_message(uint8 *databuf, uint8 datalength)
+int deal_message(uchar *databuf, uchar datalength)
 {
-	uint8 *ptr = NULL;
-	uint8 *ch = NULL;
+	uchar *ptr = NULL;
+	uchar *ch = NULL;
 	//»ñÈ¡HOOK,·µ»ØÖµ
 	if (datalength == 0)
 		return -1;
@@ -30,79 +25,13 @@ int deal_message(uint8 *databuf, uint8 datalength)
 	return -1;
 }
 
-int message_integrity(uint8 *databuf)
+int message_integrity(uchar *databuf)
 {
-	uint8 *ptr = NULL;
+	uchar *ptr = NULL;
 	ptr = strstr(databuf, "*");
 	if (ptr == NULL)
 	{
 		return 0;
 	}
 	return 1;
-}
-
-int message_parese(uint8 *buf)
-{
-	int hook_status;
-	int fsk_status;
-	uint8 uartsend_buf[100] = {0};
-	
-	if (buf[0] == '*') //Ö÷¿Ø·¢ËÍ 
-	{					
-		if (message_integrity(&buf[1])) //¼ì²âÏûÏ¢µÄÍêÕûÐÔ
-		{
-			hook_status = deal_message(buf, strlen(buf));
-			if (hook_status == 1)
-			{
-				CLR_BIT(LPC_GPIO0,DATA,9); //Õª»ú
-				//Çå³ýpstn event
-				clear_pstn_event();
-				//ÉèÖÃpstn×´Ì¬:Õª»ú
-				set_pstn_state(PSTN_OFFHOOK);
-				time16b1_disable();
-				fsk_ucgetflag = 0; //ÎÒ·½Õª»úÇåÁã
-				CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 À­µÍPDWN½øÈëÐÝÃßÄ£Ê½
-			}
-			else if (hook_status == 0)
-			{
-				SET_BIT(LPC_GPIO0,DATA,9); //¹Ò»ú
-				//Çå³ýpstn event
-				clear_pstn_event();
-				//ÉèÖÃpstn×´Ì¬:¹Ò»ú
-				set_pstn_state(PSTN_ONHOOK);
-			}
-			return 1;
-		}
-	}
-	else  //  fskÀ´ÏÔ
-	{				
-		if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
-		{
-			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-			sprintf(uartsend_buf, "*RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
-			uart_send(uartsend_buf, strlen(uartsend_buf)); //·¢ËÍ¸øÖ÷¿Ø
-			return 1;
-		}
-		else if (fsk_status == -1) // fsk ÏûÏ¢´íÎó
-		{
-			return 1;
-		}
-	}			
-	return 0;
-}
-
-void message_handler()
-{
-	int stat = 0;
-	if (recv_num > 0)
-	{		
-		stat = message_parese(uartrecv_buf);
-		if (stat == 1)
-		{
-			uart_irq_disable();
-			memset(uartrecv_buf, 0, sizeof(uartrecv_buf));
-			recv_num = 0;	
-			uart_irq_enable();
-		}
-	}		
 }

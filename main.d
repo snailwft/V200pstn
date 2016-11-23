@@ -14,6 +14,3 @@
 .\main.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 .\main.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
 .\main.o: .\Drive\com.h
-.\main.o: .\Drive\wdt.h
-.\main.o: .\Drive\dtmf.h
-.\main.o: .\Drive\main.h
