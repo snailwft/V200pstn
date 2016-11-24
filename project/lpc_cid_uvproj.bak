@@ -366,7 +366,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>..\Drive;..\System;..\User</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -407,7 +407,79 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>Startup</GroupName>
+          <Files>
+            <File>
+              <FileName>startup_LPC11xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\Startup\startup_LPC11xx.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>System</GroupName>
+          <Files>
+            <File>
+              <FileName>system_LPC11xx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\System\system_LPC11xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drive</GroupName>
+          <Files>
+            <File>
+              <FileName>com.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\com.c</FilePath>
+            </File>
+            <File>
+              <FileName>ct.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\ct.c</FilePath>
+            </File>
+            <File>
+              <FileName>dtmf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\dtmf.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsk.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\fsk.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>pstn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\pstn.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>wdt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drive\wdt.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>User</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\main.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

@@ -129,11 +129,10 @@ void UART_IRQHandler(void)
 		while (LPC_UART->LSR & 0x1)
 		{
 			redata = LPC_UART->RBR;
-			//uart_send(&redata, 1);
 			if (redata == 0x55) 			//来显数据头
 			{
 				fsk_flag = 1;
-				if (recv_num > 30) // 0x55最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
+				if (recv_num > 30) // 0x55数量最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
 				{
 					recv_num = 0;
 				}
