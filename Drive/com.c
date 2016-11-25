@@ -65,7 +65,7 @@ int message_parese(uint8 *buf)
 			{
 				SET_BIT(LPC_GPIO0,DATA,9); //¹Ò»ú
 				clear_pstn_event();
-				set_pstn_state(PSTN_ONHOOK);
+				set_pstn_state(PSTN_INIT);
 			}
 			return 1;
 		}

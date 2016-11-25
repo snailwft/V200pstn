@@ -140,10 +140,13 @@ void TIMER16_1_IRQHandler(void)
 	{	
 		ring_times++;
 		if (ring_num > 15)
-		{
-			SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
-			SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口
-			set_pstn_event(PSTN_EVENT_RING);
+		{			
+			if (get_pstn_cid_mode() != PSTN_DTMF)
+			{
+				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+				SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口
+				set_pstn_event(PSTN_EVENT_RING);
+			}
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控

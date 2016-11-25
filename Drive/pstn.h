@@ -16,10 +16,18 @@ typedef enum PSTN_SUB_EVENT_TAG
 	PSTN_EVENT_RING,          //振铃
 }PSTN_SUB_EVENT;
 
+typedef enum CID_MODE
+{
+	PSTN_CID_IDL = 0,
+	PSTN_FSK,
+	PSTN_DTMF,
+}PSTN_CID_MODE;
+
 typedef struct
 {
 	PSTN_MAIN_STATE  state;     //主状态
 	PSTN_SUB_EVENT   event;     //次状态
+	PSTN_CID_MODE	   cid_mode;
 	uint8            ringcount;		 //振铃计数
 	uint8            polacount;       //极性计数
 	uint8            delay_time;    //检测极性和振铃延时
