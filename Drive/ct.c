@@ -156,7 +156,6 @@ void TIMER16_1_IRQHandler(void)
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 0, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
-			fsk_ucgetflag = 0;														//对方挂机清零
 			recv_num = 0;
 			fsk_flag = 0;
 			CLR_BIT(LPC_GPIO1,DATA,9);  	 								//ht9032 拉低PDWN进入休眠模式

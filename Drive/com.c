@@ -58,7 +58,6 @@ int message_parese(uint8 *buf)
 				clear_pstn_event();	
 				set_pstn_state(PSTN_OFFHOOK);
 				time16b1_disable();
-				fsk_ucgetflag = 0; //我方摘机清零
 				CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 拉低PDWN进入休眠模式
 			}
 			else if (hook_status == 0)
