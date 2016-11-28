@@ -138,6 +138,7 @@ void TIMER16_1_IRQHandler(void)
 	//uint8 uartsend_buf[BUF_MAX_SIZE];
 	if((LPC_TMR16B1->IR & 0x1) == 1) 						// 检测是不是MR0引起的中断
 	{	
+#if 0
 		ring_times++;
 		if (ring_num > 15)
 		{			
@@ -162,6 +163,7 @@ void TIMER16_1_IRQHandler(void)
 			time16b1_disable();
 		}
 		ring_num = 0;
+#endif
 	}
 	LPC_TMR16B1->IR = 0x1F; 									// 清所有定时器/计数器中断标志	
 }

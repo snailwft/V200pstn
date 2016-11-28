@@ -13,3 +13,4 @@
 .\com.o: ..\User\../system/system_LPC11xx.h
 .\com.o: ..\Drive\main.h
 .\com.o: ..\Drive\pstn.h
+.\com.o: ..\Drive\uart.h

@@ -29,6 +29,7 @@ void init(void)
 	uart_init(1200); 						// 串口，并设置波特率	
 	pstn_init();
 	wdt_enable();
+	uart_recv_init();
 }
 
 int main(void)

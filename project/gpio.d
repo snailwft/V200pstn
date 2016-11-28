@@ -8,3 +8,5 @@
 .\gpio.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h
 .\gpio.o: ..\User\../system/system_LPC11xx.h
 .\gpio.o: ..\Drive\gpio.h
+.\gpio.o: ..\Drive\pstn.h
+.\gpio.o: ..\Drive\main.h

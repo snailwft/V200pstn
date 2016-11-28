@@ -1,7 +1,9 @@
 #include "config.h"
 #include "gpio.h"
+#include "pstn.h"
+#include "main.h"
 
-extern uint8 ring_times, ring_num;
+extern uint8 ring_times, ring_num, uartsend_buf[BUF_MAX_SIZE];
 
 /**************************************************************************************
 * FunctionName   : gpio_init()

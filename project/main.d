@@ -10,10 +10,10 @@
 .\main.o: ..\Drive\gpio.h
 .\main.o: ..\Drive\ct.h
 .\main.o: ..\Drive\uart.h
+.\main.o: ..\Drive\main.h
 .\main.o: ..\Drive\fsk.h
 .\main.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 .\main.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
 .\main.o: ..\Drive\com.h
 .\main.o: ..\Drive\wdt.h
 .\main.o: ..\Drive\dtmf.h
-.\main.o: ..\Drive\main.h

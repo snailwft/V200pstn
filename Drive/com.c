@@ -2,7 +2,9 @@
 #include "config.h"
 #include "main.h"
 #include "pstn.h"
+#include "uart.h"
 
+extern ST_UART_BUF uartrecv;
 extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE], fsk_flag;					//用来作为模拟串口接收数据的缓存  
 
 /*
@@ -85,15 +87,13 @@ int message_parese(uint8 *buf)
 void message_handler()
 {
 	int stat = 0;
-	if (recv_num > 0)
+	if (get_uart_recv_num() > 0)
 	{		
-		stat = message_parese(uartrecv_buf);
+		stat = message_parese(uartrecv.uart_buf);
 		if (stat == 1)
 		{
 			uart_irq_disable();
-			memset(uartrecv_buf, 0, sizeof(uartrecv_buf));
-			recv_num = 0;	
-			fsk_flag = 0;
+			uart_recv_init();
 			uart_irq_enable();
 		}
 	}		

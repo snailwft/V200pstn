@@ -11,3 +11,4 @@
 .\fsk.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 .\fsk.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
 .\fsk.o: ..\Drive\uart.h
+.\fsk.o: ..\Drive\main.h

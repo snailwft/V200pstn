@@ -1,7 +1,7 @@
 #include "config.h"
 #include "uart.h"
-#include "main.h"
 
+ST_UART_BUF uartrecv, uartsend;
 extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
 extern uint8 recv_num, fsk_flag, fsk_clear;
 /*
@@ -117,6 +117,16 @@ void uart_send(uint8 *Buffer, uint32 Length)
 	}
 }
 
+void uart_recv_init()
+{
+	memset(&uartrecv, 0, sizeof(uartrecv));
+}
+
+int get_uart_recv_num()
+{
+	return uartrecv.num;
+}
+
 void UART_IRQHandler(void)
 {
 	uint32 IRQ_ID;		  				// 定义读取中断ID号变量
@@ -131,15 +141,15 @@ void UART_IRQHandler(void)
 			redata = LPC_UART->RBR;
 			if (redata == 0x55) 			//来显数据头
 			{
-				fsk_flag = 1;
-				if (recv_num > 30) // 0x55数量最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
+				uartrecv.fsk_flag = 1;
+				if (uartrecv.num > 30) // 0x55数量最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
 				{
-					recv_num = 0;
+					uartrecv.num = 0;
 				}
 			}
-			if (recv_num < BUF_MAX_SIZE && fsk_flag == 1) 	//存在风险，万一recv_num没有清0
+			if (uartrecv.num < BUF_MAX_SIZE && uartrecv.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
 			{
-				uartrecv_buf[recv_num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
+				uartrecv.uart_buf[uartrecv.num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
 			}
 		}
 	}
