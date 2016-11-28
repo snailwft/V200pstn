@@ -27,6 +27,7 @@ void init(void)
 	dtmf_rx_buf_init();
 	time16b1_int_init(1000);		// 16位定时器1 1秒定时并产生中断
 	uart_init(1200); 						// 串口，并设置波特率	
+	pstn_init();
 	wdt_enable();
 }
 
@@ -35,9 +36,9 @@ int main(void)
 	init();
 	while (1)
 	{		
-		wdt_feed();     					// 喂狗
-		check_pstn_hook();
 		tim16b0_delay_ms(100);
+		wdt_feed();     					// 喂狗
+		check_pstn_hook();		
 		message_handler();
 		dtmf_data_handler(); 
 	}

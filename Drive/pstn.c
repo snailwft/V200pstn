@@ -13,7 +13,7 @@ void clear_pstn_event()
 void pstn_init()
 {
 	memset(&st_pstn, 0x0, sizeof(st_pstn));
-	clear_pstn_event();
+	//clear_pstn_event();
 }
 
 void set_pstn_state(PSTN_MAIN_STATE  state)
