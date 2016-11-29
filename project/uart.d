@@ -9,3 +9,4 @@
 .\uart.o: ..\User\../system/system_LPC11xx.h
 .\uart.o: ..\Drive\uart.h
 .\uart.o: ..\Drive\main.h
+.\uart.o: ..\Drive\pstn.h

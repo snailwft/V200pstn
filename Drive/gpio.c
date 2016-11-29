@@ -101,10 +101,11 @@ void PIOINT0_IRQHandler(void)
 		ring_num++;
 		if (ring_num > 15)
 		{			
-			if (get_pstn_cid_mode() != PSTN_DTMF)
+			if (get_pstn_cid_mode() == PSTN_CID_IDL)
 			{
 				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
-				SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032				
+				SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032			
+				set_pstn_cid_mode(PSTN_FSK);
 			}
 			ring_num = 0;
 			set_pstn_event(PSTN_EVENT_RING);

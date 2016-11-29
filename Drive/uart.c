@@ -1,5 +1,6 @@
 #include "config.h"
 #include "uart.h"
+#include "pstn.h"
 
 ST_UART_BUF uartrecv, uartsend;
 extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
@@ -139,17 +140,24 @@ void UART_IRQHandler(void)
 		while (LPC_UART->LSR & 0x1)
 		{
 			redata = LPC_UART->RBR;
-			if (redata == 0x55) 			//来显数据头
+			if (get_pstn_cid_mode() == PSTN_FSK)
 			{
-				uartrecv.fsk_flag = 1;
-				if (uartrecv.num > 30) // 0x55数量最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
+				if (redata == 0x55) 			//来显数据头
 				{
-					uartrecv.num = 0;
+					uartrecv.fsk_flag = 1;
+					if (uartrecv.num > 30) // 0x55数量最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
+					{
+						uartrecv.num = 0;
+					}
+				}
+				if (uartrecv.num < BUF_MAX_SIZE && uartrecv.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
+				{
+					uartrecv.uart_buf[uartrecv.num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
 				}
 			}
-			if (uartrecv.num < BUF_MAX_SIZE && uartrecv.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
+			else 
 			{
-				uartrecv.uart_buf[uartrecv.num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
+				uartrecv.uart_buf[uartrecv.num++] = redata;	
 			}
 		}
 	}

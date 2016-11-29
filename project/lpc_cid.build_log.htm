@@ -61,11 +61,13 @@ compiling com.c...
                         sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
 ..\Drive\com.c(80): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
                         uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
+..\Drive\com.c(81): warning:  #223-D: function "set_pstn_cid_mode" declared implicitly
+                        set_pstn_cid_mode(PSTN_CID_IDL);
 ..\Drive\com.c(49): warning:  #550-D: variable "fsk_status" was set but never used
         int fsk_status;
-..\Drive\com.c(100): warning:  #1-D: last line of file ends without a newline
+..\Drive\com.c(101): warning:  #1-D: last line of file ends without a newline
   }
-..\Drive\com.c: 27 warnings, 0 errors
+..\Drive\com.c: 28 warnings, 0 errors
 compiling ct.c...
 ..\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
   void wait();
@@ -101,7 +103,7 @@ compiling dtmf.c...
                 set_dtmf_qn_dir();  //设置成输入 ，接收dtmf码
 ..\Drive\dtmf.c(28): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
                 clr_dtmf_qn_dir(); //设置成输出，不接收dtmf码
-..\Drive\dtmf.c(48): warning:  #1-D: last line of file ends without a newline
+..\Drive\dtmf.c(49): warning:  #1-D: last line of file ends without a newline
   }
 ..\Drive\dtmf.c: 7 warnings, 0 errors
 compiling fsk.c...
@@ -134,16 +136,18 @@ compiling gpio.c...
 ..\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\Drive\gpio.c(104): warning:  #223-D: function "get_pstn_cid_mode" declared implicitly
-                        if (get_pstn_cid_mode() != PSTN_DTMF)
-..\Drive\gpio.c(110): warning:  #223-D: function "set_pstn_event" declared implicitly
+                        if (get_pstn_cid_mode() == PSTN_CID_IDL)
+..\Drive\gpio.c(108): warning:  #223-D: function "set_pstn_cid_mode" declared implicitly
+                                set_pstn_cid_mode(PSTN_FSK);
+..\Drive\gpio.c(111): warning:  #223-D: function "set_pstn_event" declared implicitly
                         set_pstn_event(PSTN_EVENT_RING);
-..\Drive\gpio.c(112): warning:  #223-D: function "sprintf" declared implicitly
+..\Drive\gpio.c(113): warning:  #223-D: function "sprintf" declared implicitly
                         sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0);  //来电振铃通知主控振铃
-..\Drive\gpio.c(113): warning:  #223-D: function "uart_send" declared implicitly
+..\Drive\gpio.c(114): warning:  #223-D: function "uart_send" declared implicitly
                         uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\gpio.c(113): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+..\Drive\gpio.c(114): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
                         uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\gpio.c: 11 warnings, 0 errors
+..\Drive\gpio.c: 12 warnings, 0 errors
 compiling pstn.c...
 ..\Drive\pstn.h(40): warning:  #1295-D: Deprecated declaration clear_pstn_event - give arg types
   extern void clear_pstn_event();
@@ -169,9 +173,21 @@ compiling uart.c...
   extern int get_uart_recv_num();
 ..\Drive\uart.h(21): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
   uint8 recv_byte();
-..\Drive\uart.c(20): warning:  #223-D: function "wait" declared implicitly
+..\Drive\pstn.h(40): warning:  #1295-D: Deprecated declaration clear_pstn_event - give arg types
+  extern void clear_pstn_event();
+..\Drive\pstn.h(41): warning:  #1295-D: Deprecated declaration pstn_init - give arg types
+  extern void pstn_init();
+..\Drive\pstn.h(43): warning:  #1295-D: Deprecated declaration get_pstn_state - give arg types
+  extern PSTN_MAIN_STATE get_pstn_state();
+..\Drive\pstn.h(44): warning:  #1295-D: Deprecated declaration check_pstn_hook - give arg types
+  extern void check_pstn_hook();
+..\Drive\pstn.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Drive\uart.c(21): warning:  #223-D: function "wait" declared implicitly
         wait(); //等过起始位    
-..\Drive\uart.c: 7 warnings, 0 errors
+..\Drive\uart.c(143): warning:  #223-D: function "get_pstn_cid_mode" declared implicitly
+                        if (get_pstn_cid_mode() == PSTN_FSK)
+..\Drive\uart.c: 13 warnings, 0 errors
 compiling wdt.c...
 ..\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -221,167 +237,5 @@ compiling main.c...
         return 0;
 ..\User\main.c: 19 warnings, 0 errors
 linking...
-Program Size: Code=5980 RO-data=496 RW-data=12 ZI-data=1684  
-".\lpc_cid.axf" - 0 Error(s), 96 Warning(s).
-t a newline
-  #endif
-..\Drive\uart.h(17): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
-  extern void uart_irq_disable();
-..\Drive\uart.h(18): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
-  extern void uart_irq_enable();
-..\Drive\uart.h(19): warning:  #1295-D: Deprecated declaration uart_recv_init - give arg types
-  extern void uart_recv_init();
-..\Drive\uart.h(20): warning:  #1295-D: Deprecated declaration get_uart_recv_num - give arg types
-  extern int get_uart_recv_num();
-..\Drive\uart.h(21): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-  uint8 recv_byte();
-..\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-  void fsk_init();
-..\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
-  extern void message_handler();
-..\Drive\wdt.h(11): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
-  extern void dtmf_rx_buf_init();
-..\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
-  extern void recv_dtmf();
-..\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
-  extern void dtmf_data_handler();
-..\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\User\main.c(30): warning:  #223-D: function "pstn_init" declared implicitly
-        pstn_init();
-..\User\main.c(42): warning:  #223-D: function "check_pstn_hook" declared implicitly
-                check_pstn_hook();              
-..\User\main.c(46): warning:  #111-D: statement is unreachable
-        return 0;
-..\User\main.c: 19 warnings, 0 errors
-linking...
-Program Size: Code=6248 RO-data=496 RW-data=12 ZI-data=1684  
-".\lpc_cid.axf" - 0 Error(s), 106 Warning(s).
-ation clear_pstn_event - give arg types
-  extern void clear_pstn_event();
-..\Drive\pstn.h(41): warning:  #1295-D: Deprecated declaration pstn_init - give arg types
-  extern void pstn_init();
-..\Drive\pstn.h(43): warning:  #1295-D: Deprecated declaration get_pstn_state - give arg types
-  extern PSTN_MAIN_STATE get_pstn_state();
-..\Drive\pstn.h(44): warning:  #1295-D: Deprecated declaration check_pstn_hook - give arg types
-  extern void check_pstn_hook();
-..\Drive\pstn.h(45): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Drive\com.c(6): error:  #20: identifier "ST_UART_BUF" is undefined
-  extern ST_UART_BUF uartrecv;
-..\Drive\com.c(22): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-        ptr = strstr(databuf, "HOOK:");
-..\Drive\com.c(22): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
-        ptr = strstr(databuf, "HOOK:");
-..\Drive\com.c(26): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                if (atoi(ch) == 0)
-..\Drive\com.c(28): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                else if (atoi(ch) == 1)
-..\Drive\com.c(37): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-        ptr = strstr(databuf, "*");
-..\Drive\com.c(37): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
-        ptr = strstr(databuf, "*");
-..\Drive\com.c(55): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                        hook_status = deal_message(buf, strlen(buf));
-..\Drive\com.c(61): warning:  #223-D: function "time16b1_disable" declared implicitly
-                                time16b1_disable();
-..\Drive\com.c(75): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
-..\Drive\com.c(75): warning:  #1293-D: assignment in condition
-                if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
-..\Drive\com.c(78): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-                        sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
-..\Drive\com.c(79): warning:  #223-D: function "uart_send" declared implicitly
-                        uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-..\Drive\com.c(79): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                        uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-..\Drive\com.c(48): warning:  #550-D: variable "fsk_status" was set but never used
-        int fsk_status;
-..\Drive\com.c(89): warning:  #223-D: function "get_uart_recv_num" declared implicitly
-        if (get_uart_recv_num() > 0)
-..\Drive\com.c(94): warning:  #223-D: function "uart_irq_disable" declared implicitly
-                        uart_irq_disable();
-..\Drive\com.c(95): warning:  #223-D: function "uart_recv_init" declared implicitly
-                        uart_recv_init();
-..\Drive\com.c(96): warning:  #223-D: function "uart_irq_enable" declared implicitly
-                        uart_irq_enable();
-..\Drive\com.c(99): warning:  #1-D: last line of file ends without a newline
-  }
-..\Drive\com.c: 27 warnings, 1 error
-"..\Drive\com.c" - 1 Error(s), 27 Warning(s).
-compiling com.c...
-..\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
-  void fsk_init();
-..\Drive\com.h(7): warning:  #1295-D: Deprecated declaration message_handler - give arg types
-  extern void message_handler();
-..\Drive\main.h(6): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Drive\pstn.h(40): warning:  #1295-D: Deprecated declaration clear_pstn_event - give arg types
-  extern void clear_pstn_event();
-..\Drive\pstn.h(41): warning:  #1295-D: Deprecated declaration pstn_init - give arg types
-  extern void pstn_init();
-..\Drive\pstn.h(43): warning:  #1295-D: Deprecated declaration get_pstn_state - give arg types
-  extern PSTN_MAIN_STATE get_pstn_state();
-..\Drive\pstn.h(44): warning:  #1295-D: Deprecated declaration check_pstn_hook - give arg types
-  extern void check_pstn_hook();
-..\Drive\pstn.h(45): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Drive\uart.h(17): warning:  #1295-D: Deprecated declaration uart_irq_disable - give arg types
-  extern void uart_irq_disable();
-..\Drive\uart.h(18): warning:  #1295-D: Deprecated declaration uart_irq_enable - give arg types
-  extern void uart_irq_enable();
-..\Drive\uart.h(19): warning:  #1295-D: Deprecated declaration uart_recv_init - give arg types
-  extern void uart_recv_init();
-..\Drive\uart.h(20): warning:  #1295-D: Deprecated declaration get_uart_recv_num - give arg types
-  extern int get_uart_recv_num();
-..\Drive\uart.h(21): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-  uint8 recv_byte();
-..\Drive\com.c(23): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-        ptr = strstr(databuf, "HOOK:");
-..\Drive\com.c(23): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
-        ptr = strstr(databuf, "HOOK:");
-..\Drive\com.c(27): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                if (atoi(ch) == 0)
-..\Drive\com.c(29): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                else if (atoi(ch) == 1)
-..\Drive\com.c(38): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-        ptr = strstr(databuf, "*");
-..\Drive\com.c(38): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8 *"
-        ptr = strstr(databuf, "*");
-..\Drive\com.c(56): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                        hook_status = deal_message(buf, strlen(buf));
-..\Drive\com.c(62): warning:  #223-D: function "time16b1_disable" declared implicitly
-                                time16b1_disable();
-..\Drive\com.c(76): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
-..\Drive\com.c(76): warning:  #1293-D: assignment in condition
-                if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
-..\Drive\com.c(79): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-                        sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
-..\Drive\com.c(80): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                        uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-..\Drive\com.c(49): warning:  #550-D: variable "fsk_status" was set but never used
-        int fsk_status;
-..\Drive\com.c(100): warning:  #1-D: last line of file ends without a newline
-  }
-..\Drive\com.c: 27 warnings, 0 errors
-"..\Drive\com.c" - 0 Error(s), 27 Warning(s).
-compiling gpio.c...
-..\Drive\gpio.c(102): warning:  #223-D: function "get_pstn_cid_mode" declared implicitly
-                        if (get_pstn_cid_mode() != PSTN_DTMF)
-..\Drive\gpio.c(102): error:  #20: identifier "PSTN_DTMF" is undefined
-                        if (get_pstn_cid_mode() != PSTN_DTMF)
-..\Drive\gpio.c(108): warning:  #223-D: function "set_pstn_event" declared implicitly
-                        set_pstn_event(PSTN_EVENT_RING);
-..\Drive\gpio.c(108): error:  #20: identifier "PSTN_EVENT_RING" is undefined
-                        set_pstn_event(PSTN_EVENT_RING);
-..\Drive\gpio.c(109): error:  #20: identifier "uartsend_buf" is undefined
-                        memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-..\Drive\gpio.c(110): warning:  #223-D: function "sprintf" declared implicitly
-                        sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0);  //来电振铃通知主控振铃
-..\Drive\gpio.c(111): warning:  #223-D: function "uart_send" declared implicitly
-                        uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\gpio.c: 4 warnings, 3 errors
-"..\Drive\gpio.c" - 3 Error(s), 4 Warning(s).
+Program Size: Code=6020 RO-data=496 RW-data=12 ZI-data=1684  
+".\lpc_cid.axf" - 0 Error(s), 104 Warning(s).

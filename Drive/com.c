@@ -78,6 +78,7 @@ int message_parese(uint8 *buf)
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); //·¢ËÍ¸øÖ÷¿Ø
+			set_pstn_cid_mode(PSTN_CID_IDL);
 			return 1;
 		}
 	}			

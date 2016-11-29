@@ -43,6 +43,7 @@ void dtmf_data_handler()
 	recv_dtmf();  								//怎么检测dtmf来显的完整性
 	if (dtmf_rx_buf.rx_addr > 0)
 	{
-		
+		// 获取到数据之后解析数据，判断数据的完整性，解析出时间和号码
+		//有时间和号码就发送给主控
 	}
 }
