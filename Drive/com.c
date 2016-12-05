@@ -90,7 +90,6 @@ void message_handler()
 	int stat = 0;
 	if (get_uart_recv_num() > 0)
 	{		
-#if 0
 		stat = message_parese(uartrecv.uart_buf);
 		if (stat == 1)
 		{
@@ -98,10 +97,5 @@ void message_handler()
 			uart_recv_init();
 			uart_irq_enable();
 		}
-#endif
-		uart_send(uartrecv.uart_buf, uartrecv.num);
-		//uart_irq_disable();
-		//uart_recv_init();
-		//uart_irq_enable();
 	}		
 }

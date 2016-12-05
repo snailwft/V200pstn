@@ -65,11 +65,9 @@ compiling com.c...
                         set_pstn_cid_mode(PSTN_CID_IDL);
 ..\Drive\com.c(49): warning:  #550-D: variable "fsk_status" was set but never used
         int fsk_status;
-..\Drive\com.c(107): warning:  #1-D: last line of file ends without a newline
+..\Drive\com.c(101): warning:  #1-D: last line of file ends without a newline
   }
-..\Drive\com.c(90): warning:  #177-D: variable "stat" was declared but never referenced
-        int stat = 0;
-..\Drive\com.c: 29 warnings, 0 errors
+..\Drive\com.c: 28 warnings, 0 errors
 compiling ct.c...
 ..\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
   void wait();
@@ -139,15 +137,15 @@ compiling gpio.c...
   #endif
 ..\Drive\gpio.c(104): warning:  #223-D: function "get_pstn_cid_mode" declared implicitly
                         if (get_pstn_cid_mode() == PSTN_CID_IDL)
-..\Drive\gpio.c(108): warning:  #223-D: function "set_pstn_cid_mode" declared implicitly
+..\Drive\gpio.c(109): warning:  #223-D: function "set_pstn_cid_mode" declared implicitly
                                 set_pstn_cid_mode(PSTN_FSK);
-..\Drive\gpio.c(111): warning:  #223-D: function "set_pstn_event" declared implicitly
+..\Drive\gpio.c(112): warning:  #223-D: function "set_pstn_event" declared implicitly
                         set_pstn_event(PSTN_EVENT_RING);
-..\Drive\gpio.c(113): warning:  #223-D: function "sprintf" declared implicitly
+..\Drive\gpio.c(114): warning:  #223-D: function "sprintf" declared implicitly
                         sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0);  //来电振铃通知主控振铃
-..\Drive\gpio.c(114): warning:  #223-D: function "uart_send" declared implicitly
+..\Drive\gpio.c(115): warning:  #223-D: function "uart_send" declared implicitly
                         uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\gpio.c(114): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+..\Drive\gpio.c(115): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
                         uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
 ..\Drive\gpio.c: 12 warnings, 0 errors
 compiling pstn.c...
@@ -233,11 +231,13 @@ compiling main.c...
   #endif
 ..\User\main.c(30): warning:  #223-D: function "pstn_init" declared implicitly
         pstn_init();
-..\User\main.c(47): warning:  #111-D: statement is unreachable
+..\User\main.c(42): warning:  #223-D: function "check_pstn_hook" declared implicitly
+                check_pstn_hook();              
+..\User\main.c(46): warning:  #111-D: statement is unreachable
         return 0;
-..\User\main.c: 18 warnings, 0 errors
+..\User\main.c: 19 warnings, 0 errors
 linking...
-Program Size: Code=6016 RO-data=496 RW-data=12 ZI-data=1684  
+Program Size: Code=6064 RO-data=496 RW-data=12 ZI-data=1684  
 ".\lpc_cid.axf" - 0 Error(s), 104 Warning(s).
 Load "F:\\ip话机项目\\myproject\\lpc_gpio_uart_cpy\\project\\lpc_cid.axf" 
 * JLink Info: Device "UNSPECIFIED" selected (0 KB flash, 0 KB RAM).
@@ -260,7 +260,7 @@ ROMTableAddr = 0xE00FF003
 Target info:
 ------------
 Device: LPC1114FBD48/302
-VTarget = 3.351V
+VTarget = 3.313V
 State of Pins: 
 TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
 Hardware-Breakpoints: 4
@@ -272,6 +272,3 @@ Full Chip Erase Done.
 Programming Done.
 Verify OK.
 Application running ...
-</pre>
-</body>
-</html>
