@@ -71,7 +71,7 @@ int message_parese(uint8 *buf)
 			return 1;
 		}
 	}
-	else  //  fskÀ´ÏÔ
+	else //  fskÀ´ÏÔ
 	{				
 		if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
 		{

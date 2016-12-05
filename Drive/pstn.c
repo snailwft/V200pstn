@@ -83,6 +83,7 @@ void check_pstn_hook()
 					else
 					{
 						st_pstn.event = PSTN_EVENT_POLA;
+						//设置uart开关打向主控
 						//通知主控对方已挂机
 					}
 				}
@@ -104,6 +105,7 @@ void check_pstn_hook()
 					st_pstn.last_pola = temp;
 					st_pstn.polacount = 0;
 					st_pstn.event = PSTN_EVENT_POLA; //表示对方挂机了
+					//设置uart开关打向主控
 					//通知主控对方已挂机
 				}
 			}

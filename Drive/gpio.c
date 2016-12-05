@@ -52,6 +52,7 @@ void gpio_init(void)
 	SET_BIT(LPC_GPIO0, DIR, 9);						//把p0.9设置为输出
 	SET_BIT(LPC_GPIO0, DIR, 7);						//把p0.7设置为输出
 	SET_BIT(LPC_GPIO2, DIR, 0);						//把p2.0设置为输出
+	CLR_BIT(LPC_GPIO2, DATA, 0);					//默认配置成连接主控uart
 
 	CLR_BIT(LPC_GPIO3, DIR, 2);						//把p3.2设置为输入
 	CLR_BIT(LPC_GPIO3, DIR, 4);						//把p3.4设置为输入
@@ -99,6 +100,7 @@ void PIOINT0_IRQHandler(void)
 	if (GET_BIT(LPC_GPIO0, MIS, 8)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
 	{
 		ring_num++;
+#if 0
 		if (ring_num > 15)
 		{			
 			if (get_pstn_cid_mode() == PSTN_CID_IDL)
@@ -114,8 +116,9 @@ void PIOINT0_IRQHandler(void)
 			sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 		}
-		//time16b1_enable();
-		//ring_times = 0;
+#endif
+		time16b1_enable();
+		ring_times = 0;
 	}
 	LPC_GPIO0->IC = 0xFFF;  						 	// 清除GPIO0上的中断
 }

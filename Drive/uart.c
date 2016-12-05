@@ -145,7 +145,7 @@ void UART_IRQHandler(void)
 				if (redata == 0x55) 			//来显数据头
 				{
 					uartrecv.fsk_flag = 1;
-					if (uartrecv.num > 30) // 0x55数量最多不会超过30，如果大于30表示uartrecv_buf填充了很多垃圾数据
+					if (uartrecv.num > 20) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
 					{
 						uartrecv.num = 0;
 					}
@@ -157,7 +157,7 @@ void UART_IRQHandler(void)
 			}
 			else 
 			{
-				if (uartrecv.num >= BUF_MAX_SIZE)
+				if (uartrecv.num >= BUF_MAX_SIZE2)
 				{
 					uartrecv.num = 0;
 				}
