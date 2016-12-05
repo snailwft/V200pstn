@@ -157,6 +157,10 @@ void UART_IRQHandler(void)
 			}
 			else 
 			{
+				if (uartrecv.num >= BUF_MAX_SIZE)
+				{
+					uartrecv.num = 0;
+				}
 				uartrecv.uart_buf[uartrecv.num++] = redata;	
 			}
 		}
