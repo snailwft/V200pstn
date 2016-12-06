@@ -4,5 +4,6 @@
 void gpio_init(void);
 void Delay_1ms(void);
 void Delay_Nms(uint32 N);
+uint8 recv_byte();
 
 #endif

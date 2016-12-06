@@ -10,3 +10,4 @@
 .\gpio.o: ..\Drive\gpio.h
 .\gpio.o: ..\Drive\pstn.h
 .\gpio.o: ..\Drive\main.h
+.\gpio.o: ..\Drive\uart.h

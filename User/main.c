@@ -16,7 +16,7 @@
  0:表示不振铃或挂机
 */
 
-uint8 uartrecv_buf[BUF_MAX_SIZE] = {0}, uartsend_buf[BUF_MAX_SIZE] = {0};					//用来作为模拟串口接收数据的缓存    
+uint8 uartrecv_buf[BUF_MAX_SIZE] = {0}, uartsend_buf[BUF_MAX_SIZE] = {0};	//用来作为模拟串口接收数据的缓存    
 uint8 ring_times = 0, ring_num = 0, recv_num = 0, fsk_flag = 0, fsk_clear = 0;
 
 void init(void)
@@ -26,6 +26,9 @@ void init(void)
 	fsk_init();								// fsk缓冲区初始化
 	dtmf_rx_buf_init();
 	time16b1_int_init(1000);		// 16位定时器1 1秒定时并产生中断
+	//time16b0_init_19200();		// 16倍波特率
+	time16b0_init_2400();
+	//time16b0_int_1200();
 	uart_init(1200); 						// 串口，并设置波特率	
 	pstn_init();
 	wdt_enable();
@@ -37,12 +40,11 @@ int main(void)
 	init();
 	while (1)
 	{		
-		tim16b0_delay_ms(100);
-		wdt_feed();     					// 喂狗
+		//tim16b0_delay_ms(100);
+		wdt_feed();     						// 喂狗
 		check_pstn_hook();		
 		message_handler();
-		dtmf_data_handler(); 
+		//dtmf_data_handler(); 
 	}
 	return 0;
 }
-

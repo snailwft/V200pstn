@@ -18,6 +18,5 @@ extern void uart_irq_disable();
 extern void uart_irq_enable();
 extern void uart_recv_init();
 extern int get_uart_recv_num();
-uint8 recv_byte();
 #endif
 

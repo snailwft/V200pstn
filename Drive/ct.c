@@ -74,6 +74,21 @@ void time16b0_init_19200()
 	//NVIC_EnableIRQ(TIMER_16_0_IRQn);   // 使能TIM32B0中断	不注册中断函数，当中断来时防止进入中断函数
 }
 
+void time16b0_init_2400()
+{
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<7);	//使能TIM16B0时钟
+	LPC_TMR16B0->TCR = 0x02;			//复位定时器（bit1：写1复位）
+	LPC_TMR16B0->PR  = 100;				//把预分频寄存器置0，使PC+1，TC+1
+	LPC_TMR16B0->MR0 = 200;				//在48Mhz下工作的比较值，其它请修改
+	//LPC_TMR16B0->MR0 = 433;	   //概率很低 ，有点快
+	//LPC_TMR16B0->MR0 = 434;
+	//LPC_TMR16B0->MR0 = 435;	   //读慢了
+	LPC_TMR16B0->IR  = 0x01;				//MR0中断标志复位,即清中断（bit0:MR0, bit1:MR1, bit2:MR2, bit3:MR3, bit4:CP0）
+	LPC_TMR16B0->MCR = 0x03;			//MR0与TC值匹配时产生中断，MR0与TC值匹配时使TC复位
+	LPC_TMR16B0->TCR = 0x00;			//关闭定时器：TCR[0]=1;
+	//NVIC_EnableIRQ(TIMER_16_0_IRQn);   // 使能TIM32B0中断	不注册中断函数，当中断来时防止进入中断函数
+}
+
 #if 0
 void time16b0_int_1200()
 {
@@ -99,12 +114,12 @@ void time16b0_int_1200()
 void tim16b0_delay_ms(uint32 ms)
 {
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<7);	
-	LPC_TMR16B0->TCR = 0x02;		//复位定时器（bit1：写1复位）
-	LPC_TMR16B0->PR  = ms;		//把预分频寄存器置1000，使PC+1，TC+1
+	LPC_TMR16B0->TCR = 0x02;			//复位定时器（bit1：写1复位）
+	LPC_TMR16B0->PR  = ms;				//把预分频寄存器置1000，使PC+1，TC+1
 	LPC_TMR16B0->MR0 = 1000 * 48;	//在48Mhz下工作的值，其它请修改
-	LPC_TMR16B0->IR  = 0x01;		 	//MR0中断复位,即清中断（bit0:MR0, bit1:MR1, bit2:MR2, bit3:MR3, bit4:CP0）
-	LPC_TMR16B0->MCR = 0x04;		//MR0邋禁止中断，MR0与TC值匹配时停止TC和PC，并使TCR[0]=0, 停止定时器工作
-	LPC_TMR16B0->TCR = 0x01;		//启动定时器：TCR[0]=1;
+	LPC_TMR16B0->IR  = 0x01;		 		//MR0中断复位,即清中断（bit0:MR0, bit1:MR1, bit2:MR2, bit3:MR3, bit4:CP0）
+	LPC_TMR16B0->MCR = 0x04;			//MR0邋禁止中断，MR0与TC值匹配时停止TC和PC，并使TCR[0]=0, 停止定时器工作
+	LPC_TMR16B0->TCR = 0x01;			//启动定时器：TCR[0]=1;
 	  
 	while (LPC_TMR16B0->TCR & 0x01);//等待定时器计时时间到
 }
@@ -177,7 +192,7 @@ void TIMER16_1_IRQHandler(void)
 			{
 				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
 				//SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032		
-				SET_BIT(LPC_GPIO2, DATA, 0);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032	
+				//SET_BIT(LPC_GPIO2, DATA, 0);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032	
 				set_pstn_cid_mode(PSTN_FSK);
 			}
 			set_pstn_event(PSTN_EVENT_RING);

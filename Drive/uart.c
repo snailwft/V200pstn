@@ -11,25 +11,6 @@ extern uint8 recv_num, fsk_flag, fsk_clear;
  0:表示不振铃或挂机
 */
 
-//接收一个字符 
-uint8 recv_byte() 
-{      
-	uint8 Output = 0;
-	uint8 i = 8;
-	//SET_BIT(LPC_GPIO1,DATA,9);				  // 开LED2	
-	LPC_TMR16B0->TCR = 0x01;  //启动Timer16 0
-	wait(); //等过起始位	
-	//CLR_BIT(LPC_GPIO1,DATA,9);  	 		  // 关LED2		
-	while(i--) //接收8位数据
-	{
-		Output >>= 1; //先收低位
-		if(GET_BIT(LPC_GPIO0,DATA,11) > 0) 		//高电平
-			Output |= 0x80;			
-		wait(); 			//位间延时		
-	}
-	LPC_TMR16B0->TCR = 0x00;  	//停止Timer0
-	return Output;
-}
 /********************************************************
 * FunctionName   : UART_Init()
 * Description    : 串口初始化
@@ -127,7 +108,7 @@ int get_uart_recv_num()
 {
 	return uartrecv.num;
 }
-
+#if 1
 void UART_IRQHandler(void)
 {
 	uint32 IRQ_ID;		  				// 定义读取中断ID号变量
@@ -145,7 +126,7 @@ void UART_IRQHandler(void)
 				if (redata == 0x55) 			//来显数据头
 				{
 					uartrecv.fsk_flag = 1;
-					if (uartrecv.num > 20) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
+					if (uartrecv.num > 30) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
 					{
 						uartrecv.num = 0;
 					}
@@ -166,4 +147,5 @@ void UART_IRQHandler(void)
 		}
 	}
 }
+#endif
 
