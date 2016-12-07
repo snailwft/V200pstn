@@ -121,7 +121,9 @@ void UART_IRQHandler(void)
 		while (LPC_UART->LSR & 0x1)
 		{
 			redata = LPC_UART->RBR;
-			if (get_pstn_cid_mode() == PSTN_FSK)
+			//uart_send(&redata, 1);
+#if 0
+			//if (get_pstn_cid_mode() == PSTN_FSK)
 			{
 				if (redata == 0x55) 			//来显数据头
 				{
@@ -129,21 +131,29 @@ void UART_IRQHandler(void)
 					if (uartrecv.num > 30) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
 					{
 						uartrecv.num = 0;
+						memset(uartrecv.uart_buf, 0, sizeof(uartrecv.uart_buf));
 					}
 				}
 				if (uartrecv.num < BUF_MAX_SIZE && uartrecv.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
 				{
 					uartrecv.uart_buf[uartrecv.num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
+					//uart_send(&redata, 1);
 				}
 			}
-			else 
+#endif
+#if 1
+			//else 
 			{
 				if (uartrecv.num >= BUF_MAX_SIZE2)
 				{
 					uartrecv.num = 0;
+					memset(uartrecv.uart_buf, 0, sizeof(uartrecv.uart_buf));
 				}
 				uartrecv.uart_buf[uartrecv.num++] = redata;	
 			}
+#endif
+
+
 		}
 	}
 }

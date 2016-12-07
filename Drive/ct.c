@@ -188,17 +188,18 @@ void TIMER16_1_IRQHandler(void)
 #endif
 		if (ring_num > 15)
 		{			
-			if (get_pstn_cid_mode() == PSTN_CID_IDL)
+			//if (get_pstn_cid_mode() == PSTN_CID_IDL)
 			{
-				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+				//SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
 				//SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032		
 				//SET_BIT(LPC_GPIO2, DATA, 0);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032	
-				set_pstn_cid_mode(PSTN_FSK);
+			//	set_pstn_cid_mode(PSTN_FSK);
 			}
 			set_pstn_event(PSTN_EVENT_RING);
-#if 1		//不要在这里通知振铃，直接收到来显之后在通知
+			//CLR_BIT(LPC_GPIO0,DATA,9); //摘机		
+#if 1	//不要在这里通知振铃，直接收到来显之后在通知
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-			sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
+			sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0); 	//来电振铃通知主控振铃
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 #endif
 		}
@@ -209,12 +210,12 @@ void TIMER16_1_IRQHandler(void)
 			sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 0, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 #endif
-			if (get_pstn_cid_mode() == PSTN_FSK)
+			//if (get_pstn_cid_mode() == PSTN_FSK)
 			{
-				CLR_BIT(LPC_GPIO1,DATA,9);  	 								//ht9032 拉低PDWN进入休眠模式
+				//CLR_BIT(LPC_GPIO1,DATA,9);  	 								//ht9032 拉低PDWN进入休眠模式
 				CLR_BIT(LPC_GPIO2, DATA, 0);									//uart接向主控
 				set_pstn_cid_mode(PSTN_CID_IDL);
-				uart_recv_init();
+				fsk_buf_int();
 				time16b1_disable();
 			}
 		}

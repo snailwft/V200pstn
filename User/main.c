@@ -26,13 +26,19 @@ void init(void)
 	fsk_init();								// fsk缓冲区初始化
 	dtmf_rx_buf_init();
 	time16b1_int_init(1000);		// 16位定时器1 1秒定时并产生中断
-	//time16b0_init_19200();		// 16倍波特率
 	time16b0_init_2400();
-	//time16b0_int_1200();
 	uart_init(1200); 						// 串口，并设置波特率	
 	pstn_init();
 	wdt_enable();
 	uart_recv_init();
+	fsk_buf_int();
+}
+
+void delay(int ms)
+{
+	int i = 0;
+	for (i = 0; i < ms; i++)
+		__NOP();			  //等待振荡器稳定
 }
 
 int main(void)
@@ -40,7 +46,7 @@ int main(void)
 	init();
 	while (1)
 	{		
-		//tim16b0_delay_ms(100);
+		//delay(500);
 		wdt_feed();     						// 喂狗
 		check_pstn_hook();		
 		message_handler();

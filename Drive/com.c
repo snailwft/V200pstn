@@ -3,8 +3,10 @@
 #include "main.h"
 #include "pstn.h"
 #include "uart.h"
+#include "gpio.h"
 
 extern ST_UART_BUF uartrecv;
+extern ST_FSK_BUF fsk_buf;
 extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE], fsk_flag;					//用来作为模拟串口接收数据的缓存  
 
 /*
@@ -51,6 +53,7 @@ int message_parese(uint8 *buf)
 	
 	if (buf[0] == '&') //主控发送 
 	{					
+		//uart_send(buf, strlen(buf));
 		if (message_integrity(&buf[1])) //检测消息的完整性
 		{
 			hook_status = deal_message(buf, strlen(buf));
@@ -60,7 +63,12 @@ int message_parese(uint8 *buf)
 				clear_pstn_event();	
 				set_pstn_state(PSTN_OFFHOOK);
 				time16b1_disable();
-				CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 拉低PDWN进入休眠模式
+				//CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 拉低PDWN进入休眠模式
+				//if (get_pstn_cid_mode() == PSTN_FSK)
+				{
+				//	set_pstn_cid_mode(PSTN_CID_IDL);
+					fsk_buf_int();// 清空fsk来显缓存区
+				}
 			}
 			else if (hook_status == 0)
 			{
@@ -92,10 +100,16 @@ void message_handler()
 	{		
 		stat = message_parese(uartrecv.uart_buf);
 		if (stat == 1)
-		{
-			uart_irq_disable();
+		{			
 			uart_recv_init();
-			uart_irq_enable();
 		}
 	}		
+	if (get_fsk_buf_num() > 0)
+	{
+		stat = message_parese(fsk_buf.fsk_buf);
+		if (stat == 1)
+		{
+			fsk_buf_int();
+		}
+	}
 }

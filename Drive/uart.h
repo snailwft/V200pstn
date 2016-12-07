@@ -9,6 +9,13 @@ typedef struct
 	int num;	
 }ST_UART_BUF;
 
+typedef struct 
+{
+	uint8 fsk_buf[BUF_MAX_SIZE];
+	uint8 fsk_flag;
+	int num;	
+}ST_FSK_BUF;
+
 extern uint8 Recived_data; // 接收字节
 extern void uart_init(uint32 baudrate);  // 初始化串口
 extern uint8 uart_recive(void);   // 串口接收字节数据

@@ -42,13 +42,13 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 		{
 			if(stFskMeg.ucFSK_Buf[ucTemp] == COMPLEX_MODE)
 			{
-				uart_send("message COMPLEX_MODE", strlen("message COMPLEX_MODE"));
+				//uart_send("message COMPLEX_MODE", strlen("message COMPLEX_MODE"));
 				ucStartPoint = ucTemp;							//FSK数据是复合数据格式
 				ucGetFskStep = 2;
 			}
 			else if(stFskMeg.ucFSK_Buf[ucTemp] == SINGLE_MODE)
 			{
-				uart_send("message SINGLE_MODE", strlen("message SINGLE_MODE"));
+				//uart_send("message SINGLE_MODE", strlen("message SINGLE_MODE"));
 				ucStartPoint = ucTemp;							//FSK数据是单数据格式
 				ucGetFskStep = 3;
 			}
@@ -71,7 +71,7 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 		{
 			if(stFskMeg.ucRecCnt < (ucStartPoint + 2 + stFskMeg.ucFSK_Buf[ucStartPoint + 1]))	//保证收齐数据再处理
 			{
-				uart_send("message not complete", strlen("message not complete"));
+				//uart_send("message not complete", strlen("message not complete"));
 				return 0;
 			}
 			for(ucTemp1 = ucStartPoint; ucTemp1 < (ucStartPoint + 2 + stFskMeg.ucFSK_Buf[ucStartPoint + 1]); ucTemp1++)
@@ -85,7 +85,7 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 		{
 			if(stFskMeg.ucRecCnt < (ucStartPoint + 2 + stFskMeg.ucFSK_Buf[ucStartPoint + 1]))	//保证收齐数据再处理
 			{
-				uart_send("message not complete", strlen("message not complete"));
+				//uart_send("message not complete", strlen("message not complete"));
 				return 0;
 			}
 			for(ucTemp1 = ucStartPoint; ucTemp1 < (ucStartPoint + 2 + stFskMeg.ucFSK_Buf[ucStartPoint + 1]); ucTemp1++)
@@ -108,11 +108,12 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 			stFskMeg.ucNumLength = stFskMeg.ucFSK_Buf[ucStartPoint + 1] - 8;
 
 			//HT9032_PD_SET;
-			CLR_BIT(LPC_GPIO1, DATA, 9);  	 	// 拉低PDWN进入休眠模式
+			//CLR_BIT(LPC_GPIO1, DATA, 9);  	 	// 拉低PDWN进入休眠模式
 			//CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
 			CLR_BIT(LPC_GPIO2, DATA, 0);
 			stFskMeg.ucGetFlag = 1;				//置收到号码标志
 			stFskMeg.ucRecCnt = 0;
+			//uart_send(stFskMeg.ucFSK_Buf, strlen(stFskMeg.ucFSK_Buf));
 			return 1;
 		}
 		else if(ucGetFskStep == 4)
@@ -133,7 +134,7 @@ int CheckFSKMessage(uint8 * DataBuf, uint8 DataLength)
 					stFskMeg.ucFskNum[ucTemp1] = stFskMeg.ucFSK_Buf[ucTemp + 2 + ucTemp1];
 				}
 				stFskMeg.ucNumLength = stFskMeg.ucFSK_Buf[ucTemp + 1];
-				CLR_BIT(LPC_GPIO1,DATA,9); // 拉低PDWN进入休眠模式
+				//CLR_BIT(LPC_GPIO1,DATA,9); // 拉低PDWN进入休眠模式
 				//CLR_BIT(LPC_GPIO0, DATA, 11); 		//拉低切换到主控
 				CLR_BIT(LPC_GPIO2, DATA, 0);
 				stFskMeg.ucRecCnt = 0;

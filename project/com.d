@@ -14,3 +14,4 @@
 .\com.o: ..\Drive\main.h
 .\com.o: ..\Drive\pstn.h
 .\com.o: ..\Drive\uart.h
+.\com.o: ..\Drive\gpio.h
