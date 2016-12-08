@@ -219,6 +219,7 @@ void PIOINT1_IRQHandler(void)
 				if (fsk_buf.num < BUF_MAX_SIZE && fsk_buf.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
 				{
 					fsk_buf.fsk_buf[fsk_buf.num++] = redata;	  						//从RXFIFO中读取接收到的数据 ，控制数据量
+					uart_send(&redata, 1);
 				}
 #endif
 			}
