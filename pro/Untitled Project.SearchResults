@@ -1,20 +1,51 @@
----- recv_byte Matches (15 in 6 files) ----
-Lpc_project.htm:<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_byte
-Lpc_project.htm:<P><STRONG><a name="[50]"></a>recv_byte</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, uart.o(.text), UNUSED)
-Lpc_project.map:    recv_byte                                0x0000083d   Thumb Code    50  uart.o(.text)
-Lpc_project.plg:.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:.\Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Lpc_project.plg:Drive\uart.h(12): warning:  #1295-D: Deprecated declaration recv_byte - give arg types
-Uart.c (drive):uint8 recv_byte() 
-Uart.crf:recv_byte
-Uart.h (drive):uint8 recv_byte();
----- recv_byte Search Errors Encountered (2) ----
-The following 2 files could not be processed:
-F:\ip话机项目\myproject\lpc_gpio_uart_cpy\pro\Untitled Project.IAB : File could not be opened.
-F:\ip话机项目\myproject\lpc_gpio_uart_cpy\pro\Untitled Project.IMB : File could not be opened.
+---- LPC_GPIO1 Matches (50 in 10 files) ----
+Com.c (drive):				CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 拉低PDWN进入休眠模式
+Com.crf (project):LPC_GPIO1
+Ct.c (drive):				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+Ct.c (drive):				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+Ct.c (drive):				CLR_BIT(LPC_GPIO1,DATA,9);  	 								//ht9032 拉低PDWN进入休眠模式
+Dtmf.c (drive):	if (GET_BIT(LPC_GPIO1, DATA, 11)) //判断有没有数据
+Dtmf.c (drive):		SET_BIT(LPC_GPIO1, DATA, 10); //使能			
+Dtmf.c (drive):		uc_dtmf = GET_BITS(LPC_GPIO1, DATA);
+Dtmf.c (drive):		if (GET_BIT(LPC_GPIO1, DATA, 8))
+Dtmf.c (drive):		//CLR_BIT(LPC_GPIO1, DATA, 10); // 这个地方把开关关闭了导致没有数据输出
+Fsk.c (drive):			CLR_BIT(LPC_GPIO1, DATA, 9);  	 	// 拉低PDWN进入休眠模式
+Fsk.c (drive):				CLR_BIT(LPC_GPIO1,DATA,9); // 拉低PDWN进入休眠模式
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,0); 						//把P1.0设置为输入
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,1); 						//设置p1.1为输入
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,2); 						//把p1.2设置为输入
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,8); 						//把p1.8设置为输入
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,DIR,9); 						//把P1.9设置为输出
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,DIR,10);						//把p1.10设置为输出
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,11);						//把P1.11设置为输入
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,IS,0); //选择P1.0为边沿触发   PSTN_DOUT_MCU
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,IEV,0);	//选择P1.0为下降沿触发		PSTN_DOUT_MCU
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,IE,0); //设置P1.0中断不被屏蔽
+Gpio.c (drive):	//CLR_BIT(LPC_GPIO1,IS,2); //选择P1.2为边沿触发   PSTN_RDET_MCU
+Gpio.c (drive):	//CLR_BIT(LPC_GPIO1,IEV,2);//选择P1.2为下降沿触发 
+Gpio.c (drive):	//SET_BIT(LPC_GPIO1,IE,2); //设置P1.2中断不被屏蔽
+Gpio.c (drive):	//CLR_BIT(LPC_GPIO1,IS,1); //选择P1.1为边沿触发   PSTN_CDET_MCU
+Gpio.c (drive):	//SET_BIT(LPC_GPIO1,IEV,1);//选择P1.1为上升沿触发 
+Gpio.c (drive):	//SET_BIT(LPC_GPIO1,IE,1); //设置P1.1中断不被屏蔽
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,0); 						//把P1.0设置为输入
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,1); 						//设置p1.1为输入
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,2); 						//把p1.2设置为输入
+Gpio.c (drive):	CLR_BIT(LPC_GPIO1,DIR,8); 						//把p1.8设置为输入
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,DIR,0); 						//把P1.0设置为输出
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,DIR,1); 						//设置p1.1为输出
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,DIR,2); 						//把p1.2设置为输出
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,DIR,8); 						//把p1.8设置为输出
+Gpio.c (drive):				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+Gpio.c (drive):	//SET_BIT(LPC_GPIO1,DATA,9);				  // 开LED2	
+Gpio.c (drive):	//CLR_BIT(LPC_GPIO1,DATA,9);  	 		  // 关LED2		
+Gpio.c (drive):		if(GET_BIT(LPC_GPIO1, DATA, 1) > 0) 		//高电平
+Gpio.c (drive):	if (GET_BIT(LPC_GPIO1, MIS, 0)!=0)	      // 检测P1.0引脚产生的中断 PSTN_DOUT_MCU 下降沿触发中断
+Gpio.c (drive):		if (GET_BIT(LPC_GPIO1, DATA, 0) == 0)	
+Gpio.c (drive):		CLR_BIT(LPC_GPIO1,IE,0); //设置P1.0中断屏蔽
+Gpio.c (drive):		if (GET_BIT(LPC_GPIO1, DATA, 0) == 0)		
+Gpio.c (drive):	SET_BIT(LPC_GPIO1,IE,0); 						//设置P1.0中断不屏蔽
+Gpio.c (drive):	LPC_GPIO1->IC = 0xFFF;  						 	// 清除GPIO1上的中断
+LPC11xx.h (system):#define LPC_GPIO1             ((LPC_GPIO_TypeDef   *) LPC_GPIO1_BASE )
+Pstn.crf (project):LPC_GPIO1
+System_lpc11xx.crf (project):LPC_GPIO1
+Wdt.crf (project):LPC_GPIO1

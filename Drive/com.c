@@ -83,10 +83,16 @@ int message_parese(uint8 *buf)
 	{				
 		if (fsk_status = CheckFSKMessage(buf, strlen(buf)) > 0)
 		{
+			uart_irq_disable();
+			uart_recv_init();
+			uart_irq_enable();
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
 			set_pstn_cid_mode(PSTN_CID_IDL);
+			CLR_BIT(LPC_GPIO1, DATA, 9);  	 	// 拉低PDWN进入休眠模式
+			delay(100);
+			SET_BIT(LPC_GPIO1, DATA, 9);  
 			return 1;
 		}
 	}			
@@ -101,7 +107,9 @@ void message_handler()
 		stat = message_parese(uartrecv.uart_buf);
 		if (stat == 1)
 		{			
+			uart_irq_disable();
 			uart_recv_init();
+			uart_irq_enable();
 		}
 	}		
 	if (get_fsk_buf_num() > 0)

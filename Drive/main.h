@@ -4,4 +4,6 @@
 #define BUF_MAX_SIZE				200
 #define BUF_MAX_SIZE2			100
 
+void delay(int ms);
+
 #endif

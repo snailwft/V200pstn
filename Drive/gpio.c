@@ -81,7 +81,7 @@ void gpio_init(void)
 	//SET_BIT(LPC_GPIO1,IE,1); //设置P1.1中断不被屏蔽
 	
 	//第四步，开GPIO1中断
-	NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
+	//NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
 	NVIC_EnableIRQ(EINT0_IRQn);	// 使能GPIO0中断
 }
 
@@ -186,7 +186,7 @@ void gpio_irq_enable()
 {
 	SET_BIT(LPC_GPIO1,IE,0); 						//设置P1.0中断不屏蔽
 }
-#if 1
+#if 0
 void PIOINT1_IRQHandler(void)
 {
 	int i = 0; 
@@ -217,7 +217,7 @@ void PIOINT1_IRQHandler(void)
 				}
 				if (fsk_buf.num < BUF_MAX_SIZE && fsk_buf.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
 				{
-					fsk_buf.fsk_buf[fsk_buf.num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
+					fsk_buf.fsk_buf[fsk_buf.num++] = redata;	  						//从RXFIFO中读取接收到的数据 ，控制数据量
 				}
 #endif
 			}
