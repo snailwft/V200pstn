@@ -81,7 +81,7 @@ void gpio_init(void)
 	//SET_BIT(LPC_GPIO1,IE,1); //设置P1.1中断不被屏蔽
 	
 	//第四步，开GPIO1中断
-	//NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
+	NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
 	NVIC_EnableIRQ(EINT0_IRQn);	// 使能GPIO0中断
 }
 
@@ -123,6 +123,7 @@ void PIOINT0_IRQHandler(void)
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 		}
 #endif
+		SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
 		time16b1_enable();
 		ring_times = 0;
 	}
@@ -186,7 +187,7 @@ void gpio_irq_enable()
 {
 	SET_BIT(LPC_GPIO1,IE,0); 						//设置P1.0中断不屏蔽
 }
-#if 0
+#if 1
 void PIOINT1_IRQHandler(void)
 {
 	int i = 0; 

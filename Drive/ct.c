@@ -212,7 +212,7 @@ void TIMER16_1_IRQHandler(void)
 #endif
 			//if (get_pstn_cid_mode() == PSTN_FSK)
 			{
-				//CLR_BIT(LPC_GPIO1,DATA,9);  	 								//ht9032 拉低PDWN进入休眠模式
+				CLR_BIT(LPC_GPIO1,DATA,9);  	 								//ht9032 拉低PDWN进入休眠模式
 				CLR_BIT(LPC_GPIO2, DATA, 0);									//uart接向主控
 				set_pstn_cid_mode(PSTN_CID_IDL);
 				fsk_buf_int();

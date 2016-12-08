@@ -122,7 +122,7 @@ void UART_IRQHandler(void)
 		{
 			redata = LPC_UART->RBR;
 			//uart_send(&redata, 1);
-#if 1
+#if 0
 			//if (get_pstn_cid_mode() == PSTN_FSK)
 			{
 				if (redata == 0x55) 			//来显数据头
@@ -141,7 +141,7 @@ void UART_IRQHandler(void)
 				}
 			}
 #endif
-#if 0
+#if 1
 			//else 
 			{
 				if (uartrecv.num >= BUF_MAX_SIZE2)
