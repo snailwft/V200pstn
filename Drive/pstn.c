@@ -75,11 +75,11 @@ void check_pstn_hook()
 				{
 					st_pstn.last_pola = temp;
 					st_pstn.polacount = 0;
-					if (st_pstn.cid_mode == PSTN_CID_IDL) // 万一还没收到来显就挂了，同时也没有振铃  
+					if (st_pstn.cid_mode == PSTN_CID_IDL) // 万一还没收到来显就挂了，同时也没有振铃,对方挂机pstn网络应该会发忙音来通知，是不需要协处理器来做了  
 					{
 						//st_pstn.cid_mode = PSTN_DTMF;
 						//uart_send("PSTN_CID_IDL", 12);
-						st_pstn.event = PSTN_EVENT_POLA; // 表示有dtmf来显,接着就会有振铃
+						st_pstn.event = PSTN_EVENT_POLA; // 表示有dtmf来显,接着就会有振铃,让接收dtmf来显的芯片一直使能
 					}
 					else
 					{

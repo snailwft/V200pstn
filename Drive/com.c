@@ -114,7 +114,6 @@ int master_message_parese(uint8 *buf)
 	
 	if (buf[0] == '&') //主控发送 
 	{					
-		//uart_send(buf, strlen(buf));
 		if (message_integrity(&buf[1])) //检测消息的完整性
 		{
 			hook_status = deal_message(buf, strlen(buf));
@@ -125,11 +124,7 @@ int master_message_parese(uint8 *buf)
 				set_pstn_state(PSTN_OFFHOOK);
 				time16b1_disable();
 				CLR_BIT(LPC_GPIO1,DATA,9);  	 	//ht9032 拉低PDWN进入休眠模式
-				//if (get_pstn_cid_mode() == PSTN_FSK)
-				{
-				//	set_pstn_cid_mode(PSTN_CID_IDL);
-					fsk_buf_int();// 清空fsk来显缓存区
-				}
+				fsk_buf_int();// 清空fsk来显缓存区
 			}
 			else if (hook_status == 0)
 			{
@@ -168,7 +163,6 @@ int fsk_message_handler(uint8 *buf)
 		memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 		sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
 		uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-		set_pstn_cid_mode(PSTN_CID_IDL);
 		CLR_BIT(LPC_GPIO1, DATA, 9);  	 	// 拉低PDWN进入休眠模式
 		return 1;
 	}

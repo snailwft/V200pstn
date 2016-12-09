@@ -105,24 +105,7 @@ void PIOINT0_IRQHandler(void)
 {
 	if (GET_BIT(LPC_GPIO0, MIS, 8)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
 	{
-		ring_num++;
-#if 0
-		if (ring_num > 15)
-		{			
-			if (get_pstn_cid_mode() == PSTN_CID_IDL)
-			{
-				SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
-				//SET_BIT(LPC_GPIO0, DATA, 11);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032		
-				SET_BIT(LPC_GPIO2, DATA, 0);					//拉高接通ht9032串口  ,如果是dtmf来显，不需要操作ht9032	
-				set_pstn_cid_mode(PSTN_FSK);
-			}
-			ring_num = 0;
-			set_pstn_event(PSTN_EVENT_RING);
-			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-			sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, NULL, NULL, 0); 	//来电振铃通知主控振铃
-			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
-		}
-#endif
+		ring_num++;		
 		SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
 		time16b1_enable();
 		ring_times = 0;
@@ -202,27 +185,24 @@ void PIOINT1_IRQHandler(void)
 		// 读取该gpio脚电平是否还是低(低电平表示start位)
 		if (GET_BIT(LPC_GPIO1, DATA, 0) == 0)		
 		{		
-			//if (get_pstn_cid_mode() == PSTN_FSK)
-			{
-				redata = recv_byte2();
-				//uart_send(&redata, 1);
+			redata = recv_byte2();
+			//uart_send(&redata, 1);
 #if 1
-				if (redata == 0x55) 			//来显数据头
+			if (redata == 0x55) 			//来显数据头
+			{
+				fsk_buf.fsk_flag = 1;
+				if (fsk_buf.num > 40) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
 				{
-					fsk_buf.fsk_flag = 1;
-					if (fsk_buf.num > 40) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
-					{
-						fsk_buf.num = 0;
-						memset(fsk_buf.fsk_buf, 0, sizeof(fsk_buf.fsk_buf));
-					}
+					fsk_buf.num = 0;
+					memset(fsk_buf.fsk_buf, 0, sizeof(fsk_buf.fsk_buf));
 				}
-				if (fsk_buf.num < BUF_MAX_SIZE && fsk_buf.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
-				{
-					fsk_buf.fsk_buf[fsk_buf.num++] = redata;	  						//从RXFIFO中读取接收到的数据 ，控制数据量
-					uart_send(&redata, 1);
-				}
-#endif
 			}
+			if (fsk_buf.num < BUF_MAX_SIZE && fsk_buf.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
+			{
+				fsk_buf.fsk_buf[fsk_buf.num++] = redata;	  						//从RXFIFO中读取接收到的数据 ，控制数据量
+				uart_send(&redata, 1);
+			}
+#endif
 		}
 	}
 	SET_BIT(LPC_GPIO1,IE,0); 						//设置P1.0中断不屏蔽
