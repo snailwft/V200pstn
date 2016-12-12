@@ -3,7 +3,8 @@
 #include "pstn.h"
 
 ST_UART_BUF uartrecv, uartsend;
-extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
+extern ST_FSK_BUF fsk_buf;
+extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE]; //用来作为模拟串口接收数据的缓存  
 extern uint8 recv_num, fsk_flag, fsk_clear;
 /*
  *RING:1/0:CID:0704121313016054035:HOOK:1/0*
@@ -122,26 +123,23 @@ void UART_IRQHandler(void)
 		{
 			redata = LPC_UART->RBR;
 			//uart_send(&redata, 1);
-#if 0
-			//if (get_pstn_cid_mode() == PSTN_FSK)
+#if 1
+			if (redata == 0x55) 			//来显数据头
 			{
-				if (redata == 0x55) 			//来显数据头
+				fsk_buf.fsk_flag = 1;
+				if (fsk_buf.num > 10) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
 				{
-					uartrecv.fsk_flag = 1;
-					if (uartrecv.num > 10) // 0x55数量最多不会超过20，如果大于30表示uartrecv_buf填充了很多垃圾数据
-					{
-						uartrecv.num = 0;
-						memset(uartrecv.uart_buf, 0, sizeof(uartrecv.uart_buf));
-					}
-				}
-				if (uartrecv.num < BUF_MAX_SIZE && uartrecv.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
-				{
-					uartrecv.uart_buf[uartrecv.num++] = redata;	  				//从RXFIFO中读取接收到的数据 ，控制数据量
-					uart_send(&redata, 1);
+					fsk_buf.num = 0;
+					memset(fsk_buf.fsk_buf, 0, sizeof(fsk_buf.fsk_buf));
 				}
 			}
+			if (fsk_buf.num < BUF_MAX_SIZE && fsk_buf.fsk_flag == 1) 	//存在风险，万一recv_num没有清0
+			{
+				fsk_buf.fsk_buf[fsk_buf.num++] = redata;	  						//从RXFIFO中读取接收到的数据 ，控制数据量
+				uart_send(&redata, 1);
+			}
 #endif
-#if 1
+#if 0
 			//else 
 			{
 				if (uartrecv.num >= BUF_MAX_SIZE2)

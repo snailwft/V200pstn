@@ -46,7 +46,7 @@ void gpio_init(void)
 	CLR_BIT(LPC_GPIO1,DIR,8); 						//把p1.8设置为输入
 	
 	SET_BIT(LPC_GPIO1,DIR,9); 						//把P1.9设置为输出
-	SET_BIT(LPC_GPIO1, DATA,9); 
+	SET_BIT(LPC_GPIO1, DATA,9); 					//休眠ht9032d
 	SET_BIT(LPC_GPIO1,DIR,10);						//把p1.10设置为输出
 	
 	CLR_BIT(LPC_GPIO1,DIR,11);						//把P1.11设置为输入
@@ -55,7 +55,8 @@ void gpio_init(void)
 	SET_BIT(LPC_GPIO0, DIR, 9);						//把p0.9设置为输出
 	SET_BIT(LPC_GPIO0, DIR, 7);						//把p0.7设置为输出
 	SET_BIT(LPC_GPIO2, DIR, 0);						//把p2.0设置为输出
-	CLR_BIT(LPC_GPIO2, DATA, 0);					//默认配置成连接主控uart
+	//CLR_BIT(LPC_GPIO2, DATA, 0);					//默认配置成连接主控uart
+	SET_BIT(LPC_GPIO2, DATA, 0);					//默认配置成连接ht9032d
 
 	CLR_BIT(LPC_GPIO3, DIR, 2);						//把p3.2设置为输入
 	CLR_BIT(LPC_GPIO3, DIR, 4);						//把p3.4设置为输入
@@ -106,11 +107,11 @@ void PIOINT0_IRQHandler(void)
 	if (GET_BIT(LPC_GPIO0, MIS, 8)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
 	{
 		ring_num++;		
-		SET_BIT(LPC_GPIO1, DATA,9);  	 				//拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+		SET_BIT(LPC_GPIO1, DATA,9);  	 		 //拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
 		time16b1_enable();
 		ring_times = 0;
 	}
-	LPC_GPIO0->IC = 0xFFF;  						 	// 清除GPIO0上的中断
+	LPC_GPIO0->IC = 0xFFF;  						 // 清除GPIO0上的中断
 }
 
 #if 1
