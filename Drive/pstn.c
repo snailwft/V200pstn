@@ -1,7 +1,9 @@
 #include "pstn.h"
 #include "config.h"
+#include "main.h"
 
 ST_PSTN   st_pstn;
+extern uint8 uartsend_buf[BUF_MAX_SIZE];
 
 void clear_pstn_event()
 {
@@ -86,6 +88,9 @@ void check_pstn_hook()
 						st_pstn.event = PSTN_EVENT_POLA;
 						//设置uart开关打向主控
 						//通知主控对方已挂机
+						memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+						sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1); 	//来电振铃通知主控振铃
+						uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 					}
 				}
 			}
@@ -108,6 +113,9 @@ void check_pstn_hook()
 					st_pstn.event = PSTN_EVENT_POLA; //表示对方挂机了
 					//设置uart开关打向主控
 					//通知主控对方已挂机
+					memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+					sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1); 	//来电振铃通知主控振铃
+					uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 				}
 			}
 			else 

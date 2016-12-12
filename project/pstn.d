@@ -8,3 +8,4 @@
 .\pstn.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h
 .\pstn.o: e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h
 .\pstn.o: ..\User\../system/system_LPC11xx.h
+.\pstn.o: ..\Drive\main.h

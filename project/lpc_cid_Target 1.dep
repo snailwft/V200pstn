@@ -78,7 +78,7 @@ I (..\Drive\gpio.h)(0x58490BDF)
 I (..\Drive\pstn.h)(0x58451ACF)
 I (..\Drive\main.h)(0x58490BDF)
 I (..\Drive\uart.h)(0x58490BDF)
-F (..\Drive\pstn.c)(0x584A1824)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\Drive -I..\System -I..\User-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\pstn.o --omf_browse .\pstn.crf --depend .\pstn.d)
+F (..\Drive\pstn.c)(0x584E3FA9)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\Drive -I..\System -I..\User-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\pstn.o --omf_browse .\pstn.crf --depend .\pstn.d)
 I (..\Drive\pstn.h)(0x58451ACF)
 I (..\User\config.h)(0x58451ACF)
 I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
@@ -88,6 +88,7 @@ I (e:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
 I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302A2D0)
 I (e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302A2D0)
 I (..\User\../system/system_LPC11xx.h)(0x57FDF46B)
+I (..\Drive\main.h)(0x58490BDF)
 F (..\Drive\uart.c)(0x58490BDF)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I..\Drive -I..\System -I..\User-I e:\Keil_v5\ARM\RV31\INC-I e:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I e:\Keil_v5\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
 I (..\User\config.h)(0x58451ACF)
 I (e:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
