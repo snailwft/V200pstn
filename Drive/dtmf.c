@@ -2,6 +2,7 @@
 #include "config.h"
 
 ST_DTMF_RXBUFF dtmf_rx_buf;
+extern uint8 dtmf_flag, dtmf_time;
 
 void dtmf_rx_buf_init()
 {
@@ -11,9 +12,10 @@ void dtmf_rx_buf_init()
 void recv_dtmf()
 {
 	uint8 uc_dtmf = 0xff, ch;
-	//uart_send("hello", 5);
+
 	if (!GET_BIT(LPC_GPIO1, DATA, 11)) //判断有没有数据
 	{
+		dtmf_flag = 1;
 		SET_BIT(LPC_GPIO1, DATA, 10); //使能			
 		set_dtmf_qn_dir();  //设置成输入 ，接收dtmf码
 		uc_dtmf = GET_BITS(LPC_GPIO1, DATA);
@@ -55,10 +57,17 @@ void recv_dtmf()
 
 void dtmf_data_handler()
 {
+	uint8 uartsend_buf[100] = {0};
 	recv_dtmf();  								//怎么检测dtmf来显的完整性
 	if (dtmf_rx_buf.rx_addr > 0)
 	{
-		// 获取到数据之后解析数据，判断数据的完整性，解析出时间和号码
-		//有时间和号码就发送给主控
+		if (dtmf_time >= 2)
+		{
+			dtmf_time = 0;
+			dtmf_flag = 0;
+			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+			sprintf(uartsend_buf, "&RING:%d:CID:%s:HOOK:%d*", 1, dtmf_rx_buf.dtmf_buff, 0);
+			uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
+		}
 	}
 }

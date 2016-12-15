@@ -137,7 +137,7 @@ void PIOINT0_IRQHandler(void)
 		time16b1_enable();
 		ring_times = 0;
 
-#if 0//不要在这里通知振铃，直接收到来显之后在通知
+#if 1//不要在这里通知振铃，直接收到来显之后在通知
 		memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 		sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0); 	//来电振铃通知主控振铃
 		uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控

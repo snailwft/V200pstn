@@ -69,7 +69,6 @@ void check_pstn_hook()
 				temp = 1;
 			else 
 				temp = 0;
-
 			if (st_pstn.last_pola != temp)
 			{
 				st_pstn.polacount++;
@@ -77,17 +76,16 @@ void check_pstn_hook()
 				{
 					st_pstn.last_pola = temp;
 					st_pstn.polacount = 0;
+#if 1
 					if (st_pstn.cid_mode == PSTN_CID_IDL) // 万一还没收到来显就挂了，同时也没有振铃,对方挂机pstn网络应该会发忙音来通知，是不需要协处理器来做了  
 					{
-						//st_pstn.cid_mode = PSTN_DTMF;
-						//uart_send("PSTN_CID_IDL", 12);
+						st_pstn.cid_mode = PSTN_DTMF;
 						st_pstn.event = PSTN_EVENT_POLA; // 表示有dtmf来显,接着就会有振铃,让接收dtmf来显的芯片一直使能
 					}
+#endif
 					else
 					{
 						st_pstn.event = PSTN_EVENT_POLA;
-						//设置uart开关打向主控
-						//通知主控对方已挂机
 						memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 						sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1); 	//来电振铃通知主控振铃
 						uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
@@ -111,8 +109,6 @@ void check_pstn_hook()
 					st_pstn.last_pola = temp;
 					st_pstn.polacount = 0;
 					st_pstn.event = PSTN_EVENT_POLA; //表示对方挂机了
-					//设置uart开关打向主控
-					//通知主控对方已挂机
 					memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 					sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1); 	//来电振铃通知主控振铃
 					uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
@@ -122,7 +118,7 @@ void check_pstn_hook()
 				st_pstn.polacount = 0;
 			break;
 	 }
-#if 1
+#if 0
 	CPL_BIT(LPC_GPIO0,DATA,9); //摘挂机	
 	//CLR_BIT(LPC_GPIO0,DATA,9); // 摘机
 	//delay(2000);

@@ -4,7 +4,7 @@
 #include "config.h"
 #include <stdio.h>
 #include <string.h>
-#define        MAX_DTMF_BUFF                100
+#define        MAX_DTMF_BUFF                15
 
 typedef struct
 {

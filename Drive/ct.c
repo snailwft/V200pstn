@@ -6,7 +6,7 @@
 #include "uart.h"
 
 extern uint8 uartrecv_buf[BUF_MAX_SIZE], uartsend_buf[BUF_MAX_SIZE];					//用来作为模拟串口接收数据的缓存  
-extern uint8 recv_num, ring_times, ring_num, fsk_flag;
+extern uint8 recv_num, ring_times, ring_num, fsk_flag, dtmf_flag, dtmf_time;
 
 void wait()
 {
@@ -186,7 +186,7 @@ void TIMER16_1_IRQHandler(void)
 		}
 		if (ring_times > 6)
 		{
-#if 1			//不要这里通知了
+#if 1		//不要这里通知了
 			memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 			sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 0, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
@@ -200,6 +200,12 @@ void TIMER16_1_IRQHandler(void)
 			fsk_buf_int();
 			time16b1_disable();
 		}
+#if 0
+		if (dtmf_flag == 1)
+		{
+			dtmf_time++;
+		}
+#endif
 		ring_num = 0;
 	}
 	LPC_TMR16B1->IR = 0x1F; 									// 清所有定时器/计数器中断标志	
