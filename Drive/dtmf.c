@@ -10,8 +10,8 @@ void dtmf_rx_buf_init()
 
 void recv_dtmf()
 {
-	uint8 uc_dtmf = 0xff;
-	
+	uint8 uc_dtmf = 0xff, ch;
+	//uart_send("hello", 5);
 	if (!GET_BIT(LPC_GPIO1, DATA, 11)) //判断有没有数据
 	{
 		SET_BIT(LPC_GPIO1, DATA, 10); //使能			
@@ -51,7 +51,6 @@ void recv_dtmf()
 			uart_send(&ch, 1);
 		}
 	}		
-		}
 }
 
 void dtmf_data_handler()
