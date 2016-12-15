@@ -44,11 +44,11 @@ void gpio_init(void)
 	CLR_BIT(LPC_GPIO1,DIR,0); 						//把P1.0设置为输入
 	CLR_BIT(LPC_GPIO1,DIR,1); 						//设置p1.1为输入
 	CLR_BIT(LPC_GPIO1,DIR,2); 						//把p1.2设置为输入
-	CLR_BIT(LPC_GPIO1,DIR,5); 						//把P1.0设置为输入
+	//CLR_BIT(LPC_GPIO1,DIR,5); 						//把P1.0设置为输入
 	CLR_BIT(LPC_GPIO1,DIR,8); 						//把p1.8设置为输入
 	
 	SET_BIT(LPC_GPIO1,DIR,9); 						//把P1.9设置为输出
-	SET_BIT(LPC_GPIO1, DATA,9); 					//使能ht9032d,ht9170
+	SET_BIT(LPC_GPIO1, DATA,9); 					//休眠ht9032d
 	SET_BIT(LPC_GPIO1,DIR,10);						//把p1.10设置为输出
 	//CLR_BIT(LPC_GPIO1, DATA,10); 				//禁止ht9170
 	SET_BIT(LPC_GPIO1, DATA,10); 				//使能ht9170
@@ -80,9 +80,12 @@ void gpio_init(void)
 	CLR_BIT(LPC_GPIO1,IEV,0);	//选择P1.0为下降沿触发		PSTN_DOUT_MCU
 	SET_BIT(LPC_GPIO1,IE,0); //设置P1.0中断不被屏蔽
 #endif
+
+#if 1
 	CLR_BIT(LPC_GPIO1,IS,5); //选择P1.5为边沿触发   PSTN_DOUT_MCU
 	CLR_BIT(LPC_GPIO1,IEV,5);	//选择P1.5为下降沿触发		PSTN_DOUT_MCU
 	SET_BIT(LPC_GPIO1,IE,5); //设置P1.5中断不被屏蔽
+#endif
 	//CLR_BIT(LPC_GPIO1,IS,2); //选择P1.2为边沿触发   PSTN_RDET_MCU
 	//CLR_BIT(LPC_GPIO1,IEV,2);//选择P1.2为下降沿触发 
 	//SET_BIT(LPC_GPIO1,IE,2); //设置P1.2中断不被屏蔽
@@ -93,19 +96,6 @@ void gpio_init(void)
 	//第四步，开GPIO1中断
 	NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
 	NVIC_EnableIRQ(EINT0_IRQn);	// 使能GPIO0中断
-}
-
-void gpio_init2(void)
-{
-	//第一步，引脚功能设置（数字IO或其它）
-	SET_BIT(LPC_SYSCON,SYSAHBCLKCTRL,16); 	//使能IOCON时钟(bit16)
-	LPC_IOCON->PIO1_9 = 0XD0;                        	//把P1.9设置为数字IO脚输入   			PSTN_PDWN_CPU   DTMF_PDWN共用	
-	LPC_IOCON->PIO1_10 = 0XD0; 						//把P1.10设置为数字IO脚（字节操作）	DTMF_OE_MCU	
-	SET_BIT(LPC_GPIO1,DIR,9); 						//把P1.9设置为输出
-	SET_BIT(LPC_GPIO1, DATA,9); 					//使能ht9032d,ht9170
-
-	SET_BIT(LPC_GPIO1,DIR,10);						//把p1.10设置为输出
-	SET_BIT(LPC_GPIO1, DATA,10); 				//使能ht9170
 }
 
 void set_dtmf_qn_dir()
