@@ -200,7 +200,7 @@ void TIMER16_1_IRQHandler(void)
 			fsk_buf_int();
 			time16b1_disable();
 		}
-#if 0
+#if 1
 		if (dtmf_flag == 1)
 		{
 			dtmf_time++;

@@ -49,8 +49,8 @@ int main(void)
 	init();
 	while (1)
 	{		
-		//delay(500);
-		//wdt_feed();     						// Î¹¹·
+		delay(500);
+		wdt_feed();     						// Î¹¹·
 		check_pstn_hook();		
 		message_handler();
 		dtmf_data_handler(); 
