@@ -50,7 +50,6 @@ PSTN_CID_MODE get_pstn_cid_mode()
 void check_pstn_hook()
 {
 	uint8 temp;
-
 	 switch(st_pstn.state)
 	 {
 		case PSTN_INIT:
@@ -79,8 +78,8 @@ void check_pstn_hook()
 					st_pstn.polacount = 0;
 					if (st_pstn.cid_mode == PSTN_CID_IDL) // 万一还没收到来显就挂了，同时也没有振铃,对方挂机pstn网络应该会发忙音来通知，是不需要协处理器来做了  
 					{
-						//st_pstn.cid_mode = PSTN_DTMF;
-						//uart_send("PSTN_CID_IDL", 12);
+						st_pstn.cid_mode = PSTN_DTMF;
+						uart_send("PSTN_CID_IDL", 12);
 						st_pstn.event = PSTN_EVENT_POLA; // 表示有dtmf来显,接着就会有振铃,让接收dtmf来显的芯片一直使能
 					}
 					else
@@ -122,4 +121,27 @@ void check_pstn_hook()
 				st_pstn.polacount = 0;
 			break;
 	 }
+#if 0
+	//CPL_BIT(LPC_GPIO0,DATA,9); //摘挂机	
+	//CLR_BIT(LPC_GPIO0,DATA,9); // 摘机
+	//delay(2000);
+	if (GET_BIT(LPC_GPIO3, DATA, 4))
+	{
+		uart_send("loop = 1\n", strlen("loop = 1\n"));
+	}
+	else 
+	{
+		uart_send("loop = 0\n", strlen("loop = 0\n"));
+	}
+
+	if (GET_BIT(LPC_GPIO3, DATA, 5))
+	{
+		uart_send("line not in use\n", strlen("line not in use\n"));		
+	}
+	else 
+	{
+		uart_send("line in use\n", strlen("line in use\n"));
+	}
+#endif
+
 }

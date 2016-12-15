@@ -123,7 +123,7 @@ void UART_IRQHandler(void)
 		{
 			redata = LPC_UART->RBR;
 			//uart_send(&redata, 1);
-#if 1
+#if 0
 			if (redata == 0x55) 			//来显数据头
 			{
 				fsk_buf.fsk_flag = 1;
@@ -139,7 +139,7 @@ void UART_IRQHandler(void)
 				uart_send(&redata, 1);
 			}
 #endif
-#if 0
+#if 1
 			//else 
 			{
 				if (uartrecv.num >= BUF_MAX_SIZE2)
