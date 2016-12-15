@@ -36,9 +36,12 @@ void init(void)
 
 void delay(int ms)
 {
-	int i = 0;
+	int i = 0, j = 0;
 	for (i = 0; i < ms; i++)
-		__NOP();			  //µÈ´ýÕñµ´Æ÷ÎÈ¶¨
+	{
+		for (j = 0; j < 4000; j++)
+			__NOP();			  // 0.25us * 4000 = 1ms
+	}
 }
 
 int main(void)
@@ -46,7 +49,7 @@ int main(void)
 	init();
 	while (1)
 	{		
-		//delay(500);
+		delay(500);
 		wdt_feed();     						// Î¹¹·
 		check_pstn_hook();		
 		message_handler();

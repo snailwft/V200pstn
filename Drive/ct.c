@@ -178,6 +178,11 @@ void TIMER16_1_IRQHandler(void)
 			sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0); 	//来电振铃通知主控振铃
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 #endif
+
+#if 1
+			CLR_BIT(LPC_GPIO0,DATA,9); //摘机			
+			set_pstn_state(PSTN_OFFHOOK);
+#endif
 		}
 		if (ring_times > 6)
 		{
@@ -186,7 +191,9 @@ void TIMER16_1_IRQHandler(void)
 			sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 0, 0);
 			uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 #endif
-		
+#if 1
+			SET_BIT(LPC_GPIO0,DATA,9); //挂机
+#endif
 			CLR_BIT(LPC_GPIO1,DATA,9);  	 								//ht9032 拉低PDWN进入休眠模式
 			CLR_BIT(LPC_GPIO2, DATA, 0);									//uart接向主控
 			set_pstn_cid_mode(PSTN_CID_IDL);

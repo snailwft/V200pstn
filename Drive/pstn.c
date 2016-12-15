@@ -122,8 +122,8 @@ void check_pstn_hook()
 				st_pstn.polacount = 0;
 			break;
 	 }
-#if 0
-	//CPL_BIT(LPC_GPIO0,DATA,9); //Õª¹Ò»ú	
+#if 1
+	CPL_BIT(LPC_GPIO0,DATA,9); //Õª¹Ò»ú	
 	//CLR_BIT(LPC_GPIO0,DATA,9); // Õª»ú
 	//delay(2000);
 	if (GET_BIT(LPC_GPIO3, DATA, 4))
