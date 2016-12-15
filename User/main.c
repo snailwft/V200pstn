@@ -22,7 +22,10 @@ uint8 ring_times = 0, ring_num = 0, recv_num = 0, fsk_flag = 0, fsk_clear = 0;
 void init(void)
 {
 	system_init();							// 系统初始化
-	gpio_init();								// GPIO初始化
+	//gpio_init();								// GPIO初始化
+	gpio_init2();
+	uart_init(1200); 						// 串口，并设置波特率	
+#if 0
 	fsk_init();								// fsk缓冲区初始化
 	dtmf_rx_buf_init();
 	time16b1_int_init(1000);		// 16位定时器1 1秒定时并产生中断
@@ -32,6 +35,7 @@ void init(void)
 	wdt_enable();
 	uart_recv_init();
 	fsk_buf_int();
+#endif
 }
 
 void delay(int ms)
@@ -49,10 +53,10 @@ int main(void)
 	init();
 	while (1)
 	{		
-		delay(500);
-		wdt_feed();     						// 喂狗
-		check_pstn_hook();		
-		message_handler();
+		//delay(500);
+		//wdt_feed();     						// 喂狗
+		//check_pstn_hook();		
+		//message_handler();
 		dtmf_data_handler(); 
 	}
 	return 0;

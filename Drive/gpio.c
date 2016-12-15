@@ -48,7 +48,7 @@ void gpio_init(void)
 	CLR_BIT(LPC_GPIO1,DIR,8); 						//把p1.8设置为输入
 	
 	SET_BIT(LPC_GPIO1,DIR,9); 						//把P1.9设置为输出
-	SET_BIT(LPC_GPIO1, DATA,9); 					//休眠ht9032d
+	SET_BIT(LPC_GPIO1, DATA,9); 					//使能ht9032d
 	SET_BIT(LPC_GPIO1,DIR,10);						//把p1.10设置为输出
 	//CLR_BIT(LPC_GPIO1, DATA,10); 				//禁止ht9170
 	SET_BIT(LPC_GPIO1, DATA,10); 				//使能ht9170
@@ -97,6 +97,20 @@ void gpio_init(void)
 	NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
 	NVIC_EnableIRQ(EINT0_IRQn);	// 使能GPIO0中断
 }
+
+void gpio_init2(void)
+{
+	//第一步，引脚功能设置（数字IO或其它）
+	SET_BIT(LPC_SYSCON,SYSAHBCLKCTRL,16); 	//使能IOCON时钟(bit16)
+	LPC_IOCON->PIO1_9 = 0XD0;                        	//把P1.9设置为数字IO脚输入   			PSTN_PDWN_CPU   DTMF_PDWN共用	
+	LPC_IOCON->PIO1_10 = 0XD0; 						//把P1.10设置为数字IO脚（字节操作）	DTMF_OE_MCU	
+	SET_BIT(LPC_GPIO1,DIR,9); 						//把P1.9设置为输出
+	SET_BIT(LPC_GPIO1, DATA,9); 					//使能ht9032d,ht9170
+
+	SET_BIT(LPC_GPIO1,DIR,10);						//把p1.10设置为输出
+	SET_BIT(LPC_GPIO1, DATA,10); 				//使能ht9170
+}
+
 
 void set_dtmf_qn_dir()
 {
