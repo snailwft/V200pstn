@@ -50,7 +50,7 @@ int main(void)
 		wdt_feed();     						// Î¹¹·
 		check_pstn_hook();		
 		message_handler();
-		//dtmf_data_handler(); 
+		dtmf_data_handler(); 
 	}
 	return 0;
 }

@@ -122,4 +122,27 @@ void check_pstn_hook()
 				st_pstn.polacount = 0;
 			break;
 	 }
+#if 0
+	//CPL_BIT(LPC_GPIO0,DATA,9); //Õª¹Ò»ú	
+	//CLR_BIT(LPC_GPIO0,DATA,9); // Õª»ú
+	//delay(2000);
+	if (GET_BIT(LPC_GPIO3, DATA, 4))
+	{
+		uart_send("loop = 1\n", strlen("loop = 1\n"));
+	}
+	else 
+	{
+		uart_send("loop = 0\n", strlen("loop = 0\n"));
+	}
+
+	if (GET_BIT(LPC_GPIO3, DATA, 5))
+	{
+		uart_send("line not in use\n", strlen("line not in use\n"));		
+	}
+	else 
+	{
+		uart_send("line in use\n", strlen("line in use\n"));
+	}
+#endif
+
 }
