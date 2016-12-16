@@ -19,7 +19,7 @@ void recv_dtmf()
 {
 	uint8 uc_dtmf = 0xff, ch;
 
-	if (!GET_BIT(LPC_GPIO1, DATA, 11)) //判断有没有数据
+	if (GET_BIT(LPC_GPIO1, DATA, 11)) //判断有没有数据
 	{
 		dtmf_flag = 1;
 		time16b1_enable();
@@ -31,7 +31,7 @@ void recv_dtmf()
 			uc_dtmf |= (1<<3);
 		}	
 		clr_dtmf_qn_dir(); //设置成输出，不接收dtmf码
-		while (!GET_BIT(LPC_GPIO1, DATA, 11));
+		while (GET_BIT(LPC_GPIO1, DATA, 11));
 		CLR_BIT(LPC_GPIO1, DATA, 10); // 这个地方把开关关闭了导致没有数据输出
 	}
 	if (uc_dtmf != 0xFF)
