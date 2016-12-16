@@ -86,9 +86,11 @@ void check_pstn_hook()
 					else
 					{
 						st_pstn.event = PSTN_EVENT_POLA;
+#if 0
 						memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 						sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1); 	//来电振铃通知主控振铃
 						uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
+#endif
 					}
 				}
 			}
@@ -109,9 +111,11 @@ void check_pstn_hook()
 					st_pstn.last_pola = temp;
 					st_pstn.polacount = 0;
 					st_pstn.event = PSTN_EVENT_POLA; //表示对方挂机了
+#if 0
 					memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
 					sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1); 	//来电振铃通知主控振铃
 					uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
+#endif
 				}
 			}
 			else 

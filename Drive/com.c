@@ -110,7 +110,7 @@ int master_message_parese(uint8 *buf)
 {
 	int hook_status;
 	int fsk_status;
-	uint8 uartsend_buf[100] = {0};
+//	uint8 uartsend_buf[100] = {0};
 	
 	if (buf[0] == '&') //Ö÷¿Ø·¢ËÍ 
 	{					
@@ -145,7 +145,7 @@ int master_message_parese(uint8 *buf)
 
 int fsk_message_handler(uint8 *buf)
 {
-	uint8 uartsend_buf[100] = {0};
+//	uint8 uartsend_buf[100] = {0};
 	int fsk_status;
 
 	fsk_status = CheckFSKMessage(buf, strlen(buf));

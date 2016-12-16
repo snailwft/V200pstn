@@ -12,16 +12,16 @@
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>LPC1114FBD48/302</Device>
+          <Device>LPC1113FHN33/302</Device>
           <Vendor>NXP</Vendor>
           <PackID>Keil.LPC1100_DFP.1.4.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IROM(0x00000000,0x8000) IRAM(0x10000000,0x2000) CPUTYPE("Cortex-M0") CLOCK(50000000) ELITTLE</Cpu>
+          <Cpu>IROM(0x00000000,0x6000) IRAM(0x10000000,0x2000) CPUTYPE("Cortex-M0") CLOCK(50000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD10000000 -FCFE0 -FN1 -FF0LPC1xxx_32 -FS00 -FL08000 -FP0($$Device:LPC1114FBD48/302$Flash\LPC1xxx_32.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD10000000 -FCFE0 -FN1 -FF0LPC1xxx_24 -FS00 -FL06000 -FP0($$Device:LPC1113FHN33/302$Flash\LPC1xxx_24.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:LPC1114FBD48/302$Device\Include\LPC11xx\LPC11xx.h</RegisterFile>
+          <RegisterFile>$$Device:LPC1113FHN33/302$Device\Include\LPC11xx\LPC11xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -31,7 +31,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:LPC1114FBD48/302$SVD\LPC111x.svd</SFDFile>
+          <SFDFile>$$Device:LPC1113FHN33/302$SVD\LPC111x.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -176,7 +176,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -286,7 +286,7 @@
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x8000</Size>
+                <Size>0x6000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -311,7 +311,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x8000</Size>
+                <Size>0x6000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>

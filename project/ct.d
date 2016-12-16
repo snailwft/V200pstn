@@ -14,3 +14,4 @@
 .\ct.o: e:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
 .\ct.o: ..\Drive\pstn.h
 .\ct.o: ..\Drive\uart.h
+.\ct.o: ..\Drive\dtmf.h

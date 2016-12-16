@@ -59,8 +59,6 @@ compiling com.c...
                                 time16b1_disable();
 ..\Drive\com.c(112): warning:  #177-D: variable "fsk_status" was declared but never referenced
         int fsk_status;
-..\Drive\com.c(113): warning:  #177-D: variable "uartsend_buf" was declared but never referenced
-        uint8 uartsend_buf[100] = {0};
 ..\Drive\com.c(151): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
         fsk_status = CheckFSKMessage(buf, strlen(buf));
 ..\Drive\com.c(159): warning:  #223-D: function "gpio_irq_disable" declared implicitly
@@ -71,7 +69,7 @@ compiling com.c...
                 sprintf(uartsend_buf, "&RING:%d:CID:%s%s:HOOK:%d*", 1, stFskMeg.ucTime, stFskMeg.ucFskNum, 0);
 ..\Drive\com.c(165): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
                 uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-..\Drive\com.c: 30 warnings, 0 errors
+..\Drive\com.c: 29 warnings, 0 errors
 compiling ct.c...
 ..\Drive\ct.h(8): warning:  #1295-D: Deprecated declaration wait - give arg types
   void wait();
@@ -107,21 +105,29 @@ compiling ct.c...
   extern void uart_recv_init();
 ..\Drive\uart.h(27): warning:  #1295-D: Deprecated declaration get_uart_recv_num - give arg types
   extern int get_uart_recv_num();
-..\Drive\ct.c(175): warning:  #223-D: function "set_pstn_event" declared implicitly
-                        set_pstn_event(PSTN_EVENT_RING);
-..\Drive\ct.c(178): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-                        sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0);  //来电振铃通知主控振铃
-..\Drive\ct.c(179): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                        uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\ct.c(191): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+..\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
+  extern void dtmf_rx_buf_init();
+..\Drive\dtmf.h(17): warning:  #1295-D: Deprecated declaration recv_dtmf - give arg types
+  extern void recv_dtmf();
+..\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
+  extern void dtmf_data_handler();
+..\Drive\dtmf.h(19): warning:  #1295-D: Deprecated declaration get_dtmf_rx_buf_length - give arg types
+  int get_dtmf_rx_buf_length();
+..\Drive\dtmf.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Drive\ct.c(187): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
+                                        sprintf(uartsend_buf, "&RING:%d:CID:%s:HOOK:%d*", 1, dtmf_rx_buf.dtmf_buff, 0);
+..\Drive\ct.c(188): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+                                        uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
+..\Drive\ct.c(220): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
                         sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 0, 0);
-..\Drive\ct.c(192): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
+..\Drive\ct.c(221): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
                         uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\ct.c(199): warning:  #223-D: function "set_pstn_cid_mode" declared implicitly
+..\Drive\ct.c(228): warning:  #223-D: function "set_pstn_cid_mode" declared implicitly
                         set_pstn_cid_mode(PSTN_CID_IDL);
-..\Drive\ct.c(200): warning:  #223-D: function "fsk_buf_int" declared implicitly
+..\Drive\ct.c(229): warning:  #223-D: function "fsk_buf_int" declared implicitly
                         fsk_buf_int();
-..\Drive\ct.c: 24 warnings, 0 errors
+..\Drive\ct.c: 28 warnings, 0 errors
 compiling dtmf.c...
 ..\Drive\dtmf.h(16): warning:  #1295-D: Deprecated declaration dtmf_rx_buf_init - give arg types
   extern void dtmf_rx_buf_init();
@@ -129,22 +135,22 @@ compiling dtmf.c...
   extern void recv_dtmf();
 ..\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
   extern void dtmf_data_handler();
-..\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+..\Drive\dtmf.h(19): warning:  #1295-D: Deprecated declaration get_dtmf_rx_buf_length - give arg types
+  int get_dtmf_rx_buf_length();
+..\Drive\dtmf.h(20): warning:  #1-D: last line of file ends without a newline
   #endif
-..\Drive\dtmf.c(20): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
+..\Drive\dtmf.c(25): warning:  #223-D: function "time16b1_enable" declared implicitly
+                time16b1_enable();
+..\Drive\dtmf.c(27): warning:  #223-D: function "set_dtmf_qn_dir" declared implicitly
                 set_dtmf_qn_dir();  //设置成输入 ，接收dtmf码
-..\Drive\dtmf.c(27): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
+..\Drive\dtmf.c(33): warning:  #223-D: function "clr_dtmf_qn_dir" declared implicitly
                 clr_dtmf_qn_dir(); //设置成输出，不接收dtmf码
-..\Drive\dtmf.c(53): warning:  #223-D: function "uart_send" declared implicitly
+..\Drive\dtmf.c(62): warning:  #223-D: function "uart_send" declared implicitly
                         uart_send(&ch, 1);
-..\Drive\dtmf.c(69): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "char *restrict"
-                        sprintf(uartsend_buf, "&RING:%d:CID:%s:HOOK:%d*", 1, dtmf_rx_buf.dtmf_buff, 0);
-..\Drive\dtmf.c(70): warning:  #223-D: function "uart_send" declared implicitly
-                        uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-..\Drive\dtmf.c(70): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                        uart_send(uartsend_buf, strlen(uartsend_buf)); //发送给主控
-..\Drive\dtmf.c(73): warning:  #1-D: last line of file ends without a newline
+..\Drive\dtmf.c(71): warning:  #1-D: last line of file ends without a newline
   }
+..\Drive\dtmf.c(69): warning:  #177-D: variable "uartsend_buf" was declared but never referenced
+        uint8 uartsend_buf[100] = {0};
 ..\Drive\dtmf.c: 11 warnings, 0 errors
 compiling fsk.c...
 ..\Drive\fsk.h(34): warning:  #1295-D: Deprecated declaration fsk_init - give arg types
@@ -189,10 +195,6 @@ compiling gpio.c...
   extern int get_uart_recv_num();
 ..\Drive\gpio.c(137): warning:  #223-D: function "time16b1_enable" declared implicitly
                 time16b1_enable();
-..\Drive\gpio.c(142): warning:  #223-D: function "sprintf" declared implicitly
-                sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0);  //来电振铃通知主控振铃
-..\Drive\gpio.c(143): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
 ..\Drive\gpio.c(167): warning:  #223-D: function "wait" declared implicitly
         wait(); //等过起始位    
 ..\Drive\gpio.c(184): warning:  #223-D: function "wait" declared implicitly
@@ -203,7 +205,7 @@ compiling gpio.c...
                 wait();// 定时器要是16倍发送波特率
 ..\Drive\gpio.c(210): warning:  #177-D: variable "i" was declared but never referenced
         int i = 0; 
-..\Drive\gpio.c: 21 warnings, 0 errors
+..\Drive\gpio.c: 19 warnings, 0 errors
 compiling pstn.c...
 ..\Drive\pstn.h(40): warning:  #1295-D: Deprecated declaration clear_pstn_event - give arg types
   extern void clear_pstn_event();
@@ -217,19 +219,7 @@ compiling pstn.c...
   #endif
 ..\Drive\main.h(9): warning:  #1-D: last line of file ends without a newline
   #endif
-..\Drive\pstn.c(90): warning:  #223-D: function "sprintf" declared implicitly
-                                                sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1);       //来电振铃通知主控振铃
-..\Drive\pstn.c(91): warning:  #223-D: function "uart_send" declared implicitly
-                                                uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\pstn.c(91): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                                                uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\pstn.c(113): warning:  #223-D: function "sprintf" declared implicitly
-                                        sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d:HANG:%d*", 1, 0, 1);       //来电振铃通知主控振铃
-..\Drive\pstn.c(114): warning:  #223-D: function "uart_send" declared implicitly
-                                        uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\pstn.c(114): warning:  #167-D: argument of type "uint8 *" is incompatible with parameter of type "const char *"
-                                        uart_send(uartsend_buf, strlen(uartsend_buf));  //发送给主控
-..\Drive\pstn.c: 12 warnings, 0 errors
+..\Drive\pstn.c: 6 warnings, 0 errors
 compiling uart.c...
 ..\Drive\main.h(9): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -301,18 +291,18 @@ compiling main.c...
   extern void recv_dtmf();
 ..\Drive\dtmf.h(18): warning:  #1295-D: Deprecated declaration dtmf_data_handler - give arg types
   extern void dtmf_data_handler();
-..\Drive\dtmf.h(19): warning:  #1-D: last line of file ends without a newline
+..\Drive\dtmf.h(19): warning:  #1295-D: Deprecated declaration get_dtmf_rx_buf_length - give arg types
+  int get_dtmf_rx_buf_length();
+..\Drive\dtmf.h(20): warning:  #1-D: last line of file ends without a newline
   #endif
-..\User\main.c(31): warning:  #223-D: function "pstn_init" declared implicitly
+..\User\main.c(34): warning:  #223-D: function "pstn_init" declared implicitly
         pstn_init();
-..\User\main.c(54): warning:  #223-D: function "check_pstn_hook" declared implicitly
-                check_pstn_hook();              
-..\User\main.c(58): warning:  #111-D: statement is unreachable
+..\User\main.c(63): warning:  #111-D: statement is unreachable
         return 0;
 ..\User\main.c: 24 warnings, 0 errors
 linking...
-Program Size: Code=7048 RO-data=496 RW-data=12 ZI-data=1804  
-".\lpc_cid.axf" - 0 Error(s), 141 Warning(s).
+Program Size: Code=6776 RO-data=496 RW-data=12 ZI-data=1804  
+".\lpc_cid.axf" - 0 Error(s), 136 Warning(s).
 Load "F:\\ip话机项目\\myproject\\lpc_gpio_uart_cpy\\project\\lpc_cid.axf" 
 * JLink Info: Device "UNSPECIFIED" selected (0 KB flash, 0 KB RAM).
 Set JLink Project File to "F:\ip话机项目\myproject\lpc_gpio_uart_cpy\project\JLinkSettings.ini"
@@ -334,7 +324,101 @@ ROMTableAddr = 0xE00FF003
 Target info:
 ------------
 Device: LPC1113FHN33/302
-VTarget = 3.345V
+VTarget = 3.254V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 200 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Load "F:\\ip话机项目\\myproject\\lpc_gpio_uart_cpy\\project\\lpc_cid.axf" 
+* JLink Info: Device "UNSPECIFIED" selected (0 KB flash, 0 KB RAM).
+Set JLink Project File to "F:\ip话机项目\myproject\lpc_gpio_uart_cpy\project\JLinkSettings.ini"
+* JLink Info: Device "UNSPECIFIED" selected (0 KB flash, 0 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC1113FHN33/302
+VTarget = 3.254V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 200 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+13FHN33/302
+VTarget = 3.287V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 200 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+th ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC1113FHN33/302
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 200 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC1113FHN33/302
+VTarget = 3.351V
 State of Pins: 
 TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
 Hardware-Breakpoints: 4
