@@ -119,7 +119,7 @@ int master_message_parese(uint8 *buf)
 			hook_status = deal_message(buf, strlen(buf));
 			if (hook_status == 1)
 			{
-				CLR_BIT(LPC_GPIO0,DATA,9); //摘机			
+				SET_BIT(LPC_GPIO3, DATA, 2);					//摘机
 				clear_pstn_event();	
 				set_pstn_state(PSTN_OFFHOOK);
 				time16b1_disable();
@@ -128,7 +128,7 @@ int master_message_parese(uint8 *buf)
 			}
 			else if (hook_status == 0)
 			{
-				SET_BIT(LPC_GPIO0,DATA,9); //挂机
+				CLR_BIT(LPC_GPIO3, DATA, 2);				 //挂机
 				clear_pstn_event();
 				set_pstn_state(PSTN_INIT);
 			}

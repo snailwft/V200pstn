@@ -31,12 +31,12 @@ void gpio_init(void)
 	LPC_IOCON->PIO0_7 = 0xD0;							//把p0.7设置为数字IO脚		
 	LPC_IOCON->PIO2_0 = 0xD0;							//把p2.0设置为数字IO脚
 	
-	LPC_IOCON->PIO0_8 = 0xD0;							//把p0.8设置为数字IO脚					PSTN_RING_MCU
-	LPC_IOCON->PIO0_9 = 0xD0;							//把p0.9设置为数字IO脚					PSTN_OH_MCU
+	//LPC_IOCON->PIO0_8 = 0xD0;							//把p0.8设置为数字IO脚					PSTN_RING_MCU
+	//LPC_IOCON->PIO0_9 = 0xD0;							//把p0.9设置为数字IO脚					PSTN_OH_MCU
 	
-	LPC_IOCON->PIO3_2 = 0xD0;							//把p3.2设置为数字IO脚					POLARITY_CPC5712   	反极检测
-	LPC_IOCON->PIO3_4 = 0xD0;							//把p3.4设置为数字IO脚					LOOP_CPC5712				环路电流检测
-	LPC_IOCON->PIO3_5 = 0xD0;							//把p3.5设置为数字IO脚					Line_In_Use_CPC5712	忙线检测   低电平表示设备正在摘机状态
+	LPC_IOCON->PIO3_2 = 0xD0;							//把p3.2设置为数字IO脚					PSTN_NLOOP_MCU   		摘挂机
+	LPC_IOCON->PIO3_4 = 0xD0;							//把p3.4设置为数字IO脚					PSTN_RCU_MCU				
+	LPC_IOCON->PIO3_5 = 0xD0;							//把p3.5设置为数字IO脚					PSTN_POL_MCU	 			振铃检测 
 		
 	CLR_BIT(LPC_SYSCON,SYSAHBCLKCTRL,16);//禁能IOCON时钟(bit16)（引脚配置完成后关闭该时钟）
 
@@ -63,7 +63,8 @@ void gpio_init(void)
 	//CLR_BIT(LPC_GPIO2, DATA, 0);					//默认配置成连接主控uart
 	SET_BIT(LPC_GPIO2, DATA, 0);					//默认配置成连接ht9032d
 
-	CLR_BIT(LPC_GPIO3, DIR, 2);						//把p3.2设置为输入
+	SET_BIT(LPC_GPIO3, DIR, 2);						//把p3.2设置为输出
+	//SET_BIT(LPC_GPIO3, DATA, 2);					//摘机
 	CLR_BIT(LPC_GPIO3, DIR, 4);						//把p3.4设置为输入
 	CLR_BIT(LPC_GPIO3, DIR, 5);						//把p3.5设置为输入
 
@@ -85,15 +86,14 @@ void gpio_init(void)
 	CLR_BIT(LPC_GPIO1,IS,5); //选择P1.5为边沿触发   PSTN_DOUT_MCU
 	CLR_BIT(LPC_GPIO1,IEV,5);	//选择P1.5为下降沿触发		PSTN_DOUT_MCU
 	SET_BIT(LPC_GPIO1,IE,5); //设置P1.5中断不被屏蔽
+
+	CLR_BIT(LPC_GPIO3, IS, 4); 		//选择p3.4为边沿触发 
+	CLR_BIT(LPC_GPIO3, IEV, 4);  	//选择p3.4为下降沿触发	
+	SET_BIT(LPC_GPIO3, IE, 4);		//设置p3.4中断不被屏蔽
 #endif
-	//CLR_BIT(LPC_GPIO1,IS,2); //选择P1.2为边沿触发   PSTN_RDET_MCU
-	//CLR_BIT(LPC_GPIO1,IEV,2);//选择P1.2为下降沿触发 
-	//SET_BIT(LPC_GPIO1,IE,2); //设置P1.2中断不被屏蔽
-	//CLR_BIT(LPC_GPIO1,IS,1); //选择P1.1为边沿触发   PSTN_CDET_MCU
-	//SET_BIT(LPC_GPIO1,IEV,1);//选择P1.1为上升沿触发 
-	//SET_BIT(LPC_GPIO1,IE,1); //设置P1.1中断不被屏蔽
 	
 	//第四步，开GPIO1中断
+	NVIC_EnableIRQ(EINT3_IRQn);	//使能GPIO3中断
 	NVIC_EnableIRQ(EINT1_IRQn);	// 使能GPIO1中断
 	NVIC_EnableIRQ(EINT0_IRQn);	// 使能GPIO0中断
 }
@@ -128,26 +128,8 @@ void clr_dtmf_qn_dir()
 	SET_BIT(LPC_GPIO1,DIR,8); 						//把p1.8设置为输出
 }
 
-void PIOINT0_IRQHandler(void)  	  
-{
-	if (GET_BIT(LPC_GPIO0, MIS, 8)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
-	{
-		ring_num++;		
-		SET_BIT(LPC_GPIO1, DATA,9);  	 		 //拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
-		time16b1_enable();
-		ring_times = 0;
 
-#if 0//不要在这里通知振铃，直接收到来显之后在通知
-		memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
-		sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0); 	//来电振铃通知主控振铃
-		uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
-#endif
 
-	}
-	LPC_GPIO0->IC = 0xFFF;  						 // 清除GPIO0上的中断
-}
-
-#if 1
 void fsk_buf_int()
 {
 	memset(&fsk_buf, 0, sizeof(fsk_buf));
@@ -204,7 +186,26 @@ void gpio_irq_enable()
 {
 	SET_BIT(LPC_GPIO1,IE,5); 						//设置P1.5中断不屏蔽
 }
-#if 1
+
+void PIOINT0_IRQHandler(void)  	  
+{
+	if (GET_BIT(LPC_GPIO0, MIS, 8)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
+	{
+		ring_num++;		
+		SET_BIT(LPC_GPIO1, DATA,9);  	 		 //拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+		time16b1_enable();
+		ring_times = 0;
+
+#if 0//不要在这里通知振铃，直接收到来显之后在通知
+		memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+		sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0); 	//来电振铃通知主控振铃
+		uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
+#endif
+
+	}
+	LPC_GPIO0->IC = 0xFFF;  						 // 清除GPIO0上的中断
+}
+
 void PIOINT1_IRQHandler(void)
 {
 	int i = 0; 
@@ -243,7 +244,22 @@ void PIOINT1_IRQHandler(void)
 	LPC_GPIO1->IC = 0xFFF;  						 	// 清除GPIO1上的中断
 }
 
+void PIOINT3_IRQHandler(void)
+{
+	if (GET_BIT(LPC_GPIO3, MIS, 4)!=0)	      // 检测P0.8引脚产生的中断 PSTN_RING_MCU 下降沿触发中断
+	{
+		ring_num++;		
+		SET_BIT(LPC_GPIO1, DATA,9);  	 		 //拉低 ht9032 PDWN进入工作模式		因为这里接了反极开关 	
+		time16b1_enable();
+		ring_times = 0;
+
+#if 1//不要在这里通知振铃，直接收到来显之后在通知
+		memset(uartsend_buf, 0x0, sizeof(uartsend_buf));
+		sprintf(uartsend_buf, "&RING:%d:CID::HOOK:%d*", 1, 0); 	//来电振铃通知主控振铃
+		uart_send(uartsend_buf, strlen(uartsend_buf)); 	//发送给主控
 #endif
 
-#endif
+	}
+	LPC_GPIO3->IC = 0xFFF;  						 // 清除GPIO0上的中断
+}
 

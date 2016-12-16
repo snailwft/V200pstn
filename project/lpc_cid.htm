@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\lpc_cid.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\lpc_cid.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Fri Dec 16 15:13:54 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Fri Dec 16 16:41:18 2016
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -39,7 +39,7 @@ Function Pointers
  <LI><a href="#[1e]">PIOINT0_IRQHandler</a> from gpio.o(.text) referenced from startup_lpc11xx.o(RESET)
  <LI><a href="#[1d]">PIOINT1_IRQHandler</a> from gpio.o(.text) referenced from startup_lpc11xx.o(RESET)
  <LI><a href="#[1c]">PIOINT2_IRQHandler</a> from startup_lpc11xx.o(.text) referenced from startup_lpc11xx.o(RESET)
- <LI><a href="#[1b]">PIOINT3_IRQHandler</a> from startup_lpc11xx.o(.text) referenced from startup_lpc11xx.o(RESET)
+ <LI><a href="#[1b]">PIOINT3_IRQHandler</a> from gpio.o(.text) referenced from startup_lpc11xx.o(RESET)
  <LI><a href="#[9]">PendSV_Handler</a> from startup_lpc11xx.o(.text) referenced from startup_lpc11xx.o(RESET)
  <LI><a href="#[5]">Reset_Handler</a> from startup_lpc11xx.o(.text) referenced from startup_lpc11xx.o(RESET)
  <LI><a href="#[13]">SSP0_IRQHandler</a> from startup_lpc11xx.o(.text) referenced from startup_lpc11xx.o(RESET)
@@ -291,9 +291,6 @@ Global Symbols
 <P><STRONG><a name="[1c]"></a>PIOINT2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc11xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
 </UL>
-<P><STRONG><a name="[1b]"></a>PIOINT3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc11xx.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
-</UL>
 <P><STRONG><a name="[13]"></a>SSP0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc11xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
 </UL>
@@ -364,7 +361,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT3_IRQHandler
+<LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_message_handler
 </UL>
 
@@ -491,7 +489,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3f]"></a>time16b1_enable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ct.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT0_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT3_IRQHandler
+<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT0_IRQHandler
 <LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_dtmf
 </UL>
 
@@ -533,7 +532,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_message_handler
 </UL>
 
-<P><STRONG><a name="[61]"></a>gpio_init</STRONG> (Thumb, 438 bytes, Stack size 8 bytes, gpio.o(.text))
+<P><STRONG><a name="[61]"></a>gpio_init</STRONG> (Thumb, 472 bytes, Stack size 8 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = gpio_init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EnableIRQ
@@ -551,13 +550,6 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_dtmf
 </UL>
 
-<P><STRONG><a name="[1e]"></a>PIOINT0_IRQHandler</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, gpio.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = PIOINT0_IRQHandler
-</UL>
-<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_enable
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
-</UL>
 <P><STRONG><a name="[53]"></a>fsk_buf_int</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = fsk_buf_int
 </UL>
@@ -593,12 +585,31 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_message_handler
 </UL>
 
+<P><STRONG><a name="[1e]"></a>PIOINT0_IRQHandler</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, gpio.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = PIOINT0_IRQHandler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_enable
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
+</UL>
 <P><STRONG><a name="[1d]"></a>PIOINT1_IRQHandler</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PIOINT1_IRQHandler &rArr; recv_byte2
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_byte2
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
+</UL>
+<P><STRONG><a name="[1b]"></a>PIOINT3_IRQHandler</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, gpio.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = PIOINT3_IRQHandler &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time16b1_enable
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc11xx.o(RESET)
@@ -659,6 +670,7 @@ Global Symbols
 <P><STRONG><a name="[42]"></a>uart_send</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WDT_IRQHandler
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT3_IRQHandler
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT1_IRQHandler
 <LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_dtmf
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
@@ -789,7 +801,8 @@ Global Symbols
 <P><STRONG><a name="[4f]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 12 bytes, strlen.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT3_IRQHandler
+<LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_message_handler
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;master_message_parese
 </UL>
@@ -808,7 +821,8 @@ Global Symbols
 <P><STRONG><a name="[3d]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, rt_memclr.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_init
+<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIOINT3_IRQHandler
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_init
 <LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dtmf_rx_buf_init
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER16_1_IRQHandler
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fsk_message_handler
